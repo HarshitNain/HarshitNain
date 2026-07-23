@@ -26,7 +26,7 @@ FLAGSHIPS = [
     # Backend & APIs
     dict(name="rnr-microservices", domain="Backend & APIs", lang="JavaScript", tag=None, private=True,
          blurb="Production-ready internal platforms and client-facing systems using robust REST APIs and modular architecture."),
-    dict(name="puja-backend", domain="Backend & APIs", lang="TypeScript", tag=None,
+    dict(name="online-booking-management-backend", domain="Backend & APIs", lang="TypeScript", tag=None,
          blurb="Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration."),
     
     # Security

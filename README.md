@@ -83,7 +83,7 @@ I build **responsive, scalable, and user-friendly interfaces with modern web tec
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
 | **rnr-microservices** `🔒 private` | JavaScript | — | Production-ready internal platforms and client-facing systems using robust REST APIs and modular architecture. |
-| **[puja-backend](https://github.com/abhi5heksah/puja-backend)** | TypeScript | — | Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration. |
+| **[online-booking-management-backend](https://github.com/abhi5heksah/online-booking-management-backend)** | TypeScript | — | Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration. |
 
 ### 🛡️ Security
 
