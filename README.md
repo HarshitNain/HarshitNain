@@ -189,14 +189,28 @@ I build **responsive, scalable, and user-friendly interfaces with modern web tec
 
 ---
 
+## ▌ CONTRIBUTION GRAPH
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake.svg">
+  <img alt="An animated snake that eats its way through my real GitHub contribution graph, regenerated from live contribution data every day" src="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake-dark.svg">
+</picture>
+
+</div>
+
+---
+
 <div align="center">
 
 ```
 ── EOF ────────────────────────────────────────────────────────────
 ```
 
-**This whole page is a program.** Custom SVG instruments, built from live GitHub data by [`assets/generate.py`](./assets/generate.py), committed to this repo, and refreshed every day by a GitHub Action. 
+**This whole page is a program.** Custom SVG instruments, built from live GitHub data by [`assets/generate.py`](./assets/generate.py), committed to this repo, and refreshed every day by a GitHub Action — plus the classic animated contribution snake, regenerated daily from real commit data by its own long-running [GitHub Action](./.github/workflows/main.yml) and committed to this repo's `output` branch. No flaky Vercel-hosted widget services. No mocked numbers. Every figure is real and reproducible — down to the red build I haven't hidden.
 
-<sub>◆ self-hosted ◆ live-sourced ◆ dark/light aware ◆ animated in-SVG ◆ zero external widgets</sub>
+<sub>◆ self-hosted ◆ live-sourced ◆ dark/light aware ◆ animated ◆ zero third-party image hosts</sub>
 
 </div>
