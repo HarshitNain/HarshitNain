@@ -79,7 +79,7 @@ def api(path, params=None):
         url += "?" + urlencode(params)
     req = urllib.request.Request(url)
     req.add_header("Accept", "application/vnd.github+json")
-    req.add_header("User-Agent", "bharat3645-profile-generator")
+    req.add_header("User-Agent", "abhi5heksah-profile-generator")
     if TOKEN:
         req.add_header("Authorization", f"Bearer {TOKEN}")
     try:
@@ -739,7 +739,7 @@ def boot(p, d):
     for i in range(3):
         s.append(rect(34 + i * 22, 24, 13, 13, fill=["sig", "yellow", "green"][i], rx=2,
                       stroke="ink", sw=1.5, p=p))
-    s.append(text(W - 32, 36, "00 // bharat3645@security:~/portfolio", size=12.5,
+    s.append(text(W - 32, 36, "00 // abhi5heksah@portfolio:~", size=12.5,
                   fill="page", weight=800, font=MONO, anchor="end", spacing=0.3, p=p))
     tagcol = {"ok": "green", "warn": "orange", "run": "blue"}
     n = len(lines)
@@ -776,7 +776,7 @@ def boot(p, d):
              f'</rect></g>')
     # prompt
     py = ly + n * lh + 4
-    s.append(text(30, py, f"bharat3645@security:~$", size=13.5, fill="green", weight=800,
+    s.append(text(30, py, f"abhi5heksah@portfolio:~$", size=13.5, fill="green", weight=800,
                   font=MONO, p=p))
     s.append(f'<rect x="{30 + 22 * 8.15:.1f}" y="{py-12:.1f}" width="11" height="15" '
              f'fill="{p["sig"]}"><animate attributeName="opacity" values="1;1;0;0" '
