@@ -1236,7 +1236,7 @@ def research(p, d):
     tw = (W - 48 - 2 * gap) / 3
     for i, (num, lab, sub) in enumerate(counts):
         x = x0 + i * (tw + gap)
-        off = 18 + len(num) * 17
+        off = 28 + len(num) * 17
         s.append(card(x, y0, tw, 50, p, fill="card", accent=accents[i], dx=5, dy=5))
         s.append(text(x + 18, y0 + 34, num, size=30, fill="ink", weight=800, font=MONO, p=p))
         s.append(text(x + off, y0 + 22, lab, size=12, fill="ink", weight=800, font=MONO, p=p))
