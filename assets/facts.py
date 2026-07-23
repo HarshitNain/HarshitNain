@@ -114,11 +114,11 @@ JOURNEY_MILES = [
     dict(date="2022-11", label="First UIs", sub="Learning HTML/CSS/JS", lane="up", accent="blue"),
     dict(date="2024-03", label="Web Dev Cert", sub="Internshala MERN Stack", lane="down", accent="purple"),
     dict(date="2024-05", label="SQL Cert", sub="HackerRank SQL Expert", lane="down", accent="purple"),
-    dict(date="2024-11", label="Codesquadz Intern", sub="MERN Stack Developer", lane="up", accent="orange"),
+    dict(date="2024-09", label="Codesquadz Intern", sub="MERN Stack Developer", lane="up", accent="orange"),
     dict(date="2025-01", label="Parlour System", sub="React & Node.js platform", lane="up", accent="orange"),
-    dict(date="2025-03", label="Yukti Sangam", sub="Hackathon 2025 Participant", lane="down", accent="orange"),
-    dict(date="2025-04", label="CompliSec", sub="Automated Vuln Scanner", lane="up", accent="orange"),
-    dict(date="2025-05", label="Full Stack Dev", sub="RnR Consulting", lane="up", accent="red"),
+    dict(date="2025-04", label="Yukti Sangam", sub="Hackathon 2025 Participant", lane="down", accent="orange"),
+    dict(date="2025-07", label="CompliSec", sub="Automated Vuln Scanner", lane="up", accent="orange"),
+    dict(date="2025-11", label="Full Stack Dev", sub="RnR Consulting", lane="up", accent="red"),
     dict(date="2026-06", label="React Native", sub="Mobile Development", lane="up", accent="red"),
 ]
 
