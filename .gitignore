@@ -1,0 +1,5 @@
+assets/__pycache__/
+assets/_preview.html
+__pycache__/
+*.pyc
+assets/_*

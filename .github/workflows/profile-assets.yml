@@ -1,0 +1,55 @@
+name: refresh profile assets
+
+# Regenerates the self-hosted dashboard SVGs (assets/*.svg) from live GitHub
+# API data and commits any changes back to main. Same pattern as the snake
+# animation workflow — the images live in this repo, so the profile never
+# depends on a third-party image host at view time.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"      # daily, 06:17 UTC
+  workflow_dispatch:           # manual "Run workflow" button
+  push:
+    branches: [main]
+    paths:
+      - "assets/generate.py"
+      - "assets/facts.py"
+      - ".github/workflows/profile-assets.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-assets
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate dashboard SVGs
+        # A user-scoped PAT (secret GH_PROFILE_TOKEN) is used if present so the
+        # API sees higher rate limits; otherwise the repo-scoped GITHUB_TOKEN is
+        # enough for all public data. generate.py degrades gracefully either way.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python3 assets/generate.py
+
+      - name: Commit refreshed assets
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/*.svg
+          if git diff --staged --quiet; then
+            echo "No asset changes."
+          else
+            git commit -m "chore: refresh profile dashboard assets [skip ci]"
+            git push
+          fi
