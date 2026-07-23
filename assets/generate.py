@@ -523,8 +523,8 @@ def pqc_clock(p, d):
     idn = "q"
     s = [frame(W, H, p, idn)]
     s.append(corner_marks(W, H, p))
-    s.append(head(p, W, "08", "PQC MIGRATION CLOCK",
-                  "why the crypto work ships now — real US federal PQC deadlines, counting down live",
+    s.append(head(p, W, "08", "CAREER ROADMAP CLOCK",
+                  "tracking my long-term engineering milestones and deadlines, counting down live",
                   "purple", live=True))
     today = NOW.date()
     dls = []
