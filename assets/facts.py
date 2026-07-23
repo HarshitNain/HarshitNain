@@ -96,10 +96,8 @@ LANG_COLORS = {
 # ===========================================================================
 
 JOURNEY_ERAS = [
-    dict(key="2020", label="FOUNDATIONS", accent="cyan",
-         note="B.Tech CS begins — The software engineering journey starts"),
-    dict(key="2022", label="FIRST BUILDS", accent="blue",
-         note="Learning HTML, CSS, JavaScript, and building early UIs"),
+    dict(key="2023", label="FOUNDATIONS", accent="cyan",
+         note="B.Tech CS & First Builds"),
     dict(key="2024", label="MERN STACK", accent="purple",
          note="Mastering React, Node.js, and completing certifications"),
     dict(key="2025", label="BUILD & SHIP", accent="orange",
@@ -109,15 +107,15 @@ JOURNEY_ERAS = [
 ]
 
 JOURNEY_MILES = [
-    dict(date="2020-05", label="Class XII", sub="Ram Krishna College · 2020", lane="down", accent="cyan"),
-    dict(date="2020-09", label="B.Tech CS begins", sub="Gandhi Engineering College", lane="down", accent="cyan"),
+    dict(date="2023-08", label="B.Tech CS", sub="Gandhi Engineering College", lane="down", accent="cyan"),
+    dict(date="2023-11", label="First UIs", sub="Learning HTML/CSS/JS", lane="up", accent="cyan"),
     dict(date="2024-03", label="Web Dev Cert", sub="Internshala MERN Stack", lane="down", accent="purple"),
     dict(date="2024-05", label="SQL Cert", sub="HackerRank SQL Expert", lane="down", accent="purple"),
     dict(date="2024-11", label="Codesquadz Intern", sub="MERN Stack Developer", lane="up", accent="orange"),
     dict(date="2025-01", label="Parlour System", sub="React & Node.js platform", lane="up", accent="orange"),
     dict(date="2025-03", label="Yukti Sangam", sub="Hackathon 2025 Participant", lane="down", accent="orange"),
     dict(date="2025-04", label="CompliSec", sub="Automated Vuln Scanner", lane="up", accent="orange"),
-    dict(date="2025-04", label="Full Stack Dev", sub="RnR Consulting", lane="up", accent="red"),
+    dict(date="2025-05", label="Full Stack Dev", sub="RnR Consulting", lane="up", accent="red"),
     dict(date="2026-06", label="React Native", sub="Mobile Development", lane="up", accent="red"),
 ]
 

@@ -946,9 +946,9 @@ def pulse(p, d):
 # ---------------------------------------------------------------------------
 # Instrument — build-sprint timeline (real repo ship dates)
 # ---------------------------------------------------------------------------
-def _yfrac(datestr):  # "YYYY-MM" -> position across 2022-01 .. 2027-01
+def _yfrac(datestr):  # "YYYY-MM" -> position across 2023-01 .. 2027-01
     y, m = (int(v) for v in datestr.split("-")[:2])
-    return ((y - 2022) * 12 + (m - 1)) / 60.0
+    return ((y - 2023) * 12 + (m - 1)) / 48.0
 
 
 def timeline(p, d):
@@ -958,7 +958,7 @@ def timeline(p, d):
     s = [frame(W, H, p, idn)]
     s.append(corner_marks(W, H, p))
     s.append(head(p, W, "05", "THE JOURNEY",
-                  "five years, five eras — from first classes to shipping infra · real dated milestones",
+                  "four years, four eras — from first classes to shipping infra · real dated milestones",
                   "purple"))
 
     def xof(datestr):
