@@ -1006,9 +1006,9 @@ def timeline(p, d):
             lastx[r] = x
             out.append((m, x, r))
         return out
-    up = {0: ay - 26, 1: ay - 62}
+    up = {0: ay - 26, 1: ay - 62, 2: ay - 98}
     dn = {0: ay + 24, 1: ay + 56, 2: ay + 88}
-    for m, x, r in lay("up", 2):
+    for m, x, r in lay("up", 3):
         my = up[r]
         s.append(line(x, ay, x, my, stroke=m["accent"], sw=2, p=p))
         s.append(circle(x, my, 5, fill=m["accent"], stroke="ink", sw=2, p=p))
