@@ -68,42 +68,42 @@ I build **responsive, scalable, and user-friendly interfaces with modern web tec
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **[parlour-booking-system](https://github.com/abhi5heksah/parlour-booking-system)** | JavaScript | `v1.0.0` | Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication. |
-| **[mern-ecommerce](https://github.com/abhi5heksah/mern-ecommerce)** | TypeScript | — | Scalable full-stack e-commerce application using React.js, Node.js, and MongoDB with optimized structured schema design. |
+| **parlour-booking-system** | JavaScript | `v1.0.0` | Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication. |
+| **mern-ecommerce** | TypeScript | — | Scalable full-stack e-commerce application using React.js, Node.js, and MongoDB with optimized structured schema design. |
 
 ### 🎨 Frontend & UI
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **[admin-dashboard-pro](https://github.com/abhi5heksah/admin-dashboard-pro)** | TypeScript | `v2.1` | Dedicated Admin Dashboard for administrative control, booking approval workflows, and service configuration using React, ShadCN, and GSAP. |
-| **[modern-portfolio](https://github.com/abhi5heksah/modern-portfolio)** | JavaScript | — | Highly interactive portfolio built with modern UI systems using Tailwind CSS, ShadCN UI, and micro-animations. |
+| **admin-dashboard-pro** | TypeScript | `v2.1` | Dedicated Admin Dashboard for administrative control, booking approval workflows, and service configuration using React, ShadCN, and GSAP. |
+| **modern-portfolio** | JavaScript | — | Highly interactive portfolio built with modern UI systems using Tailwind CSS, ShadCN UI, and micro-animations. |
 
 ### ⚙️ Backend & APIs
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
 | **rnr-microservices** `🔒 private` | JavaScript | — | Production-ready internal platforms and client-facing systems using robust REST APIs and modular architecture. |
-| **[online-booking-management-backend](https://github.com/abhi5heksah/online-booking-management-backend)** | TypeScript | — | Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration. |
+| **online-booking-management-backend** | TypeScript | — | Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration. |
 
 ### 🛡️ Security
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **[CompliSec](https://github.com/abhi5heksah/CompliSec)** | Python | `v0.1.0` | Automated Vulnerability Scanning Tool integrated with Nmap, OpenVAS, and Nikto for port scanning and vulnerability identification. |
+| **CompliSec** | Python | `v0.1.0` | Automated Vulnerability Scanning Tool integrated with Nmap, OpenVAS, and Nikto for port scanning and vulnerability identification. |
 
 ### 📱 Mobile Development
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **[react-native-companion](https://github.com/abhi5heksah/react-native-companion)** | TypeScript | — | Cross-platform mobile companion app built with React Native for seamless user experience across iOS and Android. |
-| **[flutter-ui-kit](https://github.com/abhi5heksah/flutter-ui-kit)** | Dart | — | Collection of reusable, performant Flutter components and responsive layouts for mobile applications. |
+| **react-native-companion** | TypeScript | — | Cross-platform mobile companion app built with React Native for seamless user experience across iOS and Android. |
+| **flutter-ui-kit** | Dart | — | Collection of reusable, performant Flutter components and responsive layouts for mobile applications. |
 
 ### 📜 Selected earlier work (2023–2024)
 
 | Repo | Year | What it is |
 |------|:----:|------------|
-| **[Old-Portfolio](https://github.com/abhi5heksah/Old-Portfolio)** | 2023 | Early version of my portfolio built with pure HTML, CSS, and Bootstrap. |
-| **[Basic-CRUD-App](https://github.com/abhi5heksah/Basic-CRUD-App)** | 2024 | A simple CRUD application to master RESTful APIs using Express.js and MongoDB. |
+| **Old-Portfolio** | 2023 | Early version of my portfolio built with pure HTML, CSS, and Bootstrap. |
+| **Basic-CRUD-App** | 2024 | A simple CRUD application to master RESTful APIs using Express.js and MongoDB. |
 
 ---
 
