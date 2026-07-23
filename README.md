@@ -83,7 +83,7 @@ I build **responsive, scalable, and user-friendly interfaces with modern web tec
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
 | **rnr-microservices** `🔒 private` | JavaScript | — | Production-ready internal platforms and client-facing systems using robust REST APIs and modular architecture. |
-| **[dynamic-discount-engine](https://github.com/abhi5heksah/dynamic-discount-engine)** | JavaScript | — | Discount management system allowing real-time offer creation and secure data flow between admin and user portals. |
+| **[puja-backend](https://github.com/abhi5heksah/puja-backend)** | TypeScript | — | Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration. |
 
 ### 🛡️ Security
 
