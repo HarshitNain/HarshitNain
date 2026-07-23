@@ -35,7 +35,7 @@
 ### Project Ownership
 
 #### 1. AI-ML Utilities
-- **Repository:** [bharat3645/ai-ml-utils](https://github.com/bharat3645/ai-ml-utils)
+- **Repository:** [abhi5heksah/ai-ml-utils](https://github.com/abhi5heksah/ai-ml-utils)
 - **Status:** ✅ Active
 - **Stars:** 450+
 - **Contributors:** 25+
@@ -43,7 +43,7 @@
 - **Key Features:** Data preprocessing, model evaluation, visualization tools
 
 #### 2. DevOps Toolkit
-- **Repository:** [bharat3645/devops-toolkit](https://github.com/bharat3645/devops-toolkit)
+- **Repository:** [abhi5heksah/devops-toolkit](https://github.com/abhi5heksah/devops-toolkit)
 - **Status:** ✅ Active
 - **Stars:** 320+
 - **Contributors:** 18+
@@ -51,7 +51,7 @@
 - **Key Features:** K8s templates, GitHub Actions workflows, monitoring setups
 
 #### 3. Web Starter Kit
-- **Repository:** [bharat3645/web-starter-kit](https://github.com/bharat3645/web-starter-kit)
+- **Repository:** [abhi5heksah/web-starter-kit](https://github.com/abhi5heksah/web-starter-kit)
 - **Status:** ✅ Active
 - **Stars:** 280+
 - **Contributors:** 22+
@@ -233,19 +233,19 @@
 ## 📚 Resources & Links
 
 ### Main Projects
-- [AI-ML Utilities](https://github.com/bharat3645/ai-ml-utils)
-- [DevOps Toolkit](https://github.com/bharat3645/devops-toolkit)
-- [Web Starter Kit](https://github.com/bharat3645/web-starter-kit)
+- [AI-ML Utilities](https://github.com/abhi5heksah/ai-ml-utils)
+- [DevOps Toolkit](https://github.com/abhi5heksah/devops-toolkit)
+- [Web Starter Kit](https://github.com/abhi5heksah/web-starter-kit)
 
 ### Contribution History
-- [GitHub Contributions](https://github.com/bharat3645)
-- [Open Source Projects](https://github.com/bharat3645?tab=repositories&type=source)
-- [Pull Requests](https://github.com/pulls?q=is:pr+author:bharat3645+archived:false)
+- [GitHub Contributions](https://github.com/abhi5heksah)
+- [Open Source Projects](https://github.com/abhi5heksah?tab=repositories&type=source)
+- [Pull Requests](https://github.com/pulls?q=is:pr+author:abhi5heksah+archived:false)
 
 ### Community Profiles
-- [Stack Overflow](https://stackoverflow.com/users/bharat3645)
-- [Product Hunt](https://www.producthunt.com/@bharat3645)
-- [Dev.to](https://dev.to/bharat3645)
+- [Stack Overflow](https://stackoverflow.com/users/abhi5heksah)
+- [Product Hunt](https://www.producthunt.com/@abhi5heksah)
+- [Dev.to](https://dev.to/abhi5heksah)
 
 ## 🚀 Getting Started with My Projects
 

@@ -52,7 +52,7 @@
 **A:** Career development, technical skills (Python, JavaScript, AI/ML, DevOps), interview prep, project architecture, open source contribution, personal branding, and more.
 
 ### Q: How do we get started with mentoring?
-**A:** Email me at bharat3645@gmail.com with:
+**A:** Email me at abhi5heksah@gmail.com with:
 - Your current background
 - Career goals
 - Specific areas you want help with
@@ -276,9 +276,9 @@ Let's discuss if you have an interesting idea!
 
 Can't find your answer here? Reach out!
 
-- **Email:** bharat3645@gmail.com
-- **LinkedIn:** linkedin.com/in/bharat-singh-parihar
-- **Twitter:** @bharat3645
+- **Email:** abhi5heksah@gmail.com
+- **LinkedIn:** linkedin.com/in/abhi5heksah
+- **Twitter:** @abhi5heksah
 - **GitHub Issues:** Ask in discussion or issue
 
 I'm happy to help! 🚀
