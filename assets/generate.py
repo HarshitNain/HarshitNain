@@ -946,9 +946,17 @@ def pulse(p, d):
 # ---------------------------------------------------------------------------
 # Instrument — build-sprint timeline (real repo ship dates)
 # ---------------------------------------------------------------------------
-def _yfrac(datestr):  # "YYYY-MM" -> position across 2023-01 .. 2027-01
+YEAR_WEIGHTS = {
+    2020: 1.2, 2021: 0.2, 2022: 1.2, 2023: 0.2,
+    2024: 2.5, 2025: 5.0, 2026: 1.5
+}
+
+def _yfrac(datestr): 
     y, m = (int(v) for v in datestr.split("-")[:2])
-    return ((y - 2023) * 12 + (m - 1)) / 48.0
+    tot = sum(YEAR_WEIGHTS.values())
+    w_before = sum(w for year, w in YEAR_WEIGHTS.items() if year < y)
+    w_curr = YEAR_WEIGHTS.get(y, 1.0)
+    return (w_before + w_curr * ((m - 1) / 12.0)) / tot
 
 
 def timeline(p, d):
@@ -958,7 +966,7 @@ def timeline(p, d):
     s = [frame(W, H, p, idn)]
     s.append(corner_marks(W, H, p))
     s.append(head(p, W, "05", "THE JOURNEY",
-                  "four years, four eras — from first classes to shipping infra · real dated milestones",
+                  "seven years, five eras — variable time scale based on milestone density",
                   "purple"))
 
     def xof(datestr):
