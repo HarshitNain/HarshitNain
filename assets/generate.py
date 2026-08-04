@@ -1224,11 +1224,11 @@ def research(p, d):
     idn = "r"
     s = [frame(W, H, p, idn)]
     s.append(corner_marks(W, H, p))
-    s.append(head(p, W, "06", "RESEARCH & IMPACT",
-                  "peer-reviewed output + shipped-work numbers — what a repo list alone doesn't show",
+    s.append(head(p, W, "06", "TECHNICAL PROFILE & DELIVERABLES",
+                  "tracked engineering experience + core capabilities — verified output beyond code repos",
                   "pink"))
     # publications
-    s.append(text(24, 86, "PEER-REVIEWED", size=10, fill="faint", weight=800, font=MONO,
+    s.append(text(24, 86, "VERIFIED", size=10, fill="faint", weight=800, font=MONO,
                   spacing=1, p=p))
     accents = ["pink", "purple", "cyan"]
     counts = facts.PUBLICATIONS["counts"]
