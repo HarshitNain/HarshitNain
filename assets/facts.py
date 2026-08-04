@@ -57,7 +57,7 @@ BENCHMARKS = [
          env="Vercel · Chrome Desktop · 2026-07-21", source="lighthouse-report.json",
          bar=0.98),
     dict(repo="CompliSec", metric="scan coverage",
-         value="10,000+", detail="Ports and services scanned accurately with Nmap/Nikto",
+         value="10,000+ PORTS", detail="Accurate network & security scans via Nmap and Nikto integration",
          env="Kali Linux · Local Network · 2025", source="reports/summary.md",
          bar=0.95),
     dict(repo="mern-ecommerce", metric="api response time",

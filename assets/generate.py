@@ -483,7 +483,7 @@ def benchmarks(p, d):
     s = [frame(W, H, p, idn)]
     s.append(corner_marks(W, H, p))
     s.append(head(p, W, "07", "VERIFIED BENCHMARKS",
-                  "every figure reproducible from the repo's own committed harness — no hand-waving",
+                  "reproducible benchmark figures from repository test harnesses — verified performance",
                   "green"))
     bx, by, gap = 24, 88, 16
     cw = (W - 2 * bx - gap) / 2
