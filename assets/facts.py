@@ -12,32 +12,32 @@ SUBLINE = "I build responsive, scalable, and user-friendly interfaces with moder
 # ---------------------------------------------------------------------------
 FLAGSHIPS = [
     # Full Stack Development
-    dict(name="parlour-booking-system", domain="Full Stack Development", lang="JavaScript", tag="v1.0.0",
+    dict(name="beautyparlour", domain="Full Stack Development", lang="TypeScript", tag="v1.0.0", private=True,
          blurb="Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication."),
-    dict(name="mern-ecommerce", domain="Full Stack Development", lang="TypeScript", tag=None,
-         blurb="Scalable full-stack e-commerce application using React.js, Node.js, and MongoDB with optimized structured schema design."),
+    dict(name="Accessibitity-Tool-", domain="Full Stack Development", lang="HTML", tag=None,
+         blurb="Complete WCAG 2.2 AA accessibility compliance documentation, system architecture, and implementation checklist."),
     
     # Frontend & UI
-    dict(name="admin-dashboard-pro", domain="Frontend & UI", lang="TypeScript", tag="v2.1",
-         blurb="Dedicated Admin Dashboard for administrative control, booking approval workflows, and service configuration using React, ShadCN, and GSAP."),
-    dict(name="modern-portfolio", domain="Frontend & UI", lang="JavaScript", tag=None,
-         blurb="Highly interactive portfolio built with modern UI systems using Tailwind CSS, ShadCN UI, and micro-animations."),
+    dict(name="abhisheksah_wise", domain="Frontend & UI", lang="TypeScript", tag=None, private=True,
+         blurb="A modern, responsive, and accessible web application theme with real-world inspiration, featuring reusable UI components."),
+    dict(name="3dportfolio", domain="Frontend & UI", lang="JavaScript", tag=None, private=True,
+         blurb="Highly interactive 3D portfolio built with modern UI systems, dynamic rendering, and micro-animations."),
     
     # Backend & APIs
-    dict(name="rnr-microservices", domain="Backend & APIs", lang="JavaScript", tag=None, private=True,
-         blurb="Production-ready internal platforms and client-facing systems using robust REST APIs and modular architecture."),
-    dict(name="online-booking-management-backend", domain="Backend & APIs", lang="TypeScript", tag=None,
-         blurb="Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration."),
+    dict(name="SyncHub", domain="Backend & APIs", lang="Go", tag=None, private=True,
+         blurb="Secure, real-time team communication platform offering instant messaging, voice/video calling, and file sharing."),
+    dict(name="rest_graphql_tanstack_api_integration_with_expressjs", domain="Backend & APIs", lang="TypeScript", tag=None,
+         blurb="Robust backend API architecture integrating both REST and GraphQL APIs with Express.js."),
     
     # Security
     dict(name="CompliSec", domain="Security", lang="Python", tag="v0.1.0",
-         blurb="Automated Vulnerability Scanning Tool integrated with Nmap, OpenVAS, and Nikto for port scanning and vulnerability identification."),
+         blurb="Full-stack security and vulnerability scanning platform built with Next.js, Python, and PostgreSQL."),
     
     # Mobile Development
-    dict(name="react-native-companion", domain="Mobile Development", lang="TypeScript", tag=None,
-         blurb="Cross-platform mobile companion app built with React Native for seamless user experience across iOS and Android."),
-    dict(name="flutter-ui-kit", domain="Mobile Development", lang="Dart", tag=None,
-         blurb="Collection of reusable, performant Flutter components and responsive layouts for mobile applications."),
+    dict(name="BP_Mobile_apps", domain="Mobile Development", lang="TypeScript", tag=None, private=True,
+         blurb="React Native mobile application for Puja Beauty Parlour, featuring service browsing and appointment booking."),
+    dict(name="ppv_flutter_widgets_ui", domain="Mobile Development", lang="Dart", tag=None, private=True,
+         blurb="Collection of reusable, performant Flutter UI components and widgets for mobile applications."),
 ]
 
 DOMAINS = [
@@ -52,7 +52,7 @@ DOMAINS = [
 # Verified benchmark numbers.
 # ---------------------------------------------------------------------------
 BENCHMARKS = [
-    dict(repo="parlour-booking-system", metric="lighthouse performance",
+    dict(repo="beautyparlour", metric="lighthouse performance",
          value="98/100", detail="Optimized React rendering & GSAP animations",
          env="Vercel · Chrome Desktop · 2026-07-21", source="lighthouse-report.json",
          bar=0.98),
@@ -60,11 +60,11 @@ BENCHMARKS = [
          value="10,000+ PORTS", detail="Accurate network & security scans via Nmap and Nikto integration",
          env="Kali Linux · Local Network · 2025", source="reports/summary.md",
          bar=0.95),
-    dict(repo="mern-ecommerce", metric="api response time",
-         value="~45 ms", detail="Optimized MongoDB aggregations & Express middleware",
-         env="Node v20 · AWS EC2 · 2026", source="tests/load-test.yml",
+    dict(repo="SyncHub", metric="api response time",
+         value="~45 ms", detail="Optimized Go backend & PostgreSQL indexing",
+         env="Go 1.22 · AWS EC2 · 2026", source="tests/load-test.yml",
          bar=0.15),
-    dict(repo="react-native-companion", metric="bundle size",
+    dict(repo="BP_Mobile_apps", metric="bundle size",
          value="< 15 MB", detail="Hermes engine enabled, optimized assets and code splitting",
          env="Expo EAS Build · Android APK", source="eas.json",
          bar=None), 
@@ -141,11 +141,6 @@ IMPACT = [
     ("SSO", "Authentication", "Google SSO and secure token-based user login workflows"),
 ]
 
-EARLIER = [
-    dict(name="Old-Portfolio", year="2023", lang="HTML/CSS",
-         blurb="Early version of my portfolio built with pure HTML, CSS, and Bootstrap."),
-    dict(name="Basic-CRUD-App", year="2024", lang="JavaScript",
-         blurb="A simple CRUD application to master RESTful APIs using Express.js and MongoDB."),
-]
+EARLIER = []
 
 CAREER_LINE = "Full Stack Developer @ RnR Consulting · B.Tech CS — Gandhi Engineering College, 2020–24"
