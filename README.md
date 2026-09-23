@@ -1,20 +1,10 @@
 <!--
   Profile README — self-hosted live dashboard.
-  Every visual below is a custom SVG generated from live GitHub API data by
-  assets/generate.py and committed to this repo (assets/*.svg), refreshed daily
-  by .github/workflows/profile-assets.yml. Nothing here depends on a third-party
-  image host at view time. Every number is real and reproducible. Dark/light
-  variants are served via <picture>. Motion is SMIL (served verbatim by GitHub);
-  every animation is additive and degrades to a complete static frame.
+  Visuals are custom SVGs generated from live GitHub API data by
+  assets/generate.py and committed to this repo, refreshed daily.
 -->
 
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="./assets/boot-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/boot-light.svg">
-  <img alt="Terminal boot log" src="./assets/boot-dark.svg" width="850">
-</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="./assets/hero-dark.svg">
@@ -26,13 +16,54 @@
 
 ## ▌ WHOAMI
 
-I build **responsive, scalable, and user-friendly interfaces with modern web technologies.** From developing full-stack platforms with robust MERN architectures to crafting highly interactive and animated frontend experiences, I specialize in translating complex business requirements into elegant code. Every flagship project listed below represents a focus on clean architecture, reusable components, and optimized APIs.
+**Abhishek Kumar Sah**  
+**Full Stack Developer**
 
-- 💼 **Now:** Full Stack Developer @ **RnR Consulting Private Limited** (New Delhi) — developing highly scalable internal platforms and client-facing systems using React.js, TypeScript, and robust modular backend APIs.
-- 🚀 **Projects:** Built a comprehensive **Parlour Booking System** (React, GSAP, Google SSO, MongoDB) and **CompliSec** (Automated Vulnerability Scanning Tool integrating Nmap/OpenVAS/Nikto).
-- 🧭 **Focus:** Full Stack Web Development (MERN) · Interactive UIs · Mobile App Development (React Native & Flutter)
-- 🎓 **B.Tech CS**, Gandhi Engineering College (2020–2024)
-- 📫 **Reach me:** [LinkedIn](https://linkedin.com/in/abhi5heksah) · [Twitter](https://twitter.com/abhi5heksah) · [Email](mailto:abhisheksah2711@gmail.com)
+I build scalable web applications, modern user interfaces, and reliable backend systems using React, Next.js, TypeScript, Node.js, and modern web technologies.
+
+🌐 Portfolio: [https://abhi5heksah.in](https://abhi5heksah.in/)  
+💼 LinkedIn: [https://linkedin.com/in/abhi5heksah](https://linkedin.com/in/abhi5heksah)
+
+## ▌ ABOUT ME
+
+Full Stack Developer with 2+ years of experience building scalable web applications, modern user interfaces, and backend systems. I specialize in translating complex business requirements into elegant code with a focus on clean architecture, reusable components, and optimized APIs.
+
+- 🚀 **Focus:** Frontend engineering · Full-stack web development · React.js · Next.js · TypeScript · Node.js · Express.js · REST APIs · MongoDB · PostgreSQL
+- 🎓 **Education:** B.Tech CS, Gandhi Engineering College (2020–2024)
+
+---
+
+## ▌ TECH STACK
+
+- **Languages:** JavaScript, TypeScript, Python
+- **Frontend:** React.js, Next.js, Tailwind CSS
+- **Backend:** Node.js, Express.js, REST APIs
+- **Database:** MongoDB, PostgreSQL
+- **Concepts:** Modern web application development, Accessible and responsive interfaces, AI integrations
+
+---
+
+## ▌ FEATURED PROJECTS
+
+### 1. 🛡️ CompliSec
+Full-stack security and vulnerability scanning platform built with Next.js, Python, and PostgreSQL.
+- **Tech:** Next.js / Python / PostgreSQL
+- 🔗 **Repository:** [https://github.com/abhi5heksah/compli_sec](https://github.com/abhi5heksah/compli_sec)
+
+### 2. 🏢 Parlour Booking System
+A comprehensive Full Stack platform enabling seamless online service booking, dynamic discount management, and administrative control.
+- **Tech:** React.js / Node.js / Express / MongoDB
+- 🔗 **Repository:** [https://github.com/abhi5heksah/parlour_booking_system](https://github.com/abhi5heksah/parlour_booking_system)
+
+### 3. 🛡️ ARCompli (Compliance Flutter)
+Cross-platform application built for compliance and accessibility.
+- **Tech:** Flutter / Dart
+- 🔗 **Repository:** [https://github.com/abhi5heksah/compliance_flutter](https://github.com/abhi5heksah/compliance_flutter)
+
+### 4. ⚙️ REST & GraphQL API Integration
+Backend API project focused on robust API architecture, integrating both REST and GraphQL with Express.js.
+- **Tech:** Node.js / Express.js / GraphQL
+- 🔗 **Repository:** [https://github.com/abhi5heksah/rest_graphql_tanstack_api_integration_with_expressjs](https://github.com/abhi5heksah/rest_graphql_tanstack_api_integration_with_expressjs)
 
 ---
 
@@ -48,66 +79,9 @@ I build **responsive, scalable, and user-friendly interfaces with modern web tec
 
 </div>
 
-> The board above is regenerated daily from the live GitHub API — CI dots, uptime bars, versions and "last commit" ages are real.
-
 ---
 
-## ▌ PORTFOLIO MAP
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="./assets/domains-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/domains-light.svg">
-  <img alt="Radar chart mapping flagship repositories" src="./assets/domains-dark.svg" width="850">
-</picture>
-
-</div>
-
-### 🌐 Full Stack Development
-
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **parlour-booking-system** | JavaScript | `v1.0.0` | Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication. |
-| **mern-ecommerce** | TypeScript | — | Scalable full-stack e-commerce application using React.js, Node.js, and MongoDB with optimized structured schema design. |
-
-### 🎨 Frontend & UI
-
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **admin-dashboard-pro** | TypeScript | `v2.1` | Dedicated Admin Dashboard for administrative control, booking approval workflows, and service configuration using React, ShadCN, and GSAP. |
-| **modern-portfolio** | JavaScript | — | Highly interactive portfolio built with modern UI systems using Tailwind CSS, ShadCN UI, and micro-animations. |
-
-### ⚙️ Backend & APIs
-
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **rnr-microservices** `🔒 private` | JavaScript | — | Production-ready internal platforms and client-facing systems using robust REST APIs and modular architecture. |
-| **online-booking-management-backend** | TypeScript | — | Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration. |
-
-### 🛡️ Security
-
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **CompliSec** | Python | `v0.1.0` | Automated Vulnerability Scanning Tool integrated with Nmap, OpenVAS, and Nikto for port scanning and vulnerability identification. |
-
-### 📱 Mobile Development
-
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **react-native-companion** | TypeScript | — | Cross-platform mobile companion app built with React Native for seamless user experience across iOS and Android. |
-| **flutter-ui-kit** | Dart | — | Collection of reusable, performant Flutter components and responsive layouts for mobile applications. |
-
-### 📜 Selected earlier work (2023–2024)
-
-| Repo | Year | What it is |
-|------|:----:|------------|
-| **Old-Portfolio** | 2023 | Early version of my portfolio built with pure HTML, CSS, and Bootstrap. |
-| **Basic-CRUD-App** | 2024 | A simple CRUD application to master RESTful APIs using Express.js and MongoDB. |
-
----
-
-## ▌ ACTIVITY PULSE
+## ▌ GITHUB ACTIVITY & STATS
 
 <div align="center">
 
@@ -119,63 +93,7 @@ I build **responsive, scalable, and user-friendly interfaces with modern web tec
 
 </div>
 
-## ▌ THE JOURNEY
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="./assets/timeline-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/timeline-light.svg">
-  <img alt="Multi-year timeline" src="./assets/timeline-dark.svg" width="850">
-</picture>
-
-</div>
-
----
-
-## ▌ EXPERIENCE & ACHIEVEMENTS
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="./assets/research-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/research-light.svg">
-  <img alt="Experience and impact panel" src="./assets/research-dark.svg" width="850">
-</picture>
-
-</div>
-
----
-
-## ▌ VERIFIED BENCHMARKS
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="./assets/benchmarks-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/benchmarks-light.svg">
-  <img alt="Four verified benchmarks" src="./assets/benchmarks-dark.svg" width="850">
-</picture>
-
-</div>
-
----
-
-## ▌ ROADMAP & DEADLINES
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="./assets/pqc-clock-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/pqc-clock-light.svg">
-  <img alt="Roadmap goals and target deadlines" src="./assets/pqc-clock-dark.svg" width="850">
-</picture>
-
-</div>
-
----
-
-## ▌ LANGUAGE MIX
+<br>
 
 <div align="center">
 
@@ -196,17 +114,26 @@ I build **responsive, scalable, and user-friendly interfaces with modern web tec
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake.svg">
-  <img alt="An animated snake that eats its way through my real GitHub contribution graph, regenerated from live contribution data every day" src="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake-dark.svg">
+  <img alt="An animated snake that eats its way through my real GitHub contribution graph" src="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake-dark.svg">
 </picture>
 
 </div>
 
 ---
 
+## ▌ CONNECT WITH ME
+
+🔗 **Portfolio** — [https://abhi5heksah.in](https://abhi5heksah.in/)  
+💻 **GitHub** — [https://github.com/abhi5heksah](https://github.com/abhi5heksah)  
+💼 **LinkedIn** — [https://linkedin.com/in/abhi5heksah](https://linkedin.com/in/abhi5heksah)  
+📝 **DEV Community** — [https://dev.to/abhi5heksah](https://dev.to/abhi5heksah)  
+📚 **Hashnode** — [https://hashnode.com/@abhi5heksah](https://hashnode.com/@abhi5heksah)  
+✍️ **Medium** — [https://medium.com/@abhi5heksah](https://medium.com/@abhi5heksah)  
+🌳 **Linktree** — [https://linktr.ee/abhi5heksah](https://linktr.ee/abhi5heksah)
+
+---
+
 <div align="center">
-<b>This whole page is a program.</b> 
-Custom SVG instruments, built from live GitHub data by <a href="./assets/generate.py"><code>assets/generate.py</code></a>, committed to this repo, and refreshed every day by a GitHub Action — plus the classic animated contribution snake, regenerated daily from real commit data by its own long-running <a href="./.github/workflows/main.yml">GitHub Action</a> and committed to this repo's <code>output</code> branch. No flaky Vercel-hosted widget services. No mocked numbers. Every figure is real and reproducible — generated live from repo telemetry.
-
-<sub>◆ self-hosted ◆ live-sourced ◆ dark/light aware ◆ animated ◆ zero third-party image hosts</sub>
-
+<b>This profile page is dynamic.</b> 
+Custom SVG instruments are built from live GitHub data and committed to this repo, refreshed every day by a GitHub Action. Every figure is real and reproducible — generated live from repo telemetry.
 </div>
