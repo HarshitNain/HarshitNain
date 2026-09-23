@@ -138,8 +138,6 @@ def gather():
     lang_bytes, all_commits = {}, []
     for f in facts.FLAGSHIPS:
         name = f["name"]
-        if f.get("private"):
-            continue  # public-only keeps every live figure reproducible by any viewer
         langs = api(f"/repos/{OWNER}/{name}/languages")
         if langs:
             for k, v in langs.items():
@@ -789,7 +787,7 @@ def boot(p, d):
 # Instrument — live system status (uptime monitor)
 # ---------------------------------------------------------------------------
 def status_board(p, d):
-    pub = [f for f in facts.FLAGSHIPS if not f.get("private")]
+    pub = [f for f in facts.FLAGSHIPS]
     W = 850
     H = 108 + len(pub) * 27 + 14
     idn = "s"
