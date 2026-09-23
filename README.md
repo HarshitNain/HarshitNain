@@ -85,6 +85,7 @@ I build scalable web applications, modern user interfaces, and reliable backend 
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
+| **beauty_parlour** `🔒 private` | TypeScript | — | Secure backend API for the Beauty Parlour management system, handling bookings, users, and administrative workflows. |
 | **SyncHub** `🔒 private` | Go, TypeScript | — | Secure, real-time team communication platform offering instant messaging, voice/video calling, and file sharing. |
 | **rest_graphql_tanstack_api_integration_with_expressjs** | TypeScript | — | Robust backend API architecture integrating both REST and GraphQL APIs with Express.js. |
 

@@ -24,6 +24,8 @@ FLAGSHIPS = [
          blurb="Highly interactive 3D portfolio built with modern UI systems, dynamic rendering, and micro-animations."),
     
     # Backend & APIs
+    dict(name="beauty_parlour", domain="Backend & APIs", lang="TypeScript", tag=None, private=True,
+         blurb="Secure backend API for the Beauty Parlour management system, handling bookings, users, and administrative workflows."),
     dict(name="SyncHub", domain="Backend & APIs", lang="Go", tag=None, private=True,
          blurb="Secure, real-time team communication platform offering instant messaging, voice/video calling, and file sharing."),
     dict(name="rest_graphql_tanstack_api_integration_with_expressjs", domain="Backend & APIs", lang="TypeScript", tag=None,
