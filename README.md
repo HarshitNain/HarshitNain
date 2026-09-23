@@ -71,22 +71,22 @@ I build scalable web applications, modern user interfaces, and reliable backend 
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **parlour-booking-system** | JavaScript | `v1.0.0` | Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication. |
-| **mern-ecommerce** | TypeScript | — | Scalable full-stack e-commerce application using React.js, Node.js, and MongoDB with optimized structured schema design. |
+| **beautyparlour** `🔒 private` | TypeScript | `v1.0.0` | Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication. |
+| **Accessibitity-Tool-** | Documentation | — | Complete WCAG 2.2 AA accessibility compliance documentation, system architecture, and implementation checklist. |
 
 ### 🎨 Frontend & UI
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **admin-dashboard-pro** | TypeScript | `v2.1` | Dedicated Admin Dashboard for administrative control, booking approval workflows, and service configuration using React, ShadCN, and GSAP. |
-| **modern-portfolio** | JavaScript | — | Highly interactive portfolio built with modern UI systems using Tailwind CSS, ShadCN UI, and micro-animations. |
+| **abhisheksah_wise** `🔒 private` | TypeScript | — | A modern, responsive, and accessible web application theme with real-world inspiration, featuring reusable UI components. |  
+| **3dportfolio** `🔒 private` | JavaScript | — | Highly interactive 3D portfolio built with modern UI systems, dynamic rendering, and micro-animations. |
 
 ### ⚙️ Backend & APIs
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **rnr-microservices** `🔒 private` | JavaScript | — | Production-ready internal platforms and client-facing systems using robust REST APIs and modular architecture. |
-| **online-booking-management-backend** | TypeScript | — | Secure NestJS backend API for Beauty Parlour management, featuring Google OAuth, Prisma ORM, and Razorpay integration. |
+| **SyncHub** `🔒 private` | Go, TypeScript | — | Secure, real-time team communication platform offering instant messaging, voice/video calling, and file sharing. |
+| **rest_graphql_tanstack_api_integration_with_expressjs** | TypeScript | — | Robust backend API architecture integrating both REST and GraphQL APIs with Express.js. |
 
 ### 🛡️ Security
 
@@ -98,15 +98,10 @@ I build scalable web applications, modern user interfaces, and reliable backend 
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **react-native-companion** | TypeScript | — | Cross-platform mobile companion app built with React Native for seamless user experience across iOS and Android. |
-| **flutter-ui-kit** | Dart | — | Collection of reusable, performant Flutter components and responsive layouts for mobile applications. |
+| **BP_Mobile_apps** `🔒 private` | TypeScript | — | React Native mobile application for Puja Beauty Parlour, featuring service browsing and appointment booking. |
+| **ppv_flutter_widgets_ui** `🔒 private` | Dart | — | Collection of reusable, performant Flutter UI components and widgets for mobile applications. |
 
-### 📜 Selected earlier work (2023–2024)
 
-| Repo | Year | What it is |
-|------|:----:|------------|
-| **Old-Portfolio** | 2023 | Early version of my portfolio built with pure HTML, CSS, and Bootstrap. |
-| **Basic-CRUD-App** | 2024 | A simple CRUD application to master RESTful APIs using Express.js and MongoDB. |
 
 ---
 
