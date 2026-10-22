@@ -1,100 +1,53 @@
 # 🎯 Comprehensive Skills Assessment 2026
 
-## 🌐 Frontend Development
+## ⚙️ Backend & Systems Architecture
+
+### Languages & Runtimes
+- **Go (Golang)** ⭐⭐⭐⭐⭐ - Expert
+- **Python** ⭐⭐⭐⭐⭐ - Expert
+- **Node.js** ⭐⭐⭐⭐ - Advanced
+- **TypeScript** ⭐⭐⭐⭐ - Advanced
+
+### Systems & Architecture
+- **Distributed Systems & Event Streams** ⭐⭐⭐⭐⭐ - Expert
+- **RESTful & gRPC Architecture** ⭐⭐⭐⭐⭐ - Expert
+- **Financial & Tax Automation (Sec 194C / UTR)** ⭐⭐⭐⭐⭐ - Expert
+- **Authentication & Security (OAuth2 / Google SSO / OTP Vaults)** ⭐⭐⭐⭐⭐ - Expert
+
+## 🌐 Frontend Engineering
 
 ### Frameworks & Libraries
 - **React.js** ⭐⭐⭐⭐⭐ - Expert
-- **React Native** ⭐⭐⭐⭐ - Advanced
-- **Next.js** ⭐⭐⭐⭐ - Advanced
-- **Flutter** ⭐⭐⭐⭐ - Advanced
-
-### Styling & UI
-- **Tailwind CSS** ⭐⭐⭐⭐⭐ - Expert
-- **ShadCN UI** ⭐⭐⭐⭐⭐ - Expert
-- **Material-UI** ⭐⭐⭐⭐ - Advanced
-- **Bootstrap** ⭐⭐⭐⭐ - Advanced
-
-### Core Web & Animation
+- **Redux Toolkit** ⭐⭐⭐⭐⭐ - Expert
+- **Material-UI & Tailwind CSS** ⭐⭐⭐⭐ - Advanced
 - **HTML5 & CSS3** ⭐⭐⭐⭐⭐ - Expert
-- **JavaScript (ES6+)** ⭐⭐⭐⭐⭐ - Expert
-- **TypeScript** ⭐⭐⭐⭐ - Advanced
-- **GSAP** ⭐⭐⭐ - Intermediate
 
-### State Management
-- **Redux** ⭐⭐⭐⭐ - Advanced
-- **React Context API** ⭐⭐⭐⭐ - Advanced
-- **TanStack Query** ⭐⭐⭐ - Intermediate
+## 💾 Databases & Caching
 
-## 🔧 Backend Development
+### Storage Engines
+- **PostgreSQL / PLpgSQL** ⭐⭐⭐⭐⭐ - Expert
+- **Redis (In-memory caching & OTP stores)** ⭐⭐⭐⭐ - Advanced
+- **MySQL & SQLite** ⭐⭐⭐⭐ - Advanced
+- **Query Optimization & Indexing** ⭐⭐⭐⭐⭐ - Expert
 
-### Frameworks & Runtimes
-- **Node.js** ⭐⭐⭐⭐⭐ - Expert
-- **Express.js** ⭐⭐⭐⭐⭐ - Expert
-- **NestJS** ⭐⭐⭐ - Intermediate
+## 🚀 DevOps & Infrastructure
 
-### APIs & Authentication
-- **REST APIs** ⭐⭐⭐⭐⭐ - Expert
-- **GraphQL** ⭐⭐⭐ - Intermediate
-- **Google SSO** ⭐⭐⭐⭐ - Advanced
-- **JWT / Auth Flows** ⭐⭐⭐⭐ - Advanced
-
-## 💾 Databases
-
-### SQL & NoSQL
-- **MongoDB** ⭐⭐⭐⭐⭐ - Expert
-- **MySQL** ⭐⭐⭐⭐⭐ - Expert
-- **PostgreSQL** ⭐⭐⭐ - Intermediate
-
-### Data Modeling
-- **Mongoose** ⭐⭐⭐⭐ - Advanced
-- **Structured Schema Design** ⭐⭐⭐⭐ - Advanced
-- **Aggregation Pipelines** ⭐⭐⭐⭐ - Advanced
-
-## 🚀 DevOps & Tooling
-
-### Deployment & CI/CD
-- **Netlify** ⭐⭐⭐⭐ - Advanced
-- **Vercel** ⭐⭐⭐⭐ - Advanced
-- **GitHub Actions** ⭐⭐⭐ - Intermediate
-- **Docker** ⭐⭐ - Beginner
-
-### Security
-- **Vulnerability Scanning** ⭐⭐⭐ - Intermediate
-- **Nmap / OpenVAS / Nikto** ⭐⭐⭐ - Intermediate
-
-### Development Tools
-- **Git & GitHub** ⭐⭐⭐⭐⭐ - Expert
-- **VS Code** ⭐⭐⭐⭐⭐ - Expert
-- **Postman** ⭐⭐⭐⭐⭐ - Expert
-- **Figma** ⭐⭐⭐ - Intermediate
+### Containerization & CI/CD
+- **Docker & Dockerfile Optimization** ⭐⭐⭐⭐ - Advanced
+- **GitHub Actions & CI Pipelines** ⭐⭐⭐⭐⭐ - Expert
+- **Git & GitOps Workflow** ⭐⭐⭐⭐⭐ - Expert
+- **AWS Cloud Deployments** ⭐⭐⭐⭐ - Advanced
 
 ## 📊 Skill Distribution
 
 ```
-Frontend:     ████████████████████ 95%
-Backend:      ██████████████████░░ 85%
-Mobile:       ████████████████░░░░ 80%
-Database:     ██████████████████░░ 85%
-DevOps/Sec:   █████████████░░░░░░░ 65%
+Backend & Systems: ████████████████████ 95%
+Frontend & UI:     ██████████████████░░ 90%
+Databases & Cache: ██████████████████░░ 90%
+DevOps & Cloud:    ████████████████░░░░ 80%
+Security & Auth:   ██████████████████░░ 90%
 ```
-
-## 🎓 Certifications
-
-- **Web Development Certification** - Internshala (2024)
-- **SQL Certification** - HackerRank (2024)
-
-## 🚀 Currently Improving
-
-- Advanced React Server Components (Next.js 15)
-- Microservices Architecture & Docker
-- Backend System Design and Performance Tuning
-- Cross-platform Mobile UI/UX Patterns
-
-## 📈 Skill Growth Trajectory
-
-Continuously enhancing full-stack and mobile expertise to architect enterprise-grade systems and deliver seamless digital experiences.
 
 ---
 
-**Last Updated:** June 2026
-**Next Skill Assessment:** December 2026
+**Last Updated:** 2026

@@ -35,7 +35,7 @@
 ### Project Ownership
 
 #### 1. AI-ML Utilities
-- **Repository:** [abhi5heksah/ai-ml-utils](https://github.com/abhi5heksah/ai-ml-utils)
+- **Repository:** [HarshitNain/ai-ml-utils](https://github.com/HarshitNain/ai-ml-utils)
 - **Status:** ✅ Active
 - **Stars:** 450+
 - **Contributors:** 25+
@@ -43,7 +43,7 @@
 - **Key Features:** Data preprocessing, model evaluation, visualization tools
 
 #### 2. DevOps Toolkit
-- **Repository:** [abhi5heksah/devops-toolkit](https://github.com/abhi5heksah/devops-toolkit)
+- **Repository:** [HarshitNain/devops-toolkit](https://github.com/HarshitNain/devops-toolkit)
 - **Status:** ✅ Active
 - **Stars:** 320+
 - **Contributors:** 18+
@@ -51,7 +51,7 @@
 - **Key Features:** K8s templates, GitHub Actions workflows, monitoring setups
 
 #### 3. Web Starter Kit
-- **Repository:** [abhi5heksah/web-starter-kit](https://github.com/abhi5heksah/web-starter-kit)
+- **Repository:** [HarshitNain/web-starter-kit](https://github.com/HarshitNain/web-starter-kit)
 - **Status:** ✅ Active
 - **Stars:** 280+
 - **Contributors:** 22+
@@ -233,19 +233,19 @@
 ## 📚 Resources & Links
 
 ### Main Projects
-- [AI-ML Utilities](https://github.com/abhi5heksah/ai-ml-utils)
-- [DevOps Toolkit](https://github.com/abhi5heksah/devops-toolkit)
-- [Web Starter Kit](https://github.com/abhi5heksah/web-starter-kit)
+- [AI-ML Utilities](https://github.com/HarshitNain/ai-ml-utils)
+- [DevOps Toolkit](https://github.com/HarshitNain/devops-toolkit)
+- [Web Starter Kit](https://github.com/HarshitNain/web-starter-kit)
 
 ### Contribution History
-- [GitHub Contributions](https://github.com/abhi5heksah)
-- [Open Source Projects](https://github.com/abhi5heksah?tab=repositories&type=source)
-- [Pull Requests](https://github.com/pulls?q=is:pr+author:abhi5heksah+archived:false)
+- [GitHub Contributions](https://github.com/HarshitNain)
+- [Open Source Projects](https://github.com/HarshitNain?tab=repositories&type=source)
+- [Pull Requests](https://github.com/pulls?q=is:pr+author:HarshitNain+archived:false)
 
 ### Community Profiles
-- [Stack Overflow](https://stackoverflow.com/users/abhi5heksah)
-- [Product Hunt](https://www.producthunt.com/@abhi5heksah)
-- [Dev.to](https://dev.to/abhi5heksah)
+- [Stack Overflow](https://stackoverflow.com/users/HarshitNain)
+- [Product Hunt](https://www.producthunt.com/@HarshitNain)
+- [Dev.to](https://dev.to/HarshitNain)
 
 ## 🚀 Getting Started with My Projects
 

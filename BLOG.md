@@ -196,11 +196,11 @@
 ### Channels Where I Share Knowledge
 
 - **Personal Blog:** [example.com/blog](https://example.com/blog)
-- **Medium:** [@abhi5heksah](https://medium.com/@abhi5heksah)
-- **Dev.to:** [@abhi5heksah](https://dev.to/abhi5heksah)
+- **Medium:** [@HarshitNain](https://medium.com/@HarshitNain)
+- **Dev.to:** [@HarshitNain](https://dev.to/HarshitNain)
 - **Hashnode:** [bharat.hashnode.dev](https://bharat.hashnode.dev)
-- **Twitter/X:** [@abhi5heksah](https://twitter.com/abhi5heksah)
-- **LinkedIn:** [in/abhi5heksah](https://linkedin.com/in/abhi5heksah)
+- **Twitter/X:** [@HarshitNain](https://twitter.com/HarshitNain)
+- **LinkedIn:** [in/HarshitNain](https://linkedin.com/in/HarshitNain)
 
 ### Reader Feedback
 

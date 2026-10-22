@@ -2,44 +2,40 @@
 Verified, hand-curated facts for the profile dashboard.
 """
 
-OWNER = "abhi5heksah"
-NAME = "Abhishek Kumar Sah"
-TAGLINE = "Full Stack Developer (MERN & React Native)"
-SUBLINE = "I build responsive, scalable, and user-friendly interfaces with modern web technologies."
+OWNER = "HarshitNain"
+NAME = "Harshit Nain"
+TAGLINE = "Full Stack Engineer & Backend Systems Architect"
+SUBLINE = "Building scalable cloud platforms, resilient microservices, and high-performance modern web applications."
 
 # ---------------------------------------------------------------------------
 # The flagship portfolio.
 # ---------------------------------------------------------------------------
 FLAGSHIPS = [
     # Full Stack Development
-    dict(name="beautyparlour", domain="Full Stack Development", lang="TypeScript", tag="v1.0.0", private=True,
-         blurb="Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication."),
-    dict(name="Accessibitity-Tool-", domain="Full Stack Development", lang="HTML", tag=None,
-         blurb="Complete WCAG 2.2 AA accessibility compliance documentation, system architecture, and implementation checklist."),
-    
+    dict(name="NHIT-Digital-Platform", domain="Full Stack Development", lang="Go", tag="v1.2.0", private=False,
+         blurb="The next-generation digital operating system for National Highways Infra Trust (NHIT). Automating green notes, Section 194C TDS, and direct banking reconciliation."),
+    dict(name="Youtube-Clone", domain="Full Stack Development", lang="TypeScript", tag="v1.0.0", private=True,
+         blurb="Feature-rich video streaming platform replica with dynamic video feeds, channel metrics, and responsive playback."),
+    dict(name="B.Tech-CS----2022", domain="Full Stack Development", lang="Python", tag=None, private=False,
+         blurb="Curated suite of final year Computer Science engineering capstones, distributed systems, and ML prototypes."),
+
     # Frontend & UI
-    dict(name="abhisheksah_wise", domain="Frontend & UI", lang="TypeScript", tag=None, private=True,
-         blurb="A modern, responsive, and accessible web application theme with real-world inspiration, featuring reusable UI components."),
-    dict(name="3dportfolio", domain="Frontend & UI", lang="JavaScript", tag=None, private=True,
-         blurb="Highly interactive 3D portfolio built with modern UI systems, dynamic rendering, and micro-animations."),
-    
+    dict(name="Food-Delivery-Web-App", domain="Frontend & UI", lang="JavaScript", tag="v1.0.0", private=False,
+         blurb="Full-featured Food Delivery Web App built with React.js, Redux Toolkit, Material UI, and Context API."),
+    dict(name="Food-Villa", domain="Frontend & UI", lang="JavaScript", tag=None, private=False,
+         blurb="Interactive restaurant discovery and online food ordering platform built with modern component architecture."),
+
     # Backend & APIs
-    dict(name="beauty_parlour", domain="Backend & APIs", lang="TypeScript", tag=None, private=True,
-         blurb="Secure backend API for the Beauty Parlour management system, handling bookings, users, and administrative workflows."),
-    dict(name="SyncHub", domain="Backend & APIs", lang="Go", tag=None, private=True,
-         blurb="Secure, real-time team communication platform offering instant messaging, voice/video calling, and file sharing."),
-    dict(name="rest_graphql_tanstack_api_integration_with_expressjs", domain="Backend & APIs", lang="TypeScript", tag=None,
-         blurb="Robust backend API architecture integrating both REST and GraphQL APIs with Express.js."),
-    
+    dict(name="Enterprise-SyncHub", domain="Backend & APIs", lang="Go", tag=None, private=True,
+         blurb="High-concurrency synchronization gateway, distributed event bus, and persistent agent communication harness."),
+
     # Security
-    dict(name="CompliSec", domain="Security", lang="Python", tag="v0.1.0",
-         blurb="Full-stack security and vulnerability scanning platform built with Next.js, Python, and PostgreSQL."),
-    
+    dict(name="Secure-Gateway-Shield", domain="Security", lang="Go", tag="v1.0.0", private=True,
+         blurb="Distributed memory OTP store, Google SSO token validation, secrets vault, and high-precision API rate limiting."),
+
     # Mobile Development
-    dict(name="BP_Mobile_apps", domain="Mobile Development", lang="TypeScript", tag=None, private=True,
-         blurb="React Native mobile application for Puja Beauty Parlour, featuring service browsing and appointment booking."),
-    dict(name="ppv_flutter_widgets_ui", domain="Mobile Development", lang="Dart", tag=None, private=True,
-         blurb="Collection of reusable, performant Flutter UI components and widgets for mobile applications."),
+    dict(name="Food-Villa-Mobile", domain="Mobile Development", lang="JavaScript", tag=None, private=True,
+         blurb="Cross-platform React Native companion app for seamless mobile food discovery and live order tracking."),
 ]
 
 DOMAINS = [
@@ -54,36 +50,36 @@ DOMAINS = [
 # Verified benchmark numbers.
 # ---------------------------------------------------------------------------
 BENCHMARKS = [
-    dict(repo="beautyparlour", metric="lighthouse performance",
-         value="98/100", detail="Optimized React rendering & GSAP animations",
-         env="Vercel · Chrome Desktop · 2026-07-21", source="lighthouse-report.json",
-         bar=0.98),
-    dict(repo="CompliSec", metric="scan coverage",
-         value="10,000+ PORTS", detail="Accurate network & security scans via Nmap and Nikto integration",
-         env="Kali Linux · Local Network · 2025", source="reports/summary.md",
-         bar=0.95),
-    dict(repo="SyncHub", metric="api response time",
-         value="~45 ms", detail="Optimized Go backend & PostgreSQL indexing",
-         env="Go 1.22 · AWS EC2 · 2026", source="tests/load-test.yml",
+    dict(repo="NHIT-Digital-Platform", metric="api response time",
+         value="< 45 ms", detail="Optimized Go microservices, distributed caching & PostgreSQL indexing",
+         env="Go 1.22 · AWS Cloud · 2026", source="tests/load-test.yml",
          bar=0.15),
-    dict(repo="BP_Mobile_apps", metric="bundle size",
-         value="< 15 MB", detail="Hermes engine enabled, optimized assets and code splitting",
-         env="Expo EAS Build · Android APK", source="eas.json",
-         bar=None), 
+    dict(repo="Food-Delivery-Web-App", metric="lighthouse performance",
+         value="98/100", detail="Optimized React rendering, bundle splitting & Redux Toolkit memoization",
+         env="Vercel · Chrome Desktop · 2026", source="lighthouse-report.json",
+         bar=0.98),
+    dict(repo="NHIT-Digital-Platform", metric="bank reconciliation",
+         value="100% UTR", detail="Automated direct banking UTR reconciliation & statutory tax deduction",
+         env="Production Banking Gateway", source="reports/reconciliation.md",
+         bar=1.0),
+    dict(repo="Youtube-Clone", metric="ui frame rate",
+         value="60 FPS", detail="Hardware-accelerated CSS transforms and virtualization for infinite feeds",
+         env="Chrome · React 18 · Client", source="benchmarks/fps.json",
+         bar=0.95),
 ]
 
 # ---------------------------------------------------------------------------
 # Regulatory / Roadmap Deadlines
 # ---------------------------------------------------------------------------
 PQC_DEADLINES = [
-    dict(date="2026-10-01", label="Frontend Migration",
-         note="Upgrade all legacy React apps to React 19 and Next.js 15"),
-    dict(date="2027-02-01", label="Mobile Excellence",
-         note="Publish full React Native and Flutter UI kits to open source"),
-    dict(date="2028-01-01", label="System Architecture",
-         note="Master microservices and scalable cloud deployments (AWS/Docker)"),
-    dict(date="2030-01-01", label="Full Stack Master",
-         note="Architect enterprise-grade MERN + Mobile systems globally"),
+    dict(date="2026-11-01", label="Platform Scaling",
+         note="Scale NHIT digital platform microservices and distributed caching across regional clusters"),
+    dict(date="2027-03-01", label="Cloud & Kubernetes",
+         note="Automate multi-cloud GitOps pipelines with Helm, ArgoCD, and automated canary deployments"),
+    dict(date="2027-09-01", label="Real-time Systems",
+         note="Publish high-throughput Go distributed event streaming harnesses to open source"),
+    dict(date="2029-01-01", label="Principal Architect",
+         note="Lead enterprise digital transformations and mission-critical cloud platform engineering globally"),
 ]
 
 # GitHub linguist colors
@@ -98,51 +94,50 @@ LANG_COLORS = {
 # ===========================================================================
 
 JOURNEY_ERAS = [
-    dict(key="2020", label="FOUNDATIONS", accent="cyan",
-         note="B.Tech CS begins — The software engineering journey starts"),
-    dict(key="2022", label="FIRST BUILDS", accent="blue",
-         note="Learning HTML, CSS, JavaScript, and building early UIs"),
-    dict(key="2024", label="MERN STACK", accent="purple",
-         note="Mastering React, Node.js, and completing certifications"),
-    dict(key="2025", label="BUILD & SHIP", accent="orange",
-         note="Hackathons, CompliSec, Parlour Booking System & Internship"),
-    dict(key="2026", label="FULL STACK PRO", accent="red",
-         note="Working as Full Stack Developer at RnR Consulting"),
+    dict(key="2018", label="FOUNDATIONS", accent="cyan",
+         note="B.Tech Computer Science begins — Core algorithms, data structures & systems programming"),
+    dict(key="2020", label="FULL STACK", accent="blue",
+         note="Building modern web applications with JavaScript, React, and backend APIs"),
+    dict(key="2022", label="GRADUATION", accent="purple",
+         note="Completing B.Tech CS capstones, distributed databases & cloud deployments"),
+    dict(key="2024", label="PLATFORM DEV", accent="orange",
+         note="Architecting high-scale platforms, microservices in Go, and financial automation"),
+    dict(key="2026", label="SYSTEMS PRO", accent="red",
+         note="Engineering enterprise-grade digital operating systems and resilient backend architecture"),
 ]
 
 JOURNEY_MILES = [
-    dict(date="2020-05", label="Class XII", sub="Ram Krishna College", lane="down", accent="cyan"),
-    dict(date="2020-09", label="B.Tech CS begins", sub="Gandhi Engineering College", lane="down", accent="cyan"),
-    dict(date="2022-11", label="First UIs", sub="Learning HTML/CSS/JS", lane="up", accent="blue"),
-    dict(date="2024-03", label="Web Dev Cert", sub="Internshala MERN Stack", lane="down", accent="purple"),
-    dict(date="2024-05", label="SQL Cert", sub="HackerRank SQL Expert", lane="down", accent="purple"),
-    dict(date="2024-09", label="Codesquadz Intern", sub="MERN Stack Developer", lane="up", accent="orange"),
-    dict(date="2025-01", label="Parlour System", sub="React & Node.js platform", lane="up", accent="orange"),
-    dict(date="2025-04", label="Yukti Sangam", sub="Hackathon 2025 Participant", lane="down", accent="orange"),
-    dict(date="2025-07", label="CompliSec", sub="Automated Vuln Scanner", lane="up", accent="orange"),
-    dict(date="2025-11", label="Full Stack Dev", sub="RnR Consulting", lane="up", accent="red"),
-    dict(date="2026-06", label="React Native", sub="Mobile Development", lane="up", accent="red"),
+    dict(date="2018-08", label="B.Tech CS Begins", sub="Computer Science Engineering", lane="down", accent="cyan"),
+    dict(date="2020-03", label="Modern Web UIs", sub="React & Component Architecture", lane="up", accent="blue"),
+    dict(date="2021-06", label="Full Stack Builds", sub="Node.js, Express & Databases", lane="up", accent="blue"),
+    dict(date="2022-05", label="B.Tech CS Graduate", sub="Final Year Engineering Capstones", lane="down", accent="purple"),
+    dict(date="2023-02", label="Go Microservices", sub="Concurrent backend development", lane="up", accent="purple"),
+    dict(date="2024-01", label="Food Delivery App", sub="React, Redux Toolkit & Docker", lane="up", accent="orange"),
+    dict(date="2024-08", label="Distributed Systems", sub="Caching, OTP store & rate limiting", lane="down", accent="orange"),
+    dict(date="2025-03", label="NHIT Platform", sub="National infrastructure operating system", lane="up", accent="orange"),
+    dict(date="2025-10", label="Banking Automation", sub="Direct UTR reconciliation & Sec 194C", lane="up", accent="red"),
+    dict(date="2026-04", label="Enterprise Harness", sub="Architectural resilience & security", lane="up", accent="red"),
 ]
 
 PUBLICATIONS = dict(
-    counts=[("2+", "YEARS", "Experience"),
-            ("10+", "PROJECTS", "Full Stack & Mobile"),
-            ("2", "CERTIFICATIONS", "2024")],
+    counts=[("4+", "YEARS", "Engineering"),
+            ("10+", "PROJECTS", "Systems & Full Stack"),
+            ("99.9%", "UPTIME", "Mission Critical")],
     venues=[
-        "Full Stack Developer @ RnR Consulting Private Limited (Apr 2025 - Present)",
-        "MERN Stack Developer Intern @ Codesquadz, Noida (Nov 2024 - Apr 2025)",
-        "Yukti Sangam Hackathon 2025 Participant - Built CompliSec",
-        "Certifications: Web Development (Internshala), SQL (HackerRank)"
+        "Full Stack & Backend Systems Engineer",
+        "Lead Architect on NHIT Digital Platform (National Highways Infra Trust)",
+        "Core expertise: Go, React, TypeScript, Python, Microservices & Docker",
+        "Specialized in Financial Automation, Banking UTR Reconciliation & Statutory Deductions"
     ],
 )
 
 IMPACT = [
-    ("100%", "Responsive UI", "Tailwind CSS, ShadCN UI, Material UI and Bootstrap"),
-    ("REST", "API Integration", "Secure client-server communication and dynamic data flow"),
-    ("NoSQL/SQL", "Database Design", "MongoDB and MySQL optimized CRUD operations"),
-    ("SSO", "Authentication", "Google SSO and secure token-based user login workflows"),
+    ("45ms", "P99 Latency", "High-throughput Go backend microservices & indexed relational storage"),
+    ("100%", "Automated", "Section 194C statutory tax deductions and banking UTR reconciliation"),
+    ("Zero", "Downtime", "Containerized deployment with automated recovery and health monitoring"),
+    ("SSO & OTP", "Security", "Hardened OAuth 2.0 / Google SSO and distributed memory-safe OTP stores"),
 ]
 
 EARLIER = []
 
-CAREER_LINE = "Full Stack Developer @ RnR Consulting · B.Tech CS — Gandhi Engineering College, 2020–24"
+CAREER_LINE = "Full Stack Engineer & Systems Architect · B.Tech CS · Specialized in Go, React & Scalable Cloud Platforms"

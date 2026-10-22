@@ -19,23 +19,23 @@
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="./assets/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
-  <img alt="Header for Abhishek Kumar Sah, Full Stack Developer" src="./assets/hero-dark.svg" width="850">
+  <img alt="Header for Harshit Nain, Full Stack Engineer & Systems Architect" src="./assets/hero-dark.svg" width="850">
 </picture>
 
 </div>
 
 ## ▌ WHOAMI
 
-**Abhishek Kumar Sah**  
-**Full Stack Developer**
+**Harshit Nain**  
+**Full Stack Engineer & Backend Systems Architect**
 
-I build scalable web applications, modern user interfaces, and reliable backend systems using React, Next.js, TypeScript, Node.js, and modern web technologies.
+I build scalable cloud platforms, resilient microservices, and high-performance modern web applications using Go, React, TypeScript, Python, and containerized architectures.
 
-- 💼 **Experience:** Full Stack Developer with 2+ years of experience building scalable web applications, modern user interfaces, and backend systems.
-- 🚀 **Projects:** Built a comprehensive **Parlour Booking System** and **CompliSec** (Full-stack security and vulnerability scanning platform built with Next.js, Python, and PostgreSQL).
-- 🧭 **Focus:** Frontend engineering · Full-stack web development · React.js · Next.js · TypeScript · Node.js · Express.js · REST APIs
-- 🎓 **Education:** B.Tech CS, Gandhi Engineering College (2020–2024)
-- 📫 **Reach me:** [Portfolio](https://abhi5heksah.in/) · [LinkedIn](https://linkedin.com/in/abhi5heksah) · [GitHub](https://github.com/abhi5heksah) · [DEV Community](https://dev.to/abhi5heksah) · [Hashnode](https://hashnode.com/@abhi5heksah) · [Medium](https://medium.com/@abhi5heksah) · [Linktree](https://linktr.ee/abhi5heksah)
+- 💼 **Experience:** 4+ years of engineering experience architecting enterprise platforms, high-throughput backend systems, and responsive user interfaces.
+- 🚀 **Projects:** Lead engineer on **NHIT-Digital-Platform** (Next-generation digital operating system for National Highways Infra Trust) and full-featured frontend platforms including **Food-Delivery-Web-App**.
+- 🧭 **Focus:** Systems architecture · Go microservices · React & Redux Toolkit · TypeScript · Distributed Systems · Financial & Tax Automation · Docker
+- 🎓 **Education:** B.Tech Computer Science Engineering (2018–2022)
+- 📫 **Reach me:** [GitHub](https://github.com/HarshitNain) · [Email](mailto:hnain932@gmail.com)
 
 ---
 
@@ -71,38 +71,34 @@ I build scalable web applications, modern user interfaces, and reliable backend 
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **beautyparlour** `🔒 private` | TypeScript | `v1.0.0` | Complete Parlour Booking System with online service booking, dynamic discount management, and Google SSO authentication. |
-| **Accessibitity-Tool-** | Documentation | — | Complete WCAG 2.2 AA accessibility compliance documentation, system architecture, and implementation checklist. |
+| **[NHIT-Digital-Platform](https://github.com/HarshitNain/NHIT-Digital-Platform)** | Go, Python, TypeScript | `v1.2.0` | Next-generation digital operating system for National Highways Infra Trust (NHIT). Automating green notes, Section 194C TDS, and direct banking reconciliation. |
+| **Youtube-Clone** `🔒 private` | TypeScript, React | `v1.0.0` | Feature-rich video streaming platform replica with dynamic video feeds, channel metrics, and responsive playback. |
+| **[B.Tech-CS----2022](https://github.com/HarshitNain/B.Tech-CS----2022)** | Python, Machine Learning | — | Curated suite of final year Computer Science engineering capstones, distributed systems, and ML prototypes. |
 
 ### 🎨 Frontend & UI
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **abhisheksah_wise** `🔒 private` | TypeScript | — | A modern, responsive, and accessible web application theme with real-world inspiration, featuring reusable UI components. |  
-| **3dportfolio** `🔒 private` | JavaScript | — | Highly interactive 3D portfolio built with modern UI systems, dynamic rendering, and micro-animations. |
+| **[Food-Delivery-Web-App](https://github.com/HarshitNain/Food-Delivery-Web-App)** | JavaScript, React, Redux Toolkit | `v1.0.0` | Full-featured Food Delivery Web App built with React.js, Redux Toolkit, Material UI, and Context API. |  
+| **[Food-Villa](https://github.com/HarshitNain/Food-Villa)** | JavaScript, React | — | Interactive restaurant discovery and online food ordering platform built with modern component architecture. |
 
 ### ⚙️ Backend & APIs
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **beauty_parlour** `🔒 private` | TypeScript | — | Secure backend API for the Beauty Parlour management system, handling bookings, users, and administrative workflows. |
-| **SyncHub** `🔒 private` | Go, TypeScript | — | Secure, real-time team communication platform offering instant messaging, voice/video calling, and file sharing. |
-| **rest_graphql_tanstack_api_integration_with_expressjs** | TypeScript | — | Robust backend API architecture integrating both REST and GraphQL APIs with Express.js. |
+| **Enterprise-SyncHub** `🔒 private` | Go | — | High-concurrency synchronization gateway, distributed event bus, and persistent agent communication harness. |
 
 ### 🛡️ Security
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **CompliSec** | Next.js, Python, PostgreSQL | `v0.1.0` | Full-stack security and vulnerability scanning platform built with Next.js, Python, and PostgreSQL. |
+| **Secure-Gateway-Shield** `🔒 private` | Go | `v1.0.0` | Distributed memory OTP store, Google SSO token validation, secrets vault, and high-precision API rate limiting. |
 
 ### 📱 Mobile Development
 
 | Repo | Stack | Release | What it does |
 |------|-------|:-------:|--------------|
-| **BP_Mobile_apps** `🔒 private` | TypeScript | — | React Native mobile application for Puja Beauty Parlour, featuring service browsing and appointment booking. |
-| **ppv_flutter_widgets_ui** `🔒 private` | Dart | — | Collection of reusable, performant Flutter UI components and widgets for mobile applications. |
-
-
+| **Food-Villa-Mobile** `🔒 private` | React Native, JavaScript | — | Cross-platform React Native companion app for seamless mobile food discovery and live order tracking. |
 
 ---
 
@@ -117,6 +113,8 @@ I build scalable web applications, modern user interfaces, and reliable backend 
 </picture>
 
 </div>
+
+---
 
 ## ▌ THE JOURNEY
 
@@ -193,9 +191,9 @@ I build scalable web applications, modern user interfaces, and reliable backend 
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake.svg">
-  <img alt="An animated snake that eats its way through my real GitHub contribution graph, regenerated from live contribution data every day" src="https://raw.githubusercontent.com/abhi5heksah/abhi5heksah/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/HarshitNain/HarshitNain/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HarshitNain/HarshitNain/output/github-contribution-grid-snake.svg">
+  <img alt="An animated snake that eats its way through my real GitHub contribution graph, regenerated from live contribution data every day" src="https://raw.githubusercontent.com/HarshitNain/HarshitNain/output/github-contribution-grid-snake-dark.svg">
 </picture>
 
 </div>
@@ -204,13 +202,8 @@ I build scalable web applications, modern user interfaces, and reliable backend 
 
 ## ▌ CONNECT WITH ME
 
-🔗 **Portfolio** — [https://abhi5heksah.in](https://abhi5heksah.in/)  
-💻 **GitHub** — [https://github.com/abhi5heksah](https://github.com/abhi5heksah)  
-💼 **LinkedIn** — [https://linkedin.com/in/abhi5heksah](https://linkedin.com/in/abhi5heksah)  
-📝 **DEV Community** — [https://dev.to/abhi5heksah](https://dev.to/abhi5heksah)  
-📚 **Hashnode** — [https://hashnode.com/@abhi5heksah](https://hashnode.com/@abhi5heksah)  
-✍️ **Medium** — [https://medium.com/@abhi5heksah](https://medium.com/@abhi5heksah)  
-🌳 **Linktree** — [https://linktr.ee/abhi5heksah](https://linktr.ee/abhi5heksah)
+💻 **GitHub** — [https://github.com/HarshitNain](https://github.com/HarshitNain)  
+✉️ **Email** — [hnain932@gmail.com](mailto:hnain932@gmail.com)  
 
 ---
 

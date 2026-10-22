@@ -35,7 +35,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import facts  # noqa: E402
 
-OWNER = facts.OWNER
+OWNER = os.environ.get("GITHUB_REPOSITORY_OWNER") or facts.OWNER
 OUT = Path(__file__).resolve().parent
 TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
 NOW = datetime.now(timezone.utc)
@@ -79,7 +79,7 @@ def api(path, params=None):
         url += "?" + urlencode(params)
     req = urllib.request.Request(url)
     req.add_header("Accept", "application/vnd.github+json")
-    req.add_header("User-Agent", "abhi5heksah-profile-generator")
+    req.add_header("User-Agent", f"{OWNER}-profile-generator")
     if TOKEN:
         req.add_header("Authorization", f"Bearer {TOKEN}")
     try:
@@ -407,7 +407,7 @@ def radar(p, d):
     s = [frame(W, H, p, idn, sweep=True)]  # only the radar uses the sweep gradient
     s.append(corner_marks(W, H, p))
     s.append(head(p, W, "03", "DOMAIN MAP",
-                  "13 flagship repositories · five problem domains · axis = live repo count",
+                  f"{len(facts.FLAGSHIPS)} flagship repositories · {len(doms)} problem domains · axis = live repo count",
                   "blue", live=True))
 
     def pt(i, frac):
@@ -737,7 +737,7 @@ def boot(p, d):
     for i in range(3):
         s.append(rect(34 + i * 22, 24, 13, 13, fill=["sig", "yellow", "green"][i], rx=2,
                       stroke="ink", sw=1.5, p=p))
-    s.append(text(W - 32, 36, "00 // abhi5heksah@portfolio:~", size=12.5,
+    s.append(text(W - 32, 36, f"00 // {OWNER.lower()}@portfolio:~", size=12.5,
                   fill="page", weight=800, font=MONO, anchor="end", spacing=0.3, p=p))
     tagcol = {"ok": "green", "warn": "orange", "run": "blue"}
     n = len(lines)
@@ -773,10 +773,11 @@ def boot(p, d):
              f'values="0 -70;0 {H-58};0 {H-58}" dur="4.8s" repeatCount="indefinite"/>'
              f'</rect></g>')
     # prompt
+    prompt = f"{OWNER.lower()}@portfolio:~$"
     py = ly + n * lh + 4
-    s.append(text(30, py, f"abhi5heksah@portfolio:~$", size=13.5, fill="green", weight=800,
+    s.append(text(30, py, prompt, size=13.5, fill="green", weight=800,
                   font=MONO, p=p))
-    s.append(f'<rect x="{30 + 22 * 8.15:.1f}" y="{py-12:.1f}" width="11" height="15" '
+    s.append(f'<rect x="{30 + len(prompt) * 8.15:.1f}" y="{py-12:.1f}" width="11" height="15" '
              f'fill="{p["sig"]}"><animate attributeName="opacity" values="1;1;0;0" '
              f'dur="1.05s" repeatCount="indefinite"/></rect>')
     s.append("</svg>")

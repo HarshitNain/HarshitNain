@@ -1,42 +1,40 @@
 # 🛣️ Engineering Roadmap
 
-My long-term technical trajectory, focusing on moving from Full Stack Development to scalable systems architecture and open-source contributions.
+My technical trajectory, focusing on platform architecture, high-concurrency Go microservices, distributed systems, and open-source platform tooling.
 
 ---
 
 ## 📅 The 2026–2030 Arc
 
-### 2026: Mastering Modern Frontend & Mobile
+### 2026: Mission-Critical Platform Scaling
 * **Target:** H2 2026
-* **Focus:** Next.js 15, React 19, React Native
+* **Focus:** Go, Distributed Caching, Banking Gateway Resilience
 * **Goals:**
-  * Upgrade all personal and freelance projects to Next.js 15 App Router.
-  * Release a comprehensive React Native Companion UI kit to the open source community.
-  * Achieve deep expertise in micro-animations with GSAP and Framer Motion.
+  * Scale NHIT digital platform microservices across multi-region distributed nodes.
+  * Optimize host-to-host banking UTR reconciliation with sub-second batch settlements.
+  * Harden secrets, distributed OTP vaults, and automated vulnerability verification.
 
-### 2027: Systems & Cloud Architecture
+### 2027: Cloud Infrastructure & GitOps
 * **Target:** Full Year 2027
-* **Focus:** Microservices, Docker, Kubernetes, AWS
+* **Focus:** Kubernetes, Helm, ArgoCD, Multi-cloud Deployments
 * **Goals:**
-  * Transition from monolithic Express.js backends to Go and Node.js microservices.
-  * Obtain the **AWS Solutions Architect Associate** certification.
-  * Master CI/CD pipelines with GitHub Actions for automated, zero-downtime deployments.
+  * Build automated GitOps pipelines with Helm, ArgoCD, and automated canary deployments.
+  * Master distributed event streaming harnesses and publish Go real-time libraries to open source.
+  * Expand cloud infrastructure with high-availability disaster recovery topologies.
 
-### 2028: Security & DevOps Integration
+### 2028: DevSecOps & High-Throughput Engines
 * **Target:** Full Year 2028
-* **Focus:** DevSecOps, Infrastructure as Code
+* **Focus:** Distributed Consensus, Zero-Trust Architecture
 * **Goals:**
-  * Integrate vulnerability scanning (like the CompliSec architecture) directly into the deployment pipeline.
-  * Master Terraform and Ansible for declarative infrastructure.
-  * Build a robust, production-grade SaaS product from scratch, managing the entire lifecycle.
+  * Deploy zero-trust security mesh and automated compliance verification across microservices.
+  * Architect low-latency streaming engines handling hundreds of thousands of events per second.
 
-### 2030: Enterprise System Architect
+### 2030: Principal Platform Architect
 * **Target:** 2030
-* **Focus:** High Availability, Global Scale Systems
+* **Focus:** Global Systems Architecture & Technical Leadership
 * **Goals:**
-  * Architect systems capable of handling millions of concurrent users.
-  * Contribute significantly to core web frameworks (React/Next.js/Node.js).
-  * Mentor junior developers and lead large engineering teams.
+  * Lead enterprise digital transformations and mission-critical cloud platform engineering globally.
+  * Architect fault-tolerant infrastructure serving national and global operational scales.
 
 ---
 
