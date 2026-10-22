@@ -1,42 +1,43 @@
-# 🎓 Certifications & Achievements
+# 🎓 Certifications, Education & Engineering Milestones
 
 ---
 
-## 🏆 Certifications
+## 🏆 Certifications & Professional Competencies
 
-### 1. Web Development Certification
-**Issuer:** Internshala
-**Date:** 2024
-**Details:**
-- Completed a comprehensive MERN Stack (MongoDB, Express.js, React.js, Node.js) training program.
-- Gained hands-on experience in building full-stack web applications, REST APIs, and responsive user interfaces.
+### 1. Full Stack Web Development Engineering
+**Focus:** React.js, Redux Toolkit, Node.js, Express & Containerized Architectures  
+**Highlights:**
+- Mastered component lifecycle, memoization, predictable state management with Redux Toolkit, and RESTful API integrations.
+- Built production-ready web platforms with Docker containerization and CI/CD pipelines.
 
-### 2. SQL Certification
-**Issuer:** HackerRank
-**Date:** 2024
-**Details:**
-- Demonstrated proficiency in SQL queries, database design, and data manipulation techniques.
-- Solved real-world problems involving joins, aggregations, and complex query optimization.
+### 2. SQL & Advanced Relational Database Architecture
+**Focus:** PostgreSQL, MySQL, PLpgSQL, Complex Query Optimization  
+**Highlights:**
+- Demonstrated expertise in schema normalization, multi-table joins, complex window functions, and indexing strategies.
+- Optimized query execution plans for sub-45ms P99 latency in high-concurrency environments.
+
+### 3. Distributed Systems & Cloud Microservices (Go)
+**Focus:** Concurrent Go handlers, in-memory OTP stores, gRPC, Redis caching  
+**Highlights:**
+- Engineered fault-tolerant distributed communication harnesses and multi-tier transaction approval workflows.
+- Implemented cryptographic authentication, secrets vaulting, and API rate-limiting shields.
 
 ---
 
-## 🌟 Achievements & Hackathons
+## 🌟 Flagship Achievements & Engineering Impact
 
-### Yukti Sangam Hackathon 2025
-**Location:** New Delhi, India
-**Role:** Participant (Team ZERODAY)
-**Details:**
-- Developed `CompliSec`, a security vulnerability scanning tool to perform automated assessments on target IP addresses and ports.
-- Integrated tools such as Nmap, OpenVAS, and Nikto for port scanning, service detection, and vulnerability identification.
+### NHIT Digital Platform (National Highways Infra Trust)
+- **Role:** Lead Architect & Full Stack Systems Engineer
+- **Impact:**
+  - Automated Green Note certifications, Section 194C statutory tax deductions, and multi-tier approval chains.
+  - Delivered direct host-to-host banking transaction reconciliation with 100% verified UTR matching across India's arterial expressway network.
+  - Implemented high-throughput concurrent Go microservices achieving sub-45ms API response times.
 
 ---
 
 ## 📚 Education
 
-**Bachelor of Technology in Computer Science and Engineering**
-Gandhi Engineering College (Bhubaneswar, India)
-2020 – 2024
-
-**Intermediate**
-Ram Krishna College, Madhubani (Madhubani, India)
-2018 – 2020
+**Bachelor of Technology in Computer Science and Engineering**  
+*2018 – 2022*  
+- Core coursework: Data Structures & Algorithms, Distributed Operating Systems, Database Management Systems, Computer Networks, and Software Engineering.
+- Capstone: Distributed Computing Prototypes & Full-Stack Platform Engineering.

@@ -276,10 +276,9 @@ Let's discuss if you have an interesting idea!
 
 Can't find your answer here? Reach out!
 
-- **Email:** hnain932@gmail.com
-- **LinkedIn:** linkedin.com/in/HarshitNain
-- **Twitter:** @HarshitNain
-- **GitHub Issues:** Ask in discussion or issue
+- **Email:** [hnain932@gmail.com](mailto:hnain932@gmail.com)
+- **GitHub:** [github.com/HarshitNain](https://github.com/HarshitNain)
+- **GitHub Discussions:** [github.com/HarshitNain/HarshitNain/discussions](https://github.com/HarshitNain/HarshitNain/discussions)
 
 I'm happy to help! 🚀
 

@@ -1,277 +1,58 @@
-# 🌟 Open Source Contributions & Community Impact
-
-## 🚀 Active Open Source Projects
-
-### Major Contributions
-
-#### 1. LangChain
-- **Repository:** [langchain-ai/langchain](https://github.com/langchain-ai/langchain)
-- **Status:** Active Contributor
-- **Contributions:** 15+ PRs merged
-- **Focus Areas:** RAG improvements, document loaders, vector store integrations
-- **Notable PRs:**
-  - Enhanced Pinecone integration with metadata filtering
-  - Optimized chunk size recommendations
-  - Improved error handling in document processors
-
-#### 2. Hugging Face Transformers
-- **Repository:** [huggingface/transformers](https://github.com/huggingface/transformers)
-- **Status:** Community Contributor
-- **Contributions:** 8+ PRs merged
-- **Focus Areas:** Documentation, model optimizations, tokenizer improvements
-
-#### 3. FastAPI
-- **Repository:** [tiangolo/fastapi](https://github.com/tiangolo/fastapi)
-- **Status:** Regular Contributor
-- **Contributions:** 12+ PRs merged
-- **Focus Areas:** Security improvements, documentation, dependency updates
-
-#### 4. Kubernetes
-- **Repository:** [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)
-- **Status:** Community Contributor
-- **Contributions:** 5+ PRs merged
-- **Focus Areas:** Documentation, CLI improvements
-
-### Project Ownership
-
-#### 1. AI-ML Utilities
-- **Repository:** [HarshitNain/ai-ml-utils](https://github.com/HarshitNain/ai-ml-utils)
-- **Status:** ✅ Active
-- **Stars:** 450+
-- **Contributors:** 25+
-- **Description:** Utility library for common AI/ML tasks
-- **Key Features:** Data preprocessing, model evaluation, visualization tools
-
-#### 2. DevOps Toolkit
-- **Repository:** [HarshitNain/devops-toolkit](https://github.com/HarshitNain/devops-toolkit)
-- **Status:** ✅ Active
-- **Stars:** 320+
-- **Contributors:** 18+
-- **Description:** Docker, Kubernetes, and CI/CD utilities
-- **Key Features:** K8s templates, GitHub Actions workflows, monitoring setups
-
-#### 3. Web Starter Kit
-- **Repository:** [HarshitNain/web-starter-kit](https://github.com/HarshitNain/web-starter-kit)
-- **Status:** ✅ Active
-- **Stars:** 280+
-- **Contributors:** 22+
-- **Description:** Full-stack web development starter template
-- **Key Features:** React, Node.js, Docker, TailwindCSS configured
-
-## 📊 Open Source Statistics
-
-### Contribution Metrics
-- **Total Contributions:** 150+
-- **Repositories Contributed:** 30+
-- **Pull Requests Merged:** 85+
-- **Issues Resolved:** 120+
-- **Open Source Hours:** 500+
-- **Languages Used:** Python, JavaScript, TypeScript, Go
-
-### Community Impact
-- **GitHub Stars (Personal Projects):** 1,200+
-- **GitHub Forks (Personal Projects):** 350+
-- **Followers:** 2,500+
-- **Mentees:** 20+
-- **Community Recognition:** Top contributor badge on 5+ projects
-
-## 💡 Areas of Contribution
-
-### By Category
-
-#### AI/ML Libraries
-- LangChain - RAG and document processing
-- Hugging Face Transformers - Model documentation and optimization
-- OpenCV - Computer vision utilities
-- PyTorch - CUDA optimization documentation
-
-#### Backend Frameworks
-- FastAPI - Security and documentation
-- Django - Middleware improvements
-- Flask - Extension documentation
-- Express.js - TypeScript definitions
-
-#### DevOps & Cloud
-- Kubernetes - Documentation and CLI
-- Docker - Image optimization guides
-- Terraform - AWS module improvements
-- Helm - Chart improvements
-
-#### Frontend Libraries
-- React - Performance optimization docs
-- Next.js - Image optimization features
-- TailwindCSS - Component library contribution
-- Vue.js - Plugin ecosystem
-
-### By Type
-
-| Type | Count | Recent |
-|------|-------|--------|
-| Bug Fixes | 35 | PR #245 - FastAPI |
-| Features | 28 | Feature/RAG optimization |
-| Documentation | 45 | Transformer docs |
-| Tests | 20 | Unit tests - LangChain |
-| Refactoring | 22 | Code quality - FastAPI |
-
-## 🏆 Recognition & Awards
-
-### Badges & Achievements
-- ⭐ **GitHub Arctic Code Vault Contributor** - 2024
-- 🌟 **Open Source Champion** - Multiple projects
-- 👨‍💻 **Top Contributor** - 5 major projects
-- 🎓 **Mentor Badge** - 20+ mentees
-- 📝 **Documentation Master** - 100+ documentation contributions
-
-### Featured & Recognized
-- **GitHub Trending** - Featured 3 times
-- **Hacker News** - Projects reached top 10 twice
-- **Product Hunt** - Launched 2 products
-- **Dev.to** - Featured articles 8+ times
-- **Tech Communities** - Active in 15+ communities
-
-## 🤝 Community Engagement
-
-### Mentoring & Teaching
-
-#### Mentorship Program
-- **Active Mentees:** 5
-- **Graduated Mentees:** 15+
-- **Focus Areas:** Career growth, technical skills, open source
-- **Mentoring Hours:** 100+ per year
-
-#### Workshops & Talks
-- **Tech Talks Given:** 8
-- **Workshop Facilitator:** Yes
-- **Community Events:** 12+ organized
-- **Attendees Reached:** 500+
-
-### Community Involvement
-
-- **GitHub Issues Help:** 200+ issues helped resolve
-- **Stack Overflow:** Top contributor in AI/ML tags
-- **Reddit:** Active in r/learnprogramming, r/Python, r/devops
-- **Twitter/X:** Sharing tips and insights daily
-- **Discord Communities:** Active moderator in 3 communities
-
-## 📈 Growth Trajectory
-
-### 2024
-- Started contributing to LangChain
-- First FastAPI PR merged
-- Created AI-ML Utilities project
-- Reached 500+ GitHub stars
-
-### 2025
-- Consistent contributor to major projects
-- Owned 3 open source projects
-- Mentored 10+ developers
-- Reached 1,000+ GitHub stars
-
-### 2026 (Current)
-- **Target:** 2,500+ total stars across projects
-- **Target:** 200+ total contributions
-- **Target:** Own/lead 5+ projects
-- **Target:** Mentor 30+ developers
-- **Target:** Speak at 5+ conferences
-
-## 🎯 Open Source Goals
-
-### Short Term (Q2-Q3 2026)
-- [ ] Merge 20+ PRs to major projects
-- [ ] Reach 1,500+ stars on personal projects
-- [ ] Mentor 10 new developers
-- [ ] Publish 5 educational repositories
-- [ ] Speak at 2 tech conferences
-
-### Long Term (Q4 2026 - 2027)
-- [ ] Become core maintainer of 1 major project
-- [ ] Create 10+ successful open source projects
-- [ ] Build active community around projects
-- [ ] Mentor 50+ developers
-- [ ] Lead open source initiative/foundation
-
-## 🔧 Active Maintenance
-
-### Currently Maintaining
-
-1. **AI-ML Utilities**
-   - Issue Response Time: <24 hours
-   - Release Frequency: Bi-weekly
-   - Test Coverage: 85%
-   - Active: ✅ Yes
-
-2. **DevOps Toolkit**
-   - Issue Response Time: <48 hours
-   - Release Frequency: Monthly
-   - Test Coverage: 80%
-   - Active: ✅ Yes
-
-3. **Web Starter Kit**
-   - Issue Response Time: <48 hours
-   - Release Frequency: As needed
-   - Test Coverage: 90%
-   - Active: ✅ Yes
-
-## 💻 Development Philosophy
-
-### Principles
-- **User First:** Design for actual user needs
-- **Quality:** Maintain high code standards
-- **Documentation:** Comprehensive and clear
-- **Community:** Responsive and inclusive
-- **Accessibility:** Inclusive design practices
-- **Performance:** Optimize for efficiency
-
-### Best Practices
-- Comprehensive testing
-- Clear commit messages
-- Responsive issue management
-- Timely PR reviews
-- Regular documentation updates
-- Community feedback incorporation
-
-## 📚 Resources & Links
-
-### Main Projects
-- [AI-ML Utilities](https://github.com/HarshitNain/ai-ml-utils)
-- [DevOps Toolkit](https://github.com/HarshitNain/devops-toolkit)
-- [Web Starter Kit](https://github.com/HarshitNain/web-starter-kit)
-
-### Contribution History
-- [GitHub Contributions](https://github.com/HarshitNain)
-- [Open Source Projects](https://github.com/HarshitNain?tab=repositories&type=source)
-- [Pull Requests](https://github.com/pulls?q=is:pr+author:HarshitNain+archived:false)
-
-### Community Profiles
-- [Stack Overflow](https://stackoverflow.com/users/HarshitNain)
-- [Product Hunt](https://www.producthunt.com/@HarshitNain)
-- [Dev.to](https://dev.to/HarshitNain)
-
-## 🚀 Getting Started with My Projects
-
-All my open source projects include:
-- ✅ Clear README with quick start
-- ✅ Comprehensive documentation
-- ✅ Contributing guidelines
-- ✅ Code of conduct
-- ✅ Issue templates
-- ✅ PR templates
-
-**Start contributing:** Pick an issue labeled `good first issue` or `help wanted`!
+# 🌟 Open Source Projects & Community Impact
 
 ---
 
-## 💬 Open Source Mission
+## 🚀 Featured Open Source Repositories
 
-Making technology accessible and improving the developer experience through:
-- **High-quality tools** that solve real problems
-- **Clear documentation** that empowers users
-- **Active community** that supports growth
-- **Inclusive environment** for all contributors
-- **Knowledge sharing** that elevates the field
+### 1. NHIT Digital Platform
+- **Repository:** [HarshitNain/NHIT-Digital-Platform](https://github.com/HarshitNain/NHIT-Digital-Platform)
+- **Primary Tech:** Go, Python, TypeScript, PostgreSQL, Docker, Redis
+- **Description:** The next-generation digital operating system for National Highways Infra Trust (NHIT). Automating green note certifications, Section 194C statutory tax deductions, multi-tier financial approvals, and direct banking UTR reconciliation across India's arterial expressway network.
+- **Key Modules:**
+  - Automated Section 194C calculation engine
+  - Direct banking UTR reconciliation service
+  - Distributed memory OTP store with expiration tracking
+  - Rate limiting and API gateway security harness
+
+### 2. Food Delivery Web App
+- **Repository:** [HarshitNain/Food-Delivery-Web-App](https://github.com/HarshitNain/Food-Delivery-Web-App)
+- **Primary Tech:** React.js, Redux Toolkit, Material UI, JavaScript, Docker
+- **Description:** Production-ready food delivery web application with predictable slice-based state management, responsive UI, dynamic menu filtering, and Docker containerization.
+- **Key Features:**
+  - Redux Toolkit memoized selectors for seamless cart state management
+  - Lighthouse 98/100 performance optimization
+  - Multi-stage Docker containerization
+
+### 3. Food Villa
+- **Repository:** [HarshitNain/Food-Villa](https://github.com/HarshitNain/Food-Villa)
+- **Primary Tech:** React.js, JavaScript, CSS3
+- **Description:** Interactive restaurant discovery and online food ordering application built with reusable modern component architecture.
+
+### 4. B.Tech CS Capstones & Prototypes
+- **Repository:** [HarshitNain/B.Tech-CS----2022](https://github.com/HarshitNain/B.Tech-CS----2022)
+- **Primary Tech:** Python, Jupyter Notebook, JavaScript
+- **Description:** Curated suite of final year Computer Science engineering capstones, distributed algorithms, and machine learning research projects.
+
+### 5. Automated Profile Telemetry & HUD
+- **Repository:** [HarshitNain/HarshitNain](https://github.com/HarshitNain/HarshitNain)
+- **Primary Tech:** Python, SVG, GitHub Actions, Neubrutalist Design System
+- **Description:** Self-hosted neubrutalist developer dashboard and contribution snake generator running completely on automated daily GitHub Actions pipelines.
 
 ---
 
-**Total Projects:** 20+ active projects
-**Last Updated:** June 2026
-**Next Milestone:** 2,000 total GitHub stars by Q4 2026
+## 🤝 Contribution Guidelines
+
+All public repositories welcome issues, feedback, and pull requests!
+
+1. **Fork the repository** on GitHub.
+2. **Clone locally** and create a feature branch (`git checkout -b feature/improvement`).
+3. **Write clean, tested code** adhering to standard formatting conventions (e.g. `gofmt` for Go, ESLint for React/TS).
+4. **Submit a Pull Request** with a concise description of your changes.
+
+---
+
+## 🔗 Quick Links
+
+- **GitHub Profile:** [github.com/HarshitNain](https://github.com/HarshitNain)
+- **All Public Repositories:** [github.com/HarshitNain?tab=repositories](https://github.com/HarshitNain?tab=repositories)
+- **Email:** [hnain932@gmail.com](mailto:hnain932@gmail.com)
