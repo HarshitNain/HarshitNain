@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshit Nain — Profile Dashboard Preview</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #121826;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: #1e293b;
+      --accent: #ff2e88;
+      --cyan: #00f0ff;
+    }
+    body.light {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #e11d48;
+      --cyan: #06b6d4;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+      padding: 40px 20px;
+      transition: background-color 0.25s, color 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+    }
+    h1 {
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 3px;
+      margin-left: 8px;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    button {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 2px solid var(--border);
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    button:hover {
+      border-color: var(--cyan);
+      box-shadow: 2px 2px 0 var(--cyan);
+    }
+    .dashboard {
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .panel {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      padding: 8px;
+      box-shadow: 4px 4px 0 var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .panel img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    .panel-meta {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 12px 2px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>HARSHIT NAIN <span class="badge">TELEMETRY HUD</span></h1>
+    </div>
+    <div class="controls">
+      <button id="themeToggle" onclick="toggleTheme()">☀️ SWITCH TO LIGHT</button>
+      <button onclick="refreshImages()">🔄 REFRESH ASSETS</button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="panel">
+      <div class="panel-meta"><span>00 // TERMINAL BOOT LOG</span><span>./assets/boot-[theme].svg</span></div>
+      <img class="preview-img" data-base="boot" src="./assets/boot-dark.svg" alt="Boot">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>01 // DEVELOPER HUD</span><span>./assets/hero-[theme].svg</span></div>
+      <img class="preview-img" data-base="hero" src="./assets/hero-dark.svg" alt="Hero">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>02 // LIVE SYSTEM STATUS</span><span>./assets/status-[theme].svg</span></div>
+      <img class="preview-img" data-base="status" src="./assets/status-dark.svg" alt="Status">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>03 // DOMAIN RADAR</span><span>./assets/domains-[theme].svg</span></div>
+      <img class="preview-img" data-base="domains" src="./assets/domains-dark.svg" alt="Domains">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>04 // ACTIVITY PULSE & COMMIT STREAM</span><span>./assets/pulse-[theme].svg</span></div>
+      <img class="preview-img" data-base="pulse" src="./assets/pulse-dark.svg" alt="Pulse">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>05 // THE JOURNEY</span><span>./assets/timeline-[theme].svg</span></div>
+      <img class="preview-img" data-base="timeline" src="./assets/timeline-dark.svg" alt="Timeline">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>06 // TECHNICAL PROFILE & IMPACT</span><span>./assets/research-[theme].svg</span></div>
+      <img class="preview-img" data-base="research" src="./assets/research-dark.svg" alt="Research">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>07 // VERIFIED BENCHMARKS</span><span>./assets/benchmarks-[theme].svg</span></div>
+      <img class="preview-img" data-base="benchmarks" src="./assets/benchmarks-dark.svg" alt="Benchmarks">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>08 // ROADMAP CLOCK</span><span>./assets/pqc-clock-[theme].svg</span></div>
+      <img class="preview-img" data-base="pqc-clock" src="./assets/pqc-clock-dark.svg" alt="Roadmap Clock">
+    </div>
+
+    <div class="panel">
+      <div class="panel-meta"><span>09 // CODEBASE COMPOSITION</span><span>./assets/langmix-[theme].svg</span></div>
+      <img class="preview-img" data-base="langmix" src="./assets/langmix-dark.svg" alt="Language Mix">
+    </div>
+  </main>
+
+  <script>
+    let currentTheme = 'dark';
+    function toggleTheme() {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.body.classList.toggle('light', currentTheme === 'light');
+      document.getElementById('themeToggle').textContent = currentTheme === 'dark' ? '☀️ SWITCH TO LIGHT' : '🌙 SWITCH TO DARK';
+      updateImages();
+    }
+    function updateImages() {
+      const imgs = document.querySelectorAll('.preview-img');
+      const timestamp = new Date().getTime();
+      imgs.forEach(img => {
+        const base = img.getAttribute('data-base');
+        img.src = `./assets/${base}-${currentTheme}.svg?t=${timestamp}`;
+      });
+    }
+    function refreshImages() {
+      updateImages();
+    }
+  </script>
+</body>
+</html>
