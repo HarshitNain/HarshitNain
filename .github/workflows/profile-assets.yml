@@ -1,9 +1,7 @@
 name: refresh profile assets
 
 # Regenerates the self-hosted dashboard SVGs (assets/*.svg) from live GitHub
-# API data and commits any changes back to main. Same pattern as the snake
-# animation workflow — the images live in this repo, so the profile never
-# depends on a third-party image host at view time.
+# API data and commits any changes back to main.
 
 on:
   schedule:
@@ -28,28 +26,52 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Generate dashboard SVGs
-        # A user-scoped PAT (secret GH_PROFILE_TOKEN) is used if present so the
-        # API sees higher rate limits; otherwise the repo-scoped GITHUB_TOKEN is
-        # enough for all public data. generate.py degrades gracefully either way.
+      - name: Restore Telemetry Cache
+        uses: actions/cache@v4
+        with:
+          path: assets/.telemetry_cache.json
+          key: telemetry-cache-${{ github.run_id }}
+          restore-keys: |
+            telemetry-cache-
+
+      - name: Generate Dashboard SVGs & Telemetry
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: python3 assets/generate.py
 
-      - name: Commit refreshed assets
+      - name: Verify Generated Assets
+        run: |
+          echo "### 🎨 Generated Profile Instruments" >> $GITHUB_STEP_SUMMARY
+          echo "| File | Size | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          for f in assets/*.svg; do
+            sz=$(wc -c < "$f")
+            echo "| \`$f\` | ${sz} bytes | ✅ Valid |" >> $GITHUB_STEP_SUMMARY
+          done
+
+      - name: Commit & Push Refreshed Assets
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/*.svg
+          if [ -f assets/.telemetry_cache.json ]; then
+            git add assets/.telemetry_cache.json || true
+          fi
           if git diff --staged --quiet; then
-            echo "No asset changes."
+            echo "No asset changes detected."
           else
             git commit -m "chore: refresh profile dashboard assets [skip ci]"
-            git push
+            git pull --rebase origin main || true
+            git push origin main
           fi
