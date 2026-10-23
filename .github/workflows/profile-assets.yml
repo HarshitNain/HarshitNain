@@ -10,8 +10,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "assets/generate.py"
-      - "assets/facts.py"
+      - "assets/**"
       - ".github/workflows/profile-assets.yml"
 
 permissions:
@@ -50,15 +49,25 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: python3 assets/generate.py
 
-      - name: Verify Generated Assets
+      - name: Validate SVG XML Well-Formedness
         run: |
-          echo "### 🎨 Generated Profile Instruments" >> $GITHUB_STEP_SUMMARY
-          echo "| File | Size | Status |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
-          for f in assets/*.svg; do
-            sz=$(wc -c < "$f")
-            echo "| \`$f\` | ${sz} bytes | ✅ Valid |" >> $GITHUB_STEP_SUMMARY
-          done
+          python3 -c "
+          import glob, sys, xml.etree.ElementTree as ET
+          svgs = sorted(glob.glob('assets/*.svg'))
+          print(f'Checking {len(svgs)} SVG instruments for strict XML compliance...')
+          failed = []
+          for s in svgs:
+              try:
+                  ET.parse(s)
+              except Exception as e:
+                  failed.append((s, str(e)))
+          if failed:
+              print(f'❌ CRITICAL: {len(failed)} SVGs failed XML validation:', file=sys.stderr)
+              for f, err in failed:
+                  print(f'  - {f}: {err}', file=sys.stderr)
+              sys.exit(1)
+          print(f'✅ All {len(svgs)} SVG instruments passed XML parsing with zero errors.')
+          "
 
       - name: Commit & Push Refreshed Assets
         run: |

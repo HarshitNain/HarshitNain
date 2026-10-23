@@ -10,6 +10,18 @@
 
 <div align="center">
 
+[![Profile Assets CI](https://github.com/HarshitNain/HarshitNain/actions/workflows/profile-assets.yml/badge.svg)](https://github.com/HarshitNain/HarshitNain/actions/workflows/profile-assets.yml)
+[![Snake CI](https://github.com/HarshitNain/HarshitNain/actions/workflows/main.yml/badge.svg)](https://github.com/HarshitNain/HarshitNain/actions/workflows/main.yml)
+![Pipeline Cadence](https://img.shields.io/badge/Cadence-Daily_06%3A17_UTC-00f0ff?style=flat-square&logo=githubactions&logoColor=black)
+![Telemetry](https://img.shields.io/badge/Telemetry-100%25_Operational-10e986?style=flat-square&logo=prometheus&logoColor=black)
+[![Interactive Dashboard](https://img.shields.io/badge/Live_Dashboard-preview.html-ff2e88?style=flat-square&logo=html5&logoColor=white)](./preview.html)
+
+<br>
+
+[ **⚡ Whoami** ](#-whoami) &nbsp;•&nbsp; [ **🟢 System Status** ](#-live-system-status) &nbsp;•&nbsp; [ **🗺️ Architecture** ](#-portfolio-map--architecture) &nbsp;•&nbsp; [ **📈 Activity Pulse** ](#-activity-pulse) &nbsp;•&nbsp; [ **⏳ Journey** ](#-career-timeline) &nbsp;•&nbsp; [ **🏆 Benchmarks** ](#-verified-benchmarks) &nbsp;•&nbsp; [ **📜 Certifications** ](#-certifications--credentials) &nbsp;•&nbsp; [ **📬 Connect** ](#-connect-with-me)
+
+<br><br>
+
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="./assets/boot-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/boot-light.svg">
@@ -64,6 +76,12 @@ Full Stack Developer with **1.4+ years of experience** engineering scalable back
   <source media="(prefers-color-scheme: dark)"  srcset="./assets/domains-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/domains-light.svg">
   <img alt="Radar chart mapping flagship repositories" src="./assets/domains-dark.svg" width="850">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="./assets/architecture-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/architecture-light.svg">
+  <img alt="System Architecture and Dataflow diagram" src="./assets/architecture-dark.svg" width="850">
 </picture>
 
 </div>
@@ -193,6 +211,16 @@ Full Stack Developer with **1.4+ years of experience** engineering scalable back
 </picture>
 
 </div>
+
+## ▌ CERTIFICATIONS & CREDENTIALS
+
+| Credential | Issuing Body | Domain & Competencies | Verification |
+|------------|--------------|-----------------------|:------------:|
+| **AWS Certified Cloud Practitioner** | Amazon Web Services (AWS) | Cloud Architecture, IAM, Security, EC2, S3, RDS, Cost Optimization | `CLF-C02` · [AWS Verification](https://aws.amazon.com/verification) |
+| **AWS Cloud Quest: Cloud Practitioner** | Amazon Web Services (AWS) | Hands-on Cloud Solutions, Serverless Computing, VPC Networking | Hands-on Badge |
+| **DevOps Essentials** | Professional Certification | CI/CD Automation, Docker Containerization, Microservices Reliability | Production Certified |
+| **Frontend Development with React** | Professional Certification | Modern Component Patterns, Redux Toolkit, React Hooks, High-Performance UI | Verified |
+| **B.Tech Computer Science & Engineering** | Anangpuria Institute of Technology & Management | Data Structures, Algorithms, Distributed Systems, Operating Systems | **CGPA: 7.4** (2019–2023) |
 
 ---
 

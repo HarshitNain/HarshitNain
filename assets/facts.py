@@ -6,7 +6,7 @@ Directly reflecting Harshit's resume, credentials, and production engineering im
 OWNER = "HarshitNain"
 NAME = "Harshit Nain"
 TAGLINE = "Full Stack Developer | Golang | Node.js | React.js | Next.js | Microservices"
-SUBLINE = "Engineering scalable backend microservices, event-driven distributed systems, and high-performance modern web applications."
+SUBLINE = "Architecting scalable Golang microservices, event-driven distributed pipelines, and responsive frontend systems."
 
 # ---------------------------------------------------------------------------
 # The flagship portfolio — reflecting Harshit's CV projects & production platforms

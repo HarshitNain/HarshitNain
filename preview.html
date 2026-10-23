@@ -781,6 +781,15 @@
             <div class="scard-ft"><span>assets/status-[theme].svg &middot; Real-time CI verdict &amp; 12-run commit history</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
           </div>
 
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">03 // SYSTEM ARCHITECTURE &amp; DATAFLOW</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="architecture" src="./assets/architecture-dark.svg" alt="System architecture and dataflow"></div>
+            <div class="scard-ft"><span>assets/architecture-[theme].svg &middot; GRC Distributed Monolith, ARC Consent Engine &amp; Kafka/NATS Event Bus</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+
           <div class="scard">
             <div class="scard-hdr">
               <span class="scard-id">03 // DOMAIN RADAR</span>
@@ -949,6 +958,16 @@
           <span class="sec-num">03</span>
           <span class="sec-ttl">Distributed System Architectures</span>
           <div class="sec-line"></div>
+        </div>
+
+        <!-- LIVE SVG ARCHITECTURE INSTRUMENT -->
+        <div class="scard fw" style="margin-bottom:24px;">
+          <div class="scard-hdr">
+            <span class="scard-id">TOPOLOGY // LIVE MICROSERVICES &amp; DATAFLOW</span>
+            <span class="scard-st"><span class="dot dot-live"></span>LIVE SVG</span>
+          </div>
+          <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="architecture" src="./assets/architecture-dark.svg" alt="System architecture and dataflow diagram"></div>
+          <div class="scard-ft"><span>assets/architecture-[theme].svg &middot; Production topology across Kong, Golang gRPC, Kafka/NATS, &amp; PostgreSQL</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
         </div>
 
         <!-- ARCH 1 -->
@@ -1677,16 +1696,44 @@ Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view av
 
       if (c === 'help') {
         resRow.innerHTML = 'Available Commands:\n' +
+          '  <span style="color:var(--accent);">pipeline</span>      - Inspect GitHub Actions CI/CD health & telemetry\n' +
+          '  <span style="color:var(--accent);">arch</span>          - View distributed systems architecture & dataflow\n' +
           '  <span style="color:var(--accent);">skills</span>        - List core technical proficiencies and competencies\n' +
           '  <span style="color:var(--accent);">projects</span>      - Print flagship production platforms\n' +
           '  <span style="color:var(--accent);">exp</span>           - Display professional work history at RNR & AppSquadz\n' +
           '  <span style="color:var(--accent);">benchmarks</span>    - View verified production latency & load speedups\n' +
           '  <span style="color:var(--accent);">certs</span>         - Display AWS & React credentials\n' +
+          '  <span style="color:var(--accent);">stack</span>         - Print full technology stack matrix\n' +
           '  <span style="color:var(--accent);">contact</span>       - Print email, phone, GitHub, and LinkedIn\n' +
           '  <span style="color:var(--accent);">cv</span>            - Open CV summary modal\n' +
           '  <span style="color:var(--accent);">theme</span>         - Toggle dark/light theme\n' +
           '  <span style="color:var(--accent);">clear</span>         - Clear the terminal screen\n' +
           '  <span style="color:var(--accent);">sudo hire</span>     - Candidate hiring access verification';
+      } else if (c === 'pipeline' || c === 'ci') {
+        resRow.innerHTML = '⚡ GITHUB ACTIONS PIPELINE TELEMETRY:\n' +
+          '  Status:          100% OPERATIONAL (11 historic runs, 0 failures)\n' +
+          '  Cadence:         Daily at 06:17 UTC (profile-assets) & 00:00 UTC (snake animation)\n' +
+          '  Avg Execution:   ~15.3s runtime\n' +
+          '  Instruments:     22 self-hosted SVGs with strict XML validation\n' +
+          '  Runtime Hosts:   Zero third-party image host dependencies\n' +
+          '  Integrity:       100% Validated (xml.etree.ElementTree compliant)\n' +
+          '  CDN Asset Base:  raw.githubusercontent.com/HarshitNain/HarshitNain/main/assets/';
+      } else if (c === 'arch' || c === 'architecture') {
+        resRow.innerHTML = '🏗️ DISTRIBUTED SYSTEMS ARCHITECTURE & TOPOLOGY:\n' +
+          '  Client Tier:     React.js / Next.js (TanStack Query, -30% page load)\n' +
+          '  Edge Defense:    Kong API Gateway (JWT Bearer Auth, Rate Limiting, 20+ APIs)\n' +
+          '  Core Services:   Golang Microservices (gRPC / Protobuf, P99 < 15ms)\n' +
+          '  Event Stream:    Apache Kafka & NATS JetStream Pub/Sub (-25% Latency)\n' +
+          '  Compliance:      ARC DPDP Act Engine (Consent State Machine, Tamper-Proof Audit)\n' +
+          '  Data Layer:      PostgreSQL 16 (ACID) & Redis In-Memory Cluster\n' +
+          '  Active Telemetry: 500+ Concurrent Live WebSocket Sessions';
+      } else if (c === 'stack') {
+        resRow.innerHTML = '💻 TECH STACK MATRIX:\n' +
+          '  Languages:       Golang (1.4+ yrs), JavaScript (ES6+), TypeScript, C++, Python, SQL\n' +
+          '  Frameworks:      React.js, Next.js, Node.js, Express.js\n' +
+          '  Distributed:     gRPC, Protobuf, Apache Kafka, NATS JetStream, WebSockets\n' +
+          '  Cloud & Ops:     AWS Certified Cloud Practitioner, Kong Gateway, Docker, CI/CD\n' +
+          '  Databases:       PostgreSQL, Redis, MySQL, MongoDB';
       } else if (c === 'skills') {
         resRow.innerHTML = 'LANGUAGES:      Golang, JavaScript (ES6+), TypeScript, C++, Python, SQL\n' +
           'BACKEND:        gRPC, Protobuf, Kafka, NATS JetStream, Node.js, Express, WebSockets\n' +
