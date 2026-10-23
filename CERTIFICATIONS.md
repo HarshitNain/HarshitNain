@@ -1,43 +1,55 @@
 # 🎓 Certifications, Education & Engineering Milestones
 
----
-
-## 🏆 Certifications & Professional Competencies
-
-### 1. Full Stack Web Development Engineering
-**Focus:** React.js, Redux Toolkit, Node.js, Express & Containerized Architectures  
-**Highlights:**
-- Mastered component lifecycle, memoization, predictable state management with Redux Toolkit, and RESTful API integrations.
-- Built production-ready web platforms with Docker containerization and CI/CD pipelines.
-
-### 2. SQL & Advanced Relational Database Architecture
-**Focus:** PostgreSQL, MySQL, PLpgSQL, Complex Query Optimization  
-**Highlights:**
-- Demonstrated expertise in schema normalization, multi-table joins, complex window functions, and indexing strategies.
-- Optimized query execution plans for sub-45ms P99 latency in high-concurrency environments.
-
-### 3. Distributed Systems & Cloud Microservices (Go)
-**Focus:** Concurrent Go handlers, in-memory OTP stores, gRPC, Redis caching  
-**Highlights:**
-- Engineered fault-tolerant distributed communication harnesses and multi-tier transaction approval workflows.
-- Implemented cryptographic authentication, secrets vaulting, and API rate-limiting shields.
+A complete record of professional certifications, formal academic education, and competitive hackathon achievements for **Harshit Nain**.
 
 ---
 
-## 🌟 Flagship Achievements & Engineering Impact
+## 🏆 Verified Certifications
 
-### NHIT Digital Platform (National Highways Infra Trust)
-- **Role:** Lead Architect & Full Stack Systems Engineer
-- **Impact:**
-  - Automated Green Note certifications, Section 194C statutory tax deductions, and multi-tier approval chains.
-  - Delivered direct host-to-host banking transaction reconciliation with 100% verified UTR matching across India's arterial expressway network.
-  - Implemented high-throughput concurrent Go microservices achieving sub-45ms API response times.
+### 1. ☁️ AWS Certified Cloud Practitioner
+**Issuing Organization:** Amazon Web Services (AWS)  
+**Competencies:**
+- Cloud concepts, security and compliance in the AWS Cloud, core AWS services (EC2, S3, RDS, Lambda, VPC, IAM), billing, and pricing models.
+- Architecting well-architected cloud foundations with high availability, fault tolerance, and cost optimization.
+
+### 2. 🎮 AWS Cloud Quest: Cloud Practitioner
+**Issuing Organization:** Amazon Web Services (AWS)  
+**Competencies:**
+- Hands-on cloud problem solving, deploying scalable compute, networking configurations, and database integrations in live sandbox environments.
+
+### 3. 🚀 DevOps Essentials
+**Issuing Organization:** DevOps Certification Institute  
+**Competencies:**
+- Continuous Integration & Continuous Delivery (CI/CD) pipelines, automated testing, container lifecycle with Docker, version control workflows, and monitoring infrastructure.
+
+### 4. ⚛️ Frontend Development with React
+**Issuing Organization:** React Engineering Academy  
+**Competencies:**
+- Advanced component lifecycle, React Hooks, virtual DOM reconciliation, bundle optimization, and predictable state management with Redux Toolkit and Context API.
 
 ---
 
-## 📚 Education
+## 🌟 Hackathons & Achievements
 
-**Bachelor of Technology in Computer Science and Engineering**  
-*2018 – 2022*  
-- Core coursework: Data Structures & Algorithms, Distributed Operating Systems, Database Management Systems, Computer Networks, and Software Engineering.
-- Capstone: Distributed Computing Prototypes & Full-Stack Platform Engineering.
+### 🏆 Yukti Sangam Hackathon 2025
+**Organization:** RNR Consulting Pvt. Ltd.  
+**Focus:** High-concurrency microservices, DPDP Act compliance automation, and real-time event streaming with Kafka and NATS JetStream.
+
+---
+
+## 📚 Formal Education
+
+### 🎓 Bachelor of Technology (B.Tech) in Computer Science and Engineering
+**Institution:** Anangpuria Institute of Technology and Management &middot; Faridabad, Haryana  
+**Graduation Year:** 2019 – 2023  
+**Cumulative Performance:** **CGPA: 7.4**  
+**Core Coursework:**
+- Data Structures & Algorithms, Object-Oriented Programming (C++, Java)
+- Operating Systems & Distributed Computing
+- Database Management Systems (PostgreSQL, MySQL) & Indexing Strategies
+- Computer Networks, Network Security, and API Protocols
+
+### 🏫 Senior Secondary (Class XII) &middot; Non-Medical with Computer Science
+**Institution:** Vidya Niketan School &middot; CBSE Board  
+**Year:** 2018 – 2019  
+**Core Subjects:** Computer Science, Physics, Chemistry, and Advanced Mathematics.

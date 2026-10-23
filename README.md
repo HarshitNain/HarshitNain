@@ -1,5 +1,5 @@
 <!--
-  Profile README — self-hosted live dashboard.
+  Profile README — self-hosted live telemetry dashboard.
   Every visual below is a custom SVG generated from live GitHub API data by
   assets/generate.py and committed to this repo (assets/*.svg), refreshed daily
   by .github/workflows/profile-assets.yml. Nothing here depends on a third-party
@@ -19,7 +19,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="./assets/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
-  <img alt="Header for Harshit Nain, Full Stack Engineer & Systems Architect" src="./assets/hero-dark.svg" width="850">
+  <img alt="Header for Harshit Nain, Full Stack Developer & Systems Architect" src="./assets/hero-dark.svg" width="850">
 </picture>
 
 </div>
@@ -27,15 +27,16 @@
 ## ▌ WHOAMI
 
 **Harshit Nain**  
-**Full Stack Engineer & Backend Systems Architect**
+**Full Stack Developer | Golang | Node.js | React.js | Next.js | Microservices**
 
-I build scalable cloud platforms, resilient microservices, and high-performance modern web applications using Go, React, TypeScript, Python, and containerized architectures.
+Full Stack Developer with **1.4+ years of experience** engineering scalable backend microservices, distributed systems, and responsive frontend applications for production environments. Proficient in **Golang, Node.js, React.js, Next.js, TypeScript, PostgreSQL, Redis, Apache Kafka, Docker, Kubernetes, and AWS**. Experienced in building high-throughput REST and gRPC APIs, event-driven pipelines, and compliance-driven platforms with proven skills in debugging, automated testing, CI/CD workflows, and performance optimization.
 
-- 💼 **Experience:** 4+ years of engineering experience architecting enterprise platforms, high-throughput backend systems, and responsive user interfaces.
-- 🚀 **Projects:** Lead engineer on **NHIT-Digital-Platform** (Next-generation digital operating system for National Highways Infra Trust) and full-featured frontend platforms including **Food-Delivery-Web-App**.
-- 🧭 **Focus:** Systems architecture · Go microservices · React & Redux Toolkit · TypeScript · Distributed Systems · Financial & Tax Automation · Docker
-- 🎓 **Education:** B.Tech Computer Science Engineering (2018–2022)
-- 📫 **Reach me:** [GitHub](https://github.com/HarshitNain) · [Email](mailto:hnain932@gmail.com)
+- 💼 **Current Role:** Full Stack Developer at **RNR Consulting Pvt. Ltd.** (May 2025 – Present) · Architecting 5+ Golang microservices (gRPC/Protobuf), Kafka/NATS JetStream event streaming, Kong API Gateway with JWT rate limiting, and real-time WebSockets across 500+ active sessions.
+- 🏢 **Previous Experience:** Full Stack Developer at **AppSquadz Pvt. Ltd.** (Jan 2024 – Oct 2024) · Developed 15+ scalable REST APIs (Node.js/Express) and standardized React/Redux Toolkit modules across 30+ responsive screens (-20% state errors).
+- 🚀 **Flagship Platforms:** **GRC Distributed Monolith** (gRPC/NATS), **ARC Automated Rights & Consents** (DPDP Act compliance), **Food Villa** (React/Redux/Geolocation), and **NHIT Digital Platform** (<45ms latency).
+- 🎓 **Education:** B.Tech in Computer Science and Engineering (**CGPA: 7.4**) · Anangpuria Institute of Technology and Management (2019–2023).
+- 📜 **Certifications:** **AWS Certified Cloud Practitioner** · **AWS Cloud Quest: Cloud Practitioner** · **DevOps Essentials** · **Frontend Development with React**.
+- 📫 **Connect:** [LinkedIn](https://linkedin.com/in/harshit-nain-62893177) · [GitHub](https://github.com/HarshitNain) · [Email](mailto:hnain932@gmail.com) · **+91-9654994442**
 
 ---
 
@@ -51,11 +52,11 @@ I build scalable cloud platforms, resilient microservices, and high-performance 
 
 </div>
 
-> The board above is regenerated daily from the live GitHub API — CI dots, uptime bars, versions and "last commit" ages are real.
+> The board above is regenerated daily from the live GitHub API — CI verdicts, uptime health, release tags, and 12-run commit histories are real and automated.
 
 ---
 
-## ▌ PORTFOLIO MAP
+## ▌ PORTFOLIO MAP & ARCHITECTURE
 
 <div align="center">
 
@@ -67,38 +68,33 @@ I build scalable cloud platforms, resilient microservices, and high-performance 
 
 </div>
 
-### 🌐 Full Stack Development
+### ⚙️ Backend & Distributed Systems
 
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **[NHIT-Digital-Platform](https://github.com/HarshitNain/NHIT-Digital-Platform)** | Go, Python, TypeScript | `v1.2.0` | Next-generation digital operating system for National Highways Infra Trust (NHIT). Automating green notes, Section 194C TDS, and direct banking reconciliation. |
-| **Youtube-Clone** `🔒 private` | TypeScript, React | `v1.0.0` | Feature-rich video streaming platform replica with dynamic video feeds, channel metrics, and responsive playback. |
-| **[B.Tech-CS----2022](https://github.com/HarshitNain/B.Tech-CS----2022)** | Python, Machine Learning | — | Curated suite of final year Computer Science engineering capstones, distributed systems, and ML prototypes. |
+| Platform | Core Stack | Status | What it does |
+|----------|------------|:------:|--------------|
+| **GRC – Distributed Monolith** | Golang, gRPC, NATS JetStream, Kong, PostgreSQL, React | `v2.1.0` | Production distributed system with modular boundaries, gRPC/Protobuf inter-service messaging, NATS pub/sub, Kong API Gateway with JWT rate limiting, and live React analytics. |
+| **ARC – Rights and Consents** | Golang, React, PostgreSQL, Docker, Kafka, Redis, Vault | `v1.4.0` | End-to-end DPDP Act compliance microservice with 5+ consent workflows, embeddable JS widgets, audit-proof data logging, and automated integration/security tests. |
+| **Enterprise-SyncHub** `🔒 private` | Golang, WebSockets, Redis, gRPC | `v1.0.0` | High-concurrency synchronization gateway, distributed event bus, and persistent agent communication harness. |
 
-### 🎨 Frontend & UI
+### 🌐 Full Stack Engineering
 
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **[Food-Delivery-Web-App](https://github.com/HarshitNain/Food-Delivery-Web-App)** | JavaScript, React, Redux Toolkit | `v1.0.0` | Full-featured Food Delivery Web App built with React.js, Redux Toolkit, Material UI, and Context API. |  
-| **[Food-Villa](https://github.com/HarshitNain/Food-Villa)** | JavaScript, React | — | Interactive restaurant discovery and online food ordering platform built with modern component architecture. |
+| Platform | Core Stack | Status | What it does |
+|----------|------------|:------:|--------------|
+| **[NHIT-Digital-Platform](https://github.com/HarshitNain/NHIT-Digital-Platform)** | Golang, PostgreSQL, Docker, Redis | `v1.2.0` | Next-generation digital operating system for National Highways Infra Trust (NHIT). Automating green notes, Section 194C TDS, and direct host-to-host banking UTR reconciliation with sub-45ms latency. |
+| **AppSquadz Core APIs** `🔒 private` | Node.js, Express, React, Redux Toolkit | `v1.0.0` | 15+ scalable RESTful API endpoints powering business workflows and partner integrations across 30+ responsive cross-browser screens. |
 
-### ⚙️ Backend & APIs
+### 🎨 Frontend & UI Engineering
 
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **Enterprise-SyncHub** `🔒 private` | Go | — | High-concurrency synchronization gateway, distributed event bus, and persistent agent communication harness. |
+| Platform | Core Stack | Status | What it does |
+|----------|------------|:------:|--------------|
+| **[Food-Villa](https://github.com/HarshitNain/Food-Villa)** | JavaScript, React.js, Redux Toolkit, Geolocation API | `v1.1.0` | Interactive restaurant discovery and food ordering web application with dynamic filtering, geolocation tracking, Swiggy API, and persistent Redux cart state. |
+| **[Food-Delivery-Web-App](https://github.com/HarshitNain/Food-Delivery-Web-App)** | React.js, Redux Toolkit, Material UI (MUI) | `v1.0.0` | Full-featured food delivery app built with React, Redux Toolkit, Material UI, and Context API achieving 98/100 Lighthouse performance. |
 
-### 🛡️ Security
+### 🛡️ Security & API Infrastructure
 
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **Secure-Gateway-Shield** `🔒 private` | Go | `v1.0.0` | Distributed memory OTP store, Google SSO token validation, secrets vault, and high-precision API rate limiting. |
-
-### 📱 Mobile Development
-
-| Repo | Stack | Release | What it does |
-|------|-------|:-------:|--------------|
-| **Food-Villa-Mobile** `🔒 private` | React Native, JavaScript | — | Cross-platform React Native companion app for seamless mobile food discovery and live order tracking. |
+| Platform | Core Stack | Status | What it does |
+|----------|------------|:------:|--------------|
+| **Secure-Gateway-Shield** `🔒 private` | Golang, Kong Gateway, JWT, Redis | `v1.0.0` | Kong API Gateway integration with JWT authentication, custom routing, and strict rate limiting protecting 20+ public endpoints from abuse. |
 
 ---
 
@@ -116,7 +112,7 @@ I build scalable cloud platforms, resilient microservices, and high-performance 
 
 ---
 
-## ▌ THE JOURNEY
+## ▌ CAREER TIMELINE
 
 <div align="center">
 
@@ -158,7 +154,7 @@ I build scalable cloud platforms, resilient microservices, and high-performance 
 
 ---
 
-## ▌ ROADMAP & DEADLINES
+## ▌ ENGINEERING ROADMAP
 
 <div align="center">
 
@@ -202,14 +198,17 @@ I build scalable cloud platforms, resilient microservices, and high-performance 
 
 ## ▌ CONNECT WITH ME
 
-💻 **GitHub** — [https://github.com/HarshitNain](https://github.com/HarshitNain)  
-✉️ **Email** — [hnain932@gmail.com](mailto:hnain932@gmail.com)  
+- 💻 **GitHub:** [https://github.com/HarshitNain](https://github.com/HarshitNain)  
+- 🔗 **LinkedIn:** [https://linkedin.com/in/harshit-nain-62893177](https://linkedin.com/in/harshit-nain-62893177)  
+- ✉️ **Email:** [hnain932@gmail.com](mailto:hnain932@gmail.com)  
+- 📞 **Phone:** +91-9654994442  
+- 📍 **Location:** India  
 
 ---
 
 <div align="center">
-<b>This whole page is a program.</b> 
-Custom SVG instruments, built from live GitHub data by <a href="./assets/generate.py"><code>assets/generate.py</code></a>, committed to this repo, and refreshed every day by a GitHub Action — plus the classic animated contribution snake, regenerated daily from real commit data by its own long-running <a href="./.github/workflows/main.yml">GitHub Action</a> and committed to this repo's <code>output</code> branch. No flaky Vercel-hosted widget services. No mocked numbers. Every figure is real and reproducible — generated live from repo telemetry.
+<b>This whole page is a program.</b><br>
+Custom SVG instruments, built from live GitHub data by <a href="./assets/generate.py"><code>assets/generate.py</code></a>, committed to this repo, and refreshed every day by a GitHub Action — plus the animated contribution snake, regenerated daily from real commit data by its own GitHub Action and committed to this repo's <code>output</code> branch. No flaky third-party widget services. Every figure is real and reproducible.
 
 <sub>◆ self-hosted ◆ live-sourced ◆ dark/light aware ◆ animated ◆ zero third-party image hosts</sub>
 

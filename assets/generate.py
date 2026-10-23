@@ -53,12 +53,22 @@ LIGHT = dict(
 )
 
 DOMAIN_ACCENT = {
-    "Full Stack Development": "blue", "Frontend & UI": "yellow",
-    "Backend & APIs": "green", "Security": "red", "Mobile Development": "purple",
+    "Full Stack Development": "blue",
+    "Frontend & UI": "yellow",
+    "Backend & APIs": "green",
+    "Security": "red",
+    "Security & Compliance": "red",
+    "Mobile Development": "purple",
+    "Cloud & DevOps": "cyan",
 }
 SHORT_DOMAIN = {
-    "Full Stack Development": "FULL STACK", "Frontend & UI": "FRONTEND",
-    "Backend & APIs": "BACKEND", "Security": "SECURITY", "Mobile Development": "MOBILE",
+    "Full Stack Development": "FULL STACK",
+    "Frontend & UI": "FRONTEND",
+    "Backend & APIs": "BACKEND",
+    "Security": "SECURITY",
+    "Security & Compliance": "COMPLIANCE",
+    "Mobile Development": "MOBILE",
+    "Cloud & DevOps": "DEVOPS",
 }
 
 

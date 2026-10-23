@@ -1,19 +1,21 @@
-# 📫 Contact & Collaboration
+# 📫 Contact & Collaboration — Harshit Nain
 
-I'm always open to discussing new projects, technical architecture, engineering challenges, or opportunities to collaborate.
+I am open to discussing new backend architecture challenges, distributed systems design, full-stack engineering roles, and innovative technology collaborations.
 
 ---
 
 ## 🔗 Direct Channels
 
-- **Email:** [hnain932@gmail.com](mailto:hnain932@gmail.com)
-- **GitHub:** [github.com/HarshitNain](https://github.com/HarshitNain)
+- ✉️ **Email:** [hnain932@gmail.com](mailto:hnain932@gmail.com)
+- 🔗 **LinkedIn:** [linkedin.com/in/harshit-nain-62893177](https://linkedin.com/in/harshit-nain-62893177)
+- 💻 **GitHub:** [github.com/HarshitNain](https://github.com/HarshitNain)
+- 📞 **Phone:** +91-9654994442
+- 📍 **Location:** India (Open to high-impact remote & on-site engineering roles)
 
-## 🤝 What I'm Looking For
+---
 
-1. **Enterprise & Scalable Systems:** Collaborating on high-performance distributed architectures, Go microservices, and modern web applications.
-2. **Open Source & Platform Engineering:** Building resilient digital platforms, financial automation pipelines, and developer tooling.
-3. **Engineering Opportunities:** Open to challenging roles in Backend Systems, Platform Architecture, and Full Stack Engineering.
+## 🤝 Core Areas of Collaboration
 
-## 📍 Location
-Based in **India**. Open to high-impact remote engineering roles globally.
+1. **Distributed Systems & Microservices:** Architecting resilient Go services with gRPC, Protobuf, Kafka, and NATS JetStream.
+2. **Modern Web Applications:** Building reactive, high-performance web platforms with React.js, Next.js, and TanStack Query.
+3. **API Infrastructure & Security:** Designing Kong API Gateways with strict rate limiting, JWT authentication, and DPDP Act compliance.
