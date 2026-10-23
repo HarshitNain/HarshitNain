@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harshit Nain — Full Stack Developer &amp; Systems Architect</title>
-  <meta name="description" content="Live interactive portfolio and GitHub telemetry dashboard for Harshit Nain, Full Stack Developer specializing in Golang, Node.js, React.js, Next.js, and Microservices.">
+  <title>Harshit Nain — Full Stack Developer &amp; Distributed Systems Architect</title>
+  <meta name="description" content="Interactive cyber-HUD portfolio and live GitHub telemetry dashboard for Harshit Nain, Full Stack Developer specializing in Golang, Node.js, React.js, Next.js, and Microservices.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,9 +12,9 @@
     :root {
       --bg: #030712;
       --bg2: #080e1e;
-      --surface: rgba(13, 22, 44, 0.75);
-      --surface2: rgba(10, 17, 34, 0.92);
-      --surface-hover: rgba(22, 36, 70, 0.85);
+      --surface: rgba(13, 22, 44, 0.78);
+      --surface2: rgba(10, 17, 34, 0.94);
+      --surface-hover: rgba(24, 38, 72, 0.88);
       --glass: rgba(255, 255, 255, 0.04);
       --glass-border: rgba(255, 255, 255, 0.09);
       --ink: #f1f5f9;
@@ -27,7 +27,7 @@
       --amber: #f59e0b;
       --blue: #3b82f6;
       --red: #f43f5e;
-      --border: rgba(0, 240, 255, 0.14);
+      --border: rgba(0, 240, 255, 0.15);
       --glow-c: 0 0 24px rgba(0, 240, 255, 0.22), 0 0 60px rgba(0, 240, 255, 0.06);
       --glow-p: 0 0 24px rgba(255, 46, 136, 0.22), 0 0 60px rgba(255, 46, 136, 0.06);
       --glow-v: 0 0 24px rgba(168, 85, 247, 0.28), 0 0 60px rgba(168, 85, 247, 0.08);
@@ -41,7 +41,7 @@
     body.light {
       --bg: #f8fafc;
       --bg2: #f1f5f9;
-      --surface: rgba(255, 255, 255, 0.92);
+      --surface: rgba(255, 255, 255, 0.94);
       --surface2: rgba(248, 250, 252, 0.98);
       --surface-hover: rgba(241, 245, 249, 0.98);
       --glass: rgba(0, 0, 0, 0.03);
@@ -56,7 +56,7 @@
       --amber: #d97706;
       --blue: #2563eb;
       --red: #dc2626;
-      --border: rgba(2, 132, 199, 0.22);
+      --border: rgba(2, 132, 199, 0.24);
       --glow-c: 0 0 16px rgba(2, 132, 199, 0.15);
       --glow-p: 0 0 16px rgba(225, 29, 72, 0.15);
       --glow-v: 0 0 16px rgba(124, 58, 237, 0.15);
@@ -90,11 +90,11 @@
     }
     #bgc { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 
-    /* Container Wrap */
+    /* Layout */
     .wrap {
       position: relative;
       z-index: 1;
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 24px 90px;
     }
@@ -109,7 +109,7 @@
       border-bottom: 1px solid var(--border);
       gap: 16px;
     }
-    body.light .topbar { background: rgba(248, 250, 252, 0.92); }
+    body.light .topbar { background: rgba(248, 250, 252, 0.94); }
 
     .tb-brand { display: flex; align-items: center; gap: 13px; text-decoration: none; color: inherit; }
     .tb-logo {
@@ -124,12 +124,12 @@
     .tb-title strong { color: var(--accent); }
     .tb-sub { font-size: 0.65rem; color: var(--ink2); font-weight: 500; }
 
-    .tb-acts { display: flex; gap: 10px; align-items: center; }
+    .tb-acts { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; }
 
     /* BUTTONS */
     .btn {
       display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: var(--rs);
-      font-family: var(--mono); font-size: 0.73rem; font-weight: 600; letter-spacing: 0.04em;
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
       cursor: pointer; border: none; outline: none; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
     }
@@ -187,10 +187,10 @@
       font-family: var(--mono); letter-spacing: 0.02em;
     }
     .hero-sub {
-      font-size: 0.92rem; color: var(--ink2); line-height: 1.74; max-width: 660px;
+      font-size: 0.92rem; color: var(--ink2); line-height: 1.74; max-width: 670px;
     }
 
-    /* HERO CONTACT CHIPS */
+    /* CONTACT CHIPS */
     .contact-bar {
       display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center;
     }
@@ -204,9 +204,8 @@
       border-color: var(--accent); color: var(--accent); background: rgba(0, 240, 255, 0.06);
       transform: translateY(-1px);
     }
-    .cchip svg { flex-shrink: 0; }
 
-    /* TECH STACK CHIPS */
+    /* TECH CHIPS */
     .hero-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
     .chip {
       display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 100px;
@@ -222,7 +221,7 @@
       border-color: rgba(0, 240, 255, 0.35); background: rgba(0, 240, 255, 0.08); color: var(--accent);
     }
 
-    /* KPI METRICS */
+    /* KPI STATS */
     .hero-stats {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 28px;
       background: var(--border); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
@@ -234,7 +233,7 @@
     }
     .hstat:hover { background: var(--surface-hover); }
     .hstat-v {
-      font-family: var(--mono); font-size: 1.4rem; font-weight: 800; color: var(--accent); display: block;
+      font-family: var(--mono); font-size: 1.45rem; font-weight: 800; color: var(--accent); display: block;
     }
     .hstat-l {
       font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; color: var(--ink3);
@@ -299,7 +298,7 @@
       border-radius: var(--r); padding: 6px; margin-bottom: 24px; overflow-x: auto;
     }
     .tab-btn {
-      flex: 1; min-width: fit-content; padding: 9px 16px; border-radius: var(--rs);
+      flex: 1; min-width: fit-content; padding: 9px 15px; border-radius: var(--rs);
       font-family: var(--mono); font-size: 0.71rem; font-weight: 700; letter-spacing: 0.05em;
       cursor: pointer; border: none; outline: none; background: transparent; color: var(--ink3);
       transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 7px; white-space: nowrap;
@@ -325,6 +324,17 @@
       color: var(--ink2); text-transform: uppercase;
     }
     .sec-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+    /* SEARCH FILTER BAR */
+    .search-bar {
+      display: flex; gap: 12px; margin-bottom: 18px; align-items: center;
+    }
+    .search-input {
+      flex: 1; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--rs);
+      padding: 8px 14px; font-family: var(--mono); font-size: 0.74rem; color: var(--ink); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input:focus { border-color: var(--accent); box-shadow: var(--glow-c); }
 
     /* SVG CARDS */
     .svg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 20px; }
@@ -436,6 +446,44 @@
       background: rgba(168, 85, 247, 0.12); border: 1px solid rgba(168, 85, 247, 0.3); color: var(--accent3);
     }
 
+    /* ARCHITECTURE DIAGRAMS */
+    .arch-card {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 22px; margin-bottom: 22px; position: relative; overflow: hidden;
+    }
+    .arch-title { font-size: 1.05rem; font-weight: 800; color: var(--accent); margin-bottom: 6px; font-family: var(--mono); }
+    .arch-sub { font-size: 0.78rem; color: var(--ink2); margin-bottom: 14px; }
+    .arch-diagram {
+      background: #02050e; border: 1px solid rgba(0, 240, 255, 0.2); border-radius: var(--rs);
+      padding: 16px; font-family: var(--mono); font-size: 0.72rem; color: #00f0ff; overflow-x: auto;
+      line-height: 1.45; white-space: pre; margin-bottom: 14px;
+    }
+    body.light .arch-diagram { background: #0f172a; color: #38bdf8; }
+
+    /* INTERACTIVE TERMINAL */
+    .term-box {
+      background: #010409; border: 1px solid var(--accent); border-radius: var(--r);
+      overflow: hidden; box-shadow: var(--glow-c); font-family: var(--mono);
+    }
+    .term-header {
+      background: #0d1117; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.72rem; color: var(--ink2);
+    }
+    .term-dots { display: flex; gap: 6px; }
+    .term-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .td-red { background: #ff5f56; } .td-yellow { background: #ffbd2e; } .td-green { background: #27c93f; }
+    .term-screen {
+      padding: 16px; min-height: 280px; max-height: 380px; overflow-y: auto; color: #f1f5f9; font-size: 0.75rem;
+      line-height: 1.6;
+    }
+    .term-out { margin-bottom: 10px; white-space: pre-wrap; }
+    .term-input-row { display: flex; align-items: center; gap: 8px; }
+    .term-prompt { color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .term-cli {
+      flex: 1; background: transparent; border: none; outline: none; color: var(--accent);
+      font-family: var(--mono); font-size: 0.75rem; font-weight: 700;
+    }
+
     /* SKILLS CATEGORIES */
     .sk-cat { margin-bottom: 24px; }
     .sk-cat-ttl {
@@ -499,21 +547,9 @@
     .bfill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--accent), var(--accent3)); box-shadow: 0 0 10px var(--accent); }
     .benv { font-family: var(--mono); font-size: 0.61rem; color: var(--ink3); margin-top: 8px; }
 
-    /* ROADMAP */
-    .rm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 15px; }
-    .rmcard {
-      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--r);
-      padding: 20px; backdrop-filter: blur(14px); transition: all 0.2s; position: relative; overflow: hidden;
-    }
-    .rmcard:hover { transform: translateY(-3px); border-color: rgba(168, 85, 247, 0.45); box-shadow: var(--glow-v); }
-    .rmcnt { font-family: var(--mono); font-size: 1.4rem; font-weight: 800; color: var(--accent3); margin-bottom: 6px; }
-    .rmlbl { font-size: 0.86rem; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
-    .rmnote { font-size: 0.75rem; color: var(--ink2); line-height: 1.62; }
-    .rmdate { font-family: var(--mono); font-size: 0.62rem; color: var(--ink3); margin-top: 10px; }
-
     /* MODAL */
     .modal-overlay {
-      position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(8px);
+      position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.84); backdrop-filter: blur(9px);
       display: none; align-items: center; justify-content: center; padding: 20px;
     }
     .modal-overlay.open { display: flex; }
@@ -582,7 +618,7 @@
 
   <!-- TOPBAR -->
   <header class="topbar">
-    <a class="tb-brand" href="#hero">
+    <a class="tb-brand" href="#hero" onclick="playClick()">
       <div class="tb-logo">HN</div>
       <div class="tb-meta">
         <div class="tb-title"><strong>HARSHIT NAIN</strong> // profile-telemetry</div>
@@ -592,7 +628,8 @@
     <div class="tb-acts">
       <div class="dot dot-live"></div>
       <span style="font-family:var(--mono);font-size:0.65rem;color:var(--green);font-weight:800;letter-spacing:0.08em;margin-right:4px;">OPEN TO ROLES</span>
-      <button class="btn btn-cv" onclick="openResumeModal()">&#128196; CV SUMMARY</button>
+      <button class="btn btn-cv" onclick="openResumeModal();playClick();">&#128196; CV SUMMARY</button>
+      <button class="btn btn-ghost" id="sfxBtn" onclick="toggleSfx()">&#128263; SFX OFF</button>
       <button class="btn btn-ghost" id="themeBtn" onclick="toggleTheme()">&#9728; LIGHT</button>
       <button class="btn btn-primary" onclick="refreshAssets()">&#8635; REFRESH</button>
     </div>
@@ -611,19 +648,19 @@
 
         <!-- CONTACT BAR -->
         <div class="contact-bar">
-          <a class="cchip" href="mailto:hnain932@gmail.com">
+          <a class="cchip" href="mailto:hnain932@gmail.com" onclick="playClick()">
             <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             hnain932@gmail.com
           </a>
-          <a class="cchip" href="tel:+919654994442">
+          <a class="cchip" href="tel:+919654994442" onclick="playClick()">
             <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             +91-9654994442
           </a>
-          <a class="cchip" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener">
+          <a class="cchip" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener" onclick="playClick()">
             <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             LinkedIn
           </a>
-          <a class="cchip" href="https://github.com/HarshitNain" target="_blank" rel="noopener">
+          <a class="cchip" href="https://github.com/HarshitNain" target="_blank" rel="noopener" onclick="playClick()">
             <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             GitHub
           </a>
@@ -646,22 +683,22 @@
         <!-- KPI STATS -->
         <div class="hero-stats">
           <div class="hstat">
-            <span class="hstat-v">-25%</span>
+            <span class="hstat-v" id="kpi-lat">-25%</span>
             <div class="hstat-l">Latency Cut</div>
             <div class="hstat-d">Kafka &amp; NATS JetStream</div>
           </div>
           <div class="hstat">
-            <span class="hstat-v">-30%</span>
+            <span class="hstat-v" id="kpi-load">-30%</span>
             <div class="hstat-l">Page Load Speedup</div>
             <div class="hstat-d">TanStack Query Cache</div>
           </div>
           <div class="hstat">
-            <span class="hstat-v">500+</span>
+            <span class="hstat-v" id="kpi-ws">500+</span>
             <div class="hstat-l">Live Sessions</div>
             <div class="hstat-d">Real-time WebSockets</div>
           </div>
           <div class="hstat">
-            <span class="hstat-v">20+</span>
+            <span class="hstat-v" id="kpi-apis">20+</span>
             <div class="hstat-l">Protected APIs</div>
             <div class="hstat-d">Kong Gateway &amp; JWT</div>
           </div>
@@ -682,15 +719,15 @@
     <div class="pipe">
       <span class="pipe-lbl">&#9658; CI/CD TELEMETRY</span>
       <div class="pipe-stages">
-        <span class="pstage pass" onclick="showPipelineLog('FETCH')">&#10003; 01: TELEMETRY FETCH</span>
+        <span class="pstage pass" onclick="showPipelineLog('FETCH');playClick();">&#10003; 01: TELEMETRY FETCH</span>
         <span class="parr">&rarr;</span>
-        <span class="pstage pass" onclick="showPipelineLog('RENDER')">&#10003; 02: RENDER 20 SVGs</span>
+        <span class="pstage pass" onclick="showPipelineLog('RENDER');playClick();">&#10003; 02: RENDER 20 SVGs</span>
         <span class="parr">&rarr;</span>
-        <span class="pstage pass" onclick="showPipelineLog('VERIFY')">&#10003; 03: VERIFY INSTRUMENTS</span>
+        <span class="pstage pass" onclick="showPipelineLog('VERIFY');playClick();">&#10003; 03: VERIFY INSTRUMENTS</span>
         <span class="parr">&rarr;</span>
-        <span class="pstage run" onclick="showPipelineLog('COMMIT')">&#8987; 04: GIT REBASE &amp; PUSH</span>
+        <span class="pstage run" onclick="showPipelineLog('COMMIT');playClick();">&#8987; 04: GIT REBASE &amp; PUSH</span>
         <span class="parr">&rarr;</span>
-        <span class="pstage que" onclick="showPipelineLog('SNAKE')">&#9675; 05: SNAKE ANIMATION</span>
+        <span class="pstage que" onclick="showPipelineLog('SNAKE');playClick();">&#9675; 05: SNAKE ANIMATION</span>
       </div>
       <span class="pipe-time" id="clock">--:--:-- IST</span>
     </div>
@@ -700,6 +737,8 @@
       <button class="tab-btn active" onclick="tab('dash',this)">&#128202; DASHBOARD (SVGs)</button>
       <button class="tab-btn" onclick="tab('exp',this)">&#128188; EXPERIENCE</button>
       <button class="tab-btn" onclick="tab('proj',this)">&#128193; KEY PROJECTS</button>
+      <button class="tab-btn" onclick="tab('arch',this)">&#128208; ARCHITECTURE</button>
+      <button class="tab-btn" onclick="tab('term',this)">&#128187; TERMINAL</button>
       <button class="tab-btn" onclick="tab('sk',this)">&#9889; TECHNICAL SKILLS</button>
       <button class="tab-btn" onclick="tab('bk',this)">&#128200; BENCHMARKS</button>
       <button class="tab-btn" onclick="tab('edu',this)">&#127891; CERTIFICATIONS &amp; EDU</button>
@@ -887,6 +926,10 @@
           <div class="sec-line"></div>
         </div>
 
+        <div class="search-bar">
+          <input type="text" class="search-input" id="projSearch" placeholder="&#128269; Search projects by tech, domain, or keyword (e.g. Go, Kafka, React, Kong)..." oninput="onProjSearch()">
+        </div>
+
         <div class="proj-filter">
           <button class="pfilter-btn active" onclick="filterProj('ALL',this)">ALL PROJECTS</button>
           <button class="pfilter-btn" onclick="filterProj('Backend & APIs',this)">BACKEND &amp; DISTRIBUTED</button>
@@ -899,11 +942,134 @@
       </div>
     </div>
 
-    <!-- PANEL 4: TECHNICAL SKILLS -->
-    <div class="tab-panel" id="p-sk">
+    <!-- PANEL 4: ARCHITECTURE -->
+    <div class="tab-panel" id="p-arch">
       <div class="sec">
         <div class="sec-hdr">
           <span class="sec-num">03</span>
+          <span class="sec-ttl">Distributed System Architectures</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <!-- ARCH 1 -->
+        <div class="arch-card">
+          <div class="arch-title">01 // GRC – DISTRIBUTED MONOLITH ARCHITECTURE</div>
+          <div class="arch-sub">Production high-concurrency event stream, binary gRPC serialization, and modular microservices</div>
+          <div class="arch-diagram">
++-----------------------------------------------------------------------------------------+
+|                              CLIENT TIER (Next.js &amp; React.js)                           |
+|       - TanStack Query (Server-State Caching, -30% Page Load)  - WebSockets (500+ Live) |
++-----------------------------------------------------------------------------------------+
+                                           |  HTTPS / WSS / REST
+                                           v
++-----------------------------------------------------------------------------------------+
+|                           KONG API GATEWAY &amp; EDGE DEFENSE                               |
+|        - JWT Bearer Validation     - Rate Limiting (Token Bucket)     - Custom Routing  |
++-----------------------------------------------------------------------------------------+
+                                           |
+                    +----------------------+----------------------+
+                    | gRPC / Protobuf                             | gRPC / Protobuf
+                    v                                             v
+     +------------------------------+              +------------------------------+
+     |   Core GRC Golang Service    |              | Analytics &amp; Reporting Service |
+     |  (Modular Domain Boundaries) |              |  (Live Aggregations Engine)  |
+     +------------------------------+              +------------------------------+
+                    |                                             |
+                    +----------------------+----------------------+
+                                           | Event Pub/Sub
+                                           v
++-----------------------------------------------------------------------------------------+
+|                      APACHE KAFKA &amp; NATS JETSTREAM EVENT BUS                            |
+|       - Decoupled Worker Workflows   - Persistent Streams   - 25% Latency Reduction     |
++-----------------------------------------------------------------------------------------+
+                    |                                             |
+                    v                                             v
+     +------------------------------+              +------------------------------+
+     |   PostgreSQL Data Layer      |              |      Redis In-Memory Cache   |
+     | (B-Tree Indexes, Sub-45ms)   |              |  (Session States, Ephemeral) |
+     +------------------------------+              +------------------------------+
+          </div>
+          <p style="font-size:0.82rem;color:var(--ink2);line-height:1.68;">
+            <strong>Architectural Highlights:</strong> By utilizing gRPC for strongly-typed internal communication alongside NATS JetStream for asynchronous job execution, this system reduced latency by 25% while maintaining strict data consistency across 5+ backend services.
+          </p>
+        </div>
+
+        <!-- ARCH 2 -->
+        <div class="arch-card">
+          <div class="arch-title">02 // ARC – AUTOMATED RIGHTS &amp; CONSENTS (DPDP ACT)</div>
+          <div class="arch-sub">End-to-end data privacy compliance microservice with embeddable client widgets and tamper-proof logging</div>
+          <div class="arch-diagram">
++-----------------------------------------------------------------------------------------+
+|                                CLIENT EMBEDDABLE WIDGET                                 |
+|         - Zero-dependency JavaScript SDK embedded via single &lt;script&gt; tag              |
++-----------------------------------------------------------------------------------------+
+                                           |  REST API / TLS 1.3
+                                           v
++-----------------------------------------------------------------------------------------+
+|                            CONSENT WORKFLOW ORCHESTRATOR                                |
+|   [Cookie Consent]   [Grievance Redressal]   [Data Erasure]   [Parental Verification]   |
++-----------------------------------------------------------------------------------------+
+                                           |
+                    +----------------------+----------------------+
+                    |                                             |
+                    v                                             v
+     +------------------------------+              +------------------------------+
+     |   Kafka Data Subject Bus     |              |    HashiCorp Vault Secrets   |
+     |  (Asynchronous Request Queue)|              | (PII Encryption &amp; Rotations) |
+     +------------------------------+              +------------------------------+
+                    |                                             |
+                    +----------------------+----------------------+
+                                           v
++-----------------------------------------------------------------------------------------+
+|                       AUDIT-PROOF TAMPER-EVIDENT PERSISTENCE                            |
+|        - Append-only PostgreSQL audit log    - Redis verification cache                 |
++-----------------------------------------------------------------------------------------+
+          </div>
+          <p style="font-size:0.82rem;color:var(--ink2);line-height:1.68;">
+            <strong>Compliance Highlights:</strong> Built in strict alignment with India's Digital Personal Data Protection Act (DPDP Act), providing audit-proof logs and seamless consent capture across millions of user sessions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 5: TERMINAL -->
+    <div class="tab-panel" id="p-term">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">04</span>
+          <span class="sec-ttl">Interactive Cyber Terminal</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="term-box">
+          <div class="term-header">
+            <div class="term-dots">
+              <span class="term-dot td-red"></span>
+              <span class="term-dot td-yellow"></span>
+              <span class="term-dot td-green"></span>
+            </div>
+            <span>guest@harshit-nain: ~ (bash / zsh)</span>
+            <span style="color:var(--accent);">TYPE 'help'</span>
+          </div>
+          <div class="term-screen" id="termScreen">
+            <div class="term-out">Welcome to Harshit Nain's Interactive Profile Terminal v3.2.0-release.
+Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view available system commands.</div>
+          </div>
+          <div style="padding:10px 16px;background:#0d1117;border-top:1px solid rgba(255,255,255,0.08);">
+            <div class="term-input-row">
+              <span class="term-prompt">guest@harshit-nain:~$</span>
+              <input type="text" class="term-cli" id="termInput" placeholder="type command (e.g. help, skills, exp, projects, contact, sudo hire)..." onkeydown="handleTermKey(event)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 6: TECHNICAL SKILLS -->
+    <div class="tab-panel" id="p-sk">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">05</span>
           <span class="sec-ttl">Technical Proficiency &amp; Core Competencies</span>
           <div class="sec-line"></div>
         </div>
@@ -935,11 +1101,11 @@
       </div>
     </div>
 
-    <!-- PANEL 5: BENCHMARKS -->
+    <!-- PANEL 7: BENCHMARKS -->
     <div class="tab-panel" id="p-bk">
       <div class="sec">
         <div class="sec-hdr">
-          <span class="sec-num">04</span>
+          <span class="sec-num">06</span>
           <span class="sec-ttl">Verified Production Benchmarks</span>
           <div class="sec-line"></div>
         </div>
@@ -947,11 +1113,11 @@
       </div>
     </div>
 
-    <!-- PANEL 6: CERTIFICATIONS & EDUCATION -->
+    <!-- PANEL 8: CERTIFICATIONS & EDUCATION -->
     <div class="tab-panel" id="p-edu">
       <div class="sec">
         <div class="sec-hdr">
-          <span class="sec-num">05</span>
+          <span class="sec-num">07</span>
           <span class="sec-ttl">Certifications &amp; Credentials</span>
           <div class="sec-line"></div>
         </div>
@@ -980,7 +1146,7 @@
         </div>
 
         <div class="sec-hdr" style="margin-top:28px;">
-          <span class="sec-num">05b</span>
+          <span class="sec-num">07b</span>
           <span class="sec-ttl">Formal Education</span>
           <div class="sec-line"></div>
         </div>
@@ -1012,7 +1178,7 @@
         </div>
 
         <div class="sec-hdr" style="margin-top:28px;">
-          <span class="sec-num">05c</span>
+          <span class="sec-num">07c</span>
           <span class="sec-ttl">Hackathons &amp; Achievements</span>
           <div class="sec-line"></div>
         </div>
@@ -1024,11 +1190,11 @@
       </div>
     </div>
 
-    <!-- PANEL 7: JOURNEY -->
+    <!-- PANEL 9: JOURNEY -->
     <div class="tab-panel" id="p-jrn">
       <div class="sec">
         <div class="sec-hdr">
-          <span class="sec-num">06</span>
+          <span class="sec-num">08</span>
           <span class="sec-ttl">Career &amp; Engineering Journey</span>
           <div class="sec-line"></div>
         </div>
@@ -1043,10 +1209,10 @@
         <div class="ct-role">Full Stack Developer &middot; Golang, Node.js, React &middot; Available for Opportunities</div>
       </div>
       <div class="ct-links">
-        <a class="btn btn-primary" href="mailto:hnain932@gmail.com">&#9993; SEND EMAIL</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener">LINKEDIN &rarr;</a>
-        <a class="btn btn-ghost" href="https://github.com/HarshitNain" target="_blank" rel="noopener">GITHUB &rarr;</a>
-        <button class="btn btn-ghost" onclick="copyContact()">&#128203; COPY CONTACT</button>
+        <a class="btn btn-primary" href="mailto:hnain932@gmail.com" onclick="playClick()">&#9993; SEND EMAIL</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener" onclick="playClick()">LINKEDIN &rarr;</a>
+        <a class="btn btn-ghost" href="https://github.com/HarshitNain" target="_blank" rel="noopener" onclick="playClick()">GITHUB &rarr;</a>
+        <button class="btn btn-ghost" onclick="copyContact();playClick();">&#128203; COPY CONTACT</button>
       </div>
     </section>
 
@@ -1074,7 +1240,7 @@
           <h2 style="font-size:1.4rem;font-weight:900;color:var(--accent);">HARSHIT NAIN</h2>
           <div style="font-family:var(--mono);font-size:0.75rem;color:var(--ink2);">Full Stack Developer &middot; Golang | Node.js | React.js | Next.js | Microservices</div>
         </div>
-        <button class="btn btn-primary" onclick="copyResumeText()">&#128203; COPY RESUME TEXT</button>
+        <button class="btn btn-primary" onclick="copyResumeText();playClick();">&#128203; COPY RESUME TEXT</button>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-family:var(--mono);font-size:0.72rem;color:var(--ink2);margin-bottom:18px;background:var(--surface);padding:12px;border-radius:var(--rs);border:1px solid var(--glass-border);">
@@ -1145,6 +1311,39 @@
 
   <script>
     var theme = 'dark';
+    var sfxEnabled = false;
+    var audioCtx = null;
+
+    function toggleSfx() {
+      sfxEnabled = !sfxEnabled;
+      if (!audioCtx && sfxEnabled) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      document.getElementById('sfxBtn').innerHTML = sfxEnabled ? '&#128266; SFX ON' : '&#128263; SFX OFF';
+      toast('Cyber SFX ' + (sfxEnabled ? 'Enabled' : 'Disabled'));
+      if (sfxEnabled) playTone(880, 0.05);
+    }
+
+    function playTone(freq, dur) {
+      if (!sfxEnabled || !audioCtx) return;
+      try {
+        var osc = audioCtx.createOscillator();
+        var gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq || 800, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime((freq || 800) * 1.5, audioCtx.currentTime + dur);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + dur);
+      } catch(e) {}
+    }
+
+    function playClick() {
+      playTone(1050, 0.035);
+    }
 
     function toggleTheme() {
       theme = theme === 'dark' ? 'light' : 'dark';
@@ -1152,6 +1351,7 @@
       document.getElementById('themeBtn').innerHTML = theme === 'dark' ? '&#9728; LIGHT' : '&#9790; DARK';
       updateImgs();
       toast('Switched to ' + theme.toUpperCase() + ' theme');
+      playTone(600, 0.06);
     }
 
     function updateImgs() {
@@ -1164,6 +1364,7 @@
     function refreshAssets() {
       updateImgs();
       toast('Assets Refreshed from Telemetry');
+      playTone(1200, 0.05);
     }
 
     function toast(msg) {
@@ -1186,6 +1387,7 @@
       var target = document.getElementById('p-' + id);
       if (target) target.classList.add('active');
       if (btn) btn.classList.add('active');
+      playClick();
     }
 
     /* DATA DEFINITIONS */
@@ -1268,9 +1470,24 @@
       }
     ];
 
-    function renderProjects(filter) {
+    var currentFilter = 'ALL';
+
+    function renderProjects(filter, query) {
       var pc = document.getElementById('proj-con');
       var list = filter === 'ALL' ? PROJ : PROJ.filter(function(p) { return p.domain === filter; });
+      if (query && query.trim()) {
+        var q = query.trim().toLowerCase();
+        list = list.filter(function(p) {
+          return p.name.toLowerCase().includes(q) ||
+                 p.domain.toLowerCase().includes(q) ||
+                 p.lang.toLowerCase().includes(q) ||
+                 p.blurb.toLowerCase().includes(q);
+        });
+      }
+      if (list.length === 0) {
+        pc.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:32px;font-family:var(--mono);color:var(--ink3);">No projects matched your search query.</div>';
+        return;
+      }
       pc.innerHTML = list.map(function(p) {
         var d = DC[p.domain] || { c1: '#00f0ff', c2: '#a855f7', t: '#00f0ff' };
         var lc = LC[p.lang] || '#ccc';
@@ -1290,9 +1507,17 @@
     renderProjects('ALL');
 
     function filterProj(dom, btn) {
+      currentFilter = dom;
       document.querySelectorAll('.pfilter-btn').forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      renderProjects(dom);
+      var q = document.getElementById('projSearch').value;
+      renderProjects(dom, q);
+      playClick();
+    }
+
+    function onProjSearch() {
+      var q = document.getElementById('projSearch').value;
+      renderProjects(currentFilter, q);
     }
 
     /* SKILLS RENDERING */
@@ -1428,21 +1653,124 @@
       '</div>';
     }).join('');
 
+    /* INTERACTIVE TERMINAL LOGIC */
+    function handleTermKey(e) {
+      if (e.key === 'Enter') {
+        var input = document.getElementById('termInput');
+        var cmd = input.value.trim();
+        input.value = '';
+        executeTermCmd(cmd);
+        playClick();
+      }
+    }
+
+    function executeTermCmd(cmd) {
+      var scr = document.getElementById('termScreen');
+      var userRow = document.createElement('div');
+      userRow.className = 'term-out';
+      userRow.innerHTML = '<span style="color:var(--green);font-weight:800;">guest@harshit-nain:~$</span> ' + escapeHtml(cmd);
+      scr.appendChild(userRow);
+
+      var resRow = document.createElement('div');
+      resRow.className = 'term-out';
+      var c = cmd.toLowerCase().trim();
+
+      if (c === 'help') {
+        resRow.innerHTML = 'Available Commands:\n' +
+          '  <span style="color:var(--accent);">skills</span>        - List core technical proficiencies and competencies\n' +
+          '  <span style="color:var(--accent);">projects</span>      - Print flagship production platforms\n' +
+          '  <span style="color:var(--accent);">exp</span>           - Display professional work history at RNR & AppSquadz\n' +
+          '  <span style="color:var(--accent);">benchmarks</span>    - View verified production latency & load speedups\n' +
+          '  <span style="color:var(--accent);">certs</span>         - Display AWS & React credentials\n' +
+          '  <span style="color:var(--accent);">contact</span>       - Print email, phone, GitHub, and LinkedIn\n' +
+          '  <span style="color:var(--accent);">cv</span>            - Open CV summary modal\n' +
+          '  <span style="color:var(--accent);">theme</span>         - Toggle dark/light theme\n' +
+          '  <span style="color:var(--accent);">clear</span>         - Clear the terminal screen\n' +
+          '  <span style="color:var(--accent);">sudo hire</span>     - Candidate hiring access verification';
+      } else if (c === 'skills') {
+        resRow.innerHTML = 'LANGUAGES:      Golang, JavaScript (ES6+), TypeScript, C++, Python, SQL\n' +
+          'BACKEND:        gRPC, Protobuf, Kafka, NATS JetStream, Node.js, Express, WebSockets\n' +
+          'FRONTEND:       React.js, Next.js, TanStack Query, Redux Toolkit, Material UI\n' +
+          'CLOUD & DEVOPS: AWS Certified, Kong API Gateway, Docker, Kubernetes, CI/CD\n' +
+          'DATABASES:      PostgreSQL, Redis, MySQL, MongoDB';
+      } else if (c === 'projects') {
+        resRow.innerHTML = '1. GRC – Distributed Monolith (Golang, gRPC, NATS JetStream, Kong, PostgreSQL, React)\n' +
+          '2. ARC – Automated Rights & Consents (Golang, DPDP Act, Kafka, Redis, Vault)\n' +
+          '3. Food Villa (React.js, Redux Toolkit, Swiggy API, Geolocation API)\n' +
+          '4. NHIT Digital Platform (Golang, Banking UTR reconciliation, sub-45ms latency)\n' +
+          '5. Enterprise SyncHub (Golang, WebSocket event harness, persistent workers)';
+      } else if (c === 'exp') {
+        resRow.innerHTML = '• Full Stack Developer | RNR Consulting Pvt. Ltd. (May 2025 – Present)\n' +
+          '  - 5+ Golang microservices via gRPC/Protobuf\n' +
+          '  - Kafka & NATS JetStream event streaming (-25% latency)\n' +
+          '  - Kong Gateway JWT rate limiting for 20+ endpoints\n' +
+          '  - React/Next.js with TanStack Query (-30% load time)\n' +
+          '  - Real-time WebSockets across 500+ sessions\n\n' +
+          '• Full Stack Developer | AppSquadz Pvt. Ltd. (Jan 2024 – Oct 2024)\n' +
+          '  - 15+ scalable RESTful APIs with Node.js & Express\n' +
+          '  - Reusable React components across 4+ product modules\n' +
+          '  - Redux Toolkit state standardization (-20% state bugs)';
+      } else if (c === 'benchmarks') {
+        resRow.innerHTML = '⚡ GRC Monolith Event Latency:  -25% (Kafka & NATS JetStream)\n' +
+          '⚡ Frontend Page Load Speedup:   -30% (TanStack Query Cache)\n' +
+          '⚡ Kong Gateway Protected APIs:  20+ Public Endpoints (JWT + Rate Limits)\n' +
+          '⚡ Active WebSocket Sessions:    500+ Concurrent Live Connections';
+      } else if (c === 'certs') {
+        resRow.innerHTML = '📜 AWS Certified Cloud Practitioner (Amazon Web Services)\n' +
+          '📜 AWS Cloud Quest: Cloud Practitioner (Amazon Web Services)\n' +
+          '📜 DevOps Essentials (CI/CD, Containerization, Docker)\n' +
+          '📜 Frontend Development with React (Component Patterns, Redux Toolkit)\n' +
+          '🎓 B.Tech Computer Science & Engineering (CGPA: 7.4) - AITM (2019-2023)';
+      } else if (c === 'contact') {
+        resRow.innerHTML = 'Email:    hnain932@gmail.com\n' +
+          'Phone:    +91-9654994442\n' +
+          'LinkedIn: https://linkedin.com/in/harshit-nain-62893177\n' +
+          'GitHub:   https://github.com/HarshitNain\n' +
+          'Location: India';
+      } else if (c === 'cv') {
+        openResumeModal();
+        resRow.innerHTML = 'Opened CV Summary modal window.';
+      } else if (c === 'theme') {
+        toggleTheme();
+        resRow.innerHTML = 'Toggled theme to: ' + theme.toUpperCase();
+      } else if (c === 'clear') {
+        scr.innerHTML = '';
+        return;
+      } else if (c === 'sudo hire' || c === 'hire') {
+        resRow.innerHTML = '<span style="color:#10e986;font-weight:900;">[ACCESS GRANTED]</span>\n' +
+          'Candidate Harshit Nain is strongly recommended for high-impact Full Stack and Backend Systems roles!\n' +
+          'Direct contact: hnain932@gmail.com / +91-9654994442 🚀';
+      } else if (!c) {
+        return;
+      } else {
+        resRow.innerHTML = '<span style="color:#ef4444;">command not found: ' + escapeHtml(cmd) + '</span>. Type <span style="color:var(--accent);">help</span> for available commands.';
+      }
+      scr.appendChild(resRow);
+      scr.scrollTop = scr.scrollHeight;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
     /* MODAL HANDLERS */
     function openResumeModal() {
       document.getElementById('resumeModal').classList.add('open');
     }
     function closeResumeModal() {
       document.getElementById('resumeModal').classList.remove('open');
+      playClick();
     }
 
     function zoomImg(el) {
       var img = el.querySelector('img') || el;
       document.getElementById('modalImg').src = img.src;
       document.getElementById('imgModal').classList.add('open');
+      playClick();
     }
     function closeImgModal() {
       document.getElementById('imgModal').classList.remove('open');
+      playClick();
     }
 
     function showPipelineLog(stage) {
@@ -1468,11 +1796,13 @@
     }
     function closeLogModal() {
       document.getElementById('logModal').classList.remove('open');
+      playClick();
     }
 
     function closeModalOnBg(e) {
       if (e.target.classList.contains('modal-overlay')) {
         e.target.classList.remove('open');
+        playClick();
       }
     }
 
