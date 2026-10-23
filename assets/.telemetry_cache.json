@@ -138,11 +138,11 @@
       "watchers": 0,
       "default_branch": "main",
       "permissions": {
-        "admin": true,
-        "maintain": true,
-        "push": true,
-        "triage": true,
-        "pull": true
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
       }
     },
     {
@@ -248,11 +248,11 @@
       "watchers": 0,
       "default_branch": "main",
       "permissions": {
-        "admin": true,
-        "maintain": true,
-        "push": true,
-        "triage": true,
-        "pull": true
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
       }
     },
     {
@@ -358,11 +358,11 @@
       "watchers": 0,
       "default_branch": "main",
       "permissions": {
-        "admin": true,
-        "maintain": true,
-        "push": true,
-        "triage": true,
-        "pull": true
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
       }
     },
     {
@@ -468,11 +468,11 @@
       "watchers": 0,
       "default_branch": "main",
       "permissions": {
-        "admin": true,
-        "maintain": true,
-        "push": true,
-        "triage": true,
-        "pull": true
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
       }
     },
     {
@@ -543,8 +543,8 @@
       "releases_url": "https://api.github.com/repos/HarshitNain/HarshitNain/releases{/id}",
       "deployments_url": "https://api.github.com/repos/HarshitNain/HarshitNain/deployments",
       "created_at": "2026-10-22T09:15:21Z",
-      "updated_at": "2026-10-23T19:55:49Z",
-      "pushed_at": "2026-10-23T19:55:54Z",
+      "updated_at": "2026-10-23T20:38:42Z",
+      "pushed_at": "2026-10-23T20:38:38Z",
       "git_url": "git://github.com/HarshitNain/HarshitNain.git",
       "ssh_url": "git@github.com:HarshitNain/HarshitNain.git",
       "clone_url": "https://github.com/HarshitNain/HarshitNain.git",
@@ -578,11 +578,11 @@
       "watchers": 0,
       "default_branch": "main",
       "permissions": {
-        "admin": true,
-        "maintain": true,
-        "push": true,
-        "triage": true,
-        "pull": true
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
       }
     },
     {
@@ -688,19 +688,19 @@
       "watchers": 0,
       "default_branch": "main",
       "permissions": {
-        "admin": true,
-        "maintain": true,
-        "push": true,
-        "triage": true,
-        "pull": true
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
       }
     }
   ],
   "/repos/HarshitNain/done/languages": {},
   "/repos/HarshitNain/Food-Villa/languages": {},
   "/repos/HarshitNain/HarshitNain/languages": {
-    "HTML": 101536,
-    "Python": 66421
+    "HTML": 105463,
+    "Python": 74455
   },
   "/repos/HarshitNain/NHIT-Digital-Platform/languages": {
     "Go": 996347,
@@ -818,41 +818,13 @@
     "watchers": 0,
     "default_branch": "main",
     "permissions": {
-      "admin": true,
-      "maintain": true,
-      "push": true,
-      "triage": true,
-      "pull": true
+      "admin": false,
+      "maintain": false,
+      "push": false,
+      "triage": false,
+      "pull": false
     },
     "temp_clone_token": "",
-    "allow_squash_merge": true,
-    "allow_merge_commit": true,
-    "allow_rebase_merge": true,
-    "allow_auto_merge": false,
-    "delete_branch_on_merge": false,
-    "allow_update_branch": false,
-    "use_squash_pr_title_as_default": false,
-    "squash_merge_commit_message": "COMMIT_MESSAGES",
-    "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
-    "merge_commit_message": "PR_TITLE",
-    "merge_commit_title": "MERGE_MESSAGE",
-    "security_and_analysis": {
-      "secret_scanning": {
-        "status": "enabled"
-      },
-      "secret_scanning_push_protection": {
-        "status": "enabled"
-      },
-      "dependabot_security_updates": {
-        "status": "disabled"
-      },
-      "secret_scanning_non_provider_patterns": {
-        "status": "disabled"
-      },
-      "secret_scanning_validity_checks": {
-        "status": "disabled"
-      }
-    },
     "network_count": 0,
     "subscribers_count": 0
   },
@@ -8124,24 +8096,13 @@
     "watchers": 0,
     "default_branch": "main",
     "permissions": {
-      "admin": true,
-      "maintain": true,
-      "push": true,
-      "triage": true,
-      "pull": true
+      "admin": false,
+      "maintain": false,
+      "push": false,
+      "triage": false,
+      "pull": false
     },
     "temp_clone_token": "",
-    "allow_squash_merge": true,
-    "allow_merge_commit": true,
-    "allow_rebase_merge": true,
-    "allow_auto_merge": false,
-    "delete_branch_on_merge": false,
-    "allow_update_branch": false,
-    "use_squash_pr_title_as_default": false,
-    "squash_merge_commit_message": "COMMIT_MESSAGES",
-    "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
-    "merge_commit_message": "PR_TITLE",
-    "merge_commit_title": "MERGE_MESSAGE",
     "parent": {
       "id": 617892844,
       "node_id": "R_kgDOJNRL7A",
@@ -8364,23 +8325,6 @@
       "watchers": 38,
       "default_branch": "main"
     },
-    "security_and_analysis": {
-      "secret_scanning": {
-        "status": "enabled"
-      },
-      "secret_scanning_push_protection": {
-        "status": "enabled"
-      },
-      "dependabot_security_updates": {
-        "status": "disabled"
-      },
-      "secret_scanning_non_provider_patterns": {
-        "status": "disabled"
-      },
-      "secret_scanning_validity_checks": {
-        "status": "disabled"
-      }
-    },
     "network_count": 14,
     "subscribers_count": 0
   },
@@ -8492,41 +8436,13 @@
     "watchers": 0,
     "default_branch": "main",
     "permissions": {
-      "admin": true,
-      "maintain": true,
-      "push": true,
-      "triage": true,
-      "pull": true
+      "admin": false,
+      "maintain": false,
+      "push": false,
+      "triage": false,
+      "pull": false
     },
     "temp_clone_token": "",
-    "allow_squash_merge": true,
-    "allow_merge_commit": true,
-    "allow_rebase_merge": true,
-    "allow_auto_merge": false,
-    "delete_branch_on_merge": false,
-    "allow_update_branch": false,
-    "use_squash_pr_title_as_default": false,
-    "squash_merge_commit_message": "COMMIT_MESSAGES",
-    "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
-    "merge_commit_message": "PR_TITLE",
-    "merge_commit_title": "MERGE_MESSAGE",
-    "security_and_analysis": {
-      "secret_scanning": {
-        "status": "enabled"
-      },
-      "secret_scanning_push_protection": {
-        "status": "enabled"
-      },
-      "dependabot_security_updates": {
-        "status": "disabled"
-      },
-      "secret_scanning_non_provider_patterns": {
-        "status": "disabled"
-      },
-      "secret_scanning_validity_checks": {
-        "status": "disabled"
-      }
-    },
     "network_count": 0,
     "subscribers_count": 1
   },
@@ -22025,7 +21941,7 @@
   ],
   "/repos/HarshitNain/Food-Villa/commits?since=2026-09-23T19%3A50%3A41Z&per_page=100": [],
   "/repos/HarshitNain/Food-Delivery-Web-App/commits?since=2026-09-23T19%3A50%3A41Z&per_page=100": [],
-  "/repos/HarshitNain/NHIT-Digital-Platform/commits?since=2026-09-23T20%3A33%3A36Z&per_page=100": [
+  "/repos/HarshitNain/NHIT-Digital-Platform/commits?since=2026-09-23T20%3A38%3A50Z&per_page=100": [
     {
       "sha": "dd2a09ab32cfd94b7497cb4d3ad59f0e6b980e9f",
       "node_id": "C_kwDOVNM_QdoAKGRkMmEwOWFiMzJjZmQ5NGI3NDk3Y2I0ZDNhZDU5ZjBlNmI5ODBlOWY",
@@ -26847,6 +26763,6 @@
       "parents": []
     }
   ],
-  "/repos/HarshitNain/Food-Villa/commits?since=2026-09-23T20%3A33%3A36Z&per_page=100": [],
-  "/repos/HarshitNain/Food-Delivery-Web-App/commits?since=2026-09-23T20%3A33%3A36Z&per_page=100": []
+  "/repos/HarshitNain/Food-Villa/commits?since=2026-09-23T20%3A38%3A50Z&per_page=100": [],
+  "/repos/HarshitNain/Food-Delivery-Web-App/commits?since=2026-09-23T20%3A38%3A50Z&per_page=100": []
 }
