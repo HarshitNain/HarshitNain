@@ -603,6 +603,113 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 100px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* REQUEST PACKET SIMULATOR */
+    .sim-card {
+      background: var(--surface2); border: 1px solid var(--accent); border-radius: var(--r);
+      padding: 24px; margin-bottom: 24px; box-shadow: var(--glow-c); position: relative; overflow: hidden;
+    }
+    .sim-header {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+      margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 14px;
+    }
+    .sim-title {
+      display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.85rem;
+      font-weight: 800; color: var(--accent); letter-spacing: 0.06em;
+    }
+    .sim-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .sim-select {
+      background: var(--bg); border: 1px solid var(--border); color: var(--ink); border-radius: var(--rs);
+      padding: 8px 14px; font-family: var(--mono); font-size: 0.74rem; outline: none; cursor: pointer;
+    }
+    .sim-select:focus { border-color: var(--accent); }
+    .sim-pipeline {
+      display: flex; align-items: center; justify-content: space-between; position: relative;
+      padding: 16px 0; margin-bottom: 20px; overflow-x: auto; gap: 8px;
+    }
+    .sim-node {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--rs);
+      padding: 14px 12px; min-width: 130px; text-align: center; position: relative; z-index: 2;
+      transition: all 0.3s;
+    }
+    .sim-node.active {
+      border-color: var(--accent); box-shadow: var(--glow-c); transform: translateY(-3px) scale(1.02);
+      background: var(--surface-hover);
+    }
+    .sim-node.done { border-color: var(--green); box-shadow: var(--glow-g); }
+    .sn-icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .sn-label { font-family: var(--mono); font-size: 0.72rem; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .sn-tech { font-size: 0.65rem; color: var(--ink2); margin: 4px 0 8px; }
+    .sn-badge {
+      display: inline-block; font-family: var(--mono); font-size: 0.58rem; font-weight: 800;
+      padding: 2px 6px; border-radius: 4px; background: var(--glass); color: var(--ink3); letter-spacing: 0.06em;
+    }
+    .sim-node.active .sn-badge { background: rgba(0, 240, 255, 0.18); color: var(--accent); }
+    .sim-node.done .sn-badge { background: rgba(16, 233, 134, 0.18); color: var(--green); }
+    .sim-wire {
+      flex: 1; height: 3px; background: var(--glass-border); position: relative; min-width: 24px;
+    }
+    .sim-wire.active { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .sim-pulse {
+      position: absolute; top: -4px; width: 11px; height: 11px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 10px var(--accent); display: none;
+    }
+    .sim-wire.active .sim-pulse { display: block; animation: wireTravel 0.6s linear infinite; }
+    @keyframes wireTravel {
+      0% { left: 0%; opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { left: 100%; opacity: 0; }
+    }
+    .sim-metrics {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 16px;
+    }
+    .sm-item {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--rs);
+      padding: 10px 14px;
+    }
+    .sm-lbl { font-family: var(--mono); font-size: 0.62rem; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+    .sm-val { font-family: var(--mono); font-size: 0.95rem; font-weight: 800; color: var(--accent); }
+    .sim-trace-box {
+      background: #000; border: 1px solid var(--border); border-radius: var(--rs); padding: 14px;
+    }
+    .sim-trace-header {
+      display: flex; align-items: center; justify-content: space-between; font-family: var(--mono);
+      font-size: 0.68rem; color: var(--ink2); margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 6px;
+    }
+    #simTraceOutput {
+      font-family: var(--mono); font-size: 0.72rem; color: #10e986; line-height: 1.6;
+      white-space: pre-wrap; word-break: break-all; max-height: 220px; overflow-y: auto; margin: 0;
+    }
+
+    /* RECRUITER HUD & MATCH CHECKLIST */
+    .recruiter-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;
+    }
+    .rec-box {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--rs);
+      padding: 16px;
+    }
+    .rec-box-ttl {
+      font-family: var(--mono); font-size: 0.75rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .match-tag {
+      display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; margin: 3px;
+      border-radius: 4px; font-family: var(--mono); font-size: 0.68rem; cursor: pointer;
+      background: var(--glass); border: 1px solid var(--glass-border); color: var(--ink2);
+      transition: all 0.2s; user-select: none;
+    }
+    .match-tag.checked {
+      background: rgba(16, 233, 134, 0.15); border-color: var(--green); color: var(--green); font-weight: 700;
+    }
+    .match-score-bar {
+      height: 6px; background: var(--glass-border); border-radius: 100px; overflow: hidden; margin: 10px 0;
+    }
+    .match-score-fill {
+      height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); border-radius: 100px;
+      width: 100%; transition: width 0.4s;
+    }
   </style>
 </head>
 <body id="body">
@@ -628,7 +735,8 @@
     <div class="tb-acts">
       <div class="dot dot-live"></div>
       <span style="font-family:var(--mono);font-size:0.65rem;color:var(--green);font-weight:800;letter-spacing:0.08em;margin-right:4px;">OPEN TO ROLES</span>
-      <button class="btn btn-cv" onclick="openResumeModal();playClick();">&#128196; CV SUMMARY</button>
+      <button class="btn btn-cv" onclick="openRecruiterModal();playClick();" style="border-color:var(--accent);box-shadow:var(--glow-c);">&#128084; RECRUITER HUD</button>
+      <button class="btn btn-ghost" onclick="openResumeModal();playClick();">&#128196; CV</button>
       <button class="btn btn-ghost" id="sfxBtn" onclick="toggleSfx()">&#128263; SFX OFF</button>
       <button class="btn btn-ghost" id="themeBtn" onclick="toggleTheme()">&#9728; LIGHT</button>
       <button class="btn btn-primary" onclick="refreshAssets()">&#8635; REFRESH</button>
@@ -788,6 +896,15 @@
             </div>
             <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="architecture" src="./assets/architecture-dark.svg" alt="System architecture and dataflow"></div>
             <div class="scard-ft"><span>assets/architecture-[theme].svg &middot; GRC Distributed Monolith, ARC Consent Engine &amp; Kafka/NATS Event Bus</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">04 // PRODUCTION STACK &amp; INFRASTRUCTURE MATRIX</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="stack" src="./assets/stack-dark.svg" alt="Production Stack Matrix"></div>
+            <div class="scard-ft"><span>assets/stack-[theme].svg &middot; 5-tier production stack: Edge Gateway, Microservices Engine, Event Bus, Persistence &amp; Frontend</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
           </div>
 
           <div class="scard">
@@ -968,6 +1085,100 @@
           </div>
           <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="architecture" src="./assets/architecture-dark.svg" alt="System architecture and dataflow diagram"></div>
           <div class="scard-ft"><span>assets/architecture-[theme].svg &middot; Production topology across Kong, Golang gRPC, Kafka/NATS, &amp; PostgreSQL</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+        </div>
+
+        <!-- LIVE SVG STACK INSTRUMENT -->
+        <div class="scard fw" style="margin-bottom:24px;">
+          <div class="scard-hdr">
+            <span class="scard-id">PRODUCTION STACK // MULTI-TIER DISTRIBUTED MATRIX</span>
+            <span class="scard-st"><span class="dot dot-live"></span>LIVE SVG</span>
+          </div>
+          <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="stack" src="./assets/stack-dark.svg" alt="Production Stack Matrix"></div>
+          <div class="scard-ft"><span>assets/stack-[theme].svg &middot; Edge Gateway, Golang gRPC Core, Kafka/NATS Bus, PostgreSQL/Redis, &amp; React UI</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+        </div>
+
+        <!-- INTERACTIVE REQUEST PACKET SIMULATOR -->
+        <div class="sim-card" id="packetSimSection">
+          <div class="sim-header">
+            <div class="sim-title">
+              <span class="dot dot-live"></span>
+              <span>INTERACTIVE PACKET TRACE &amp; LATENCY SIMULATOR</span>
+            </div>
+            <div class="sim-controls">
+              <select id="simScenario" class="sim-select" onchange="resetSim()">
+                <option value="arc">POST /api/v1/consent/grant (ARC DPDP Engine)</option>
+                <option value="grc">RPC GrcService.ProcessAuditLog (GRC Monolith)</option>
+                <option value="nhit">POST /api/v1/nhit/reconcile-utr (NHIT Banking)</option>
+              </select>
+              <button class="btn btn-primary" id="btnSim" onclick="runPacketSimulator();playClick();">&#128640; SEND PACKET TRACE</button>
+            </div>
+          </div>
+
+          <!-- Simulated Pipeline Diagram Nodes -->
+          <div class="sim-pipeline">
+            <div class="sim-node" id="sn-client">
+              <div class="sn-icon">&#127760;</div>
+              <div class="sn-label">CLIENT APPS</div>
+              <div class="sn-tech">Next.js / React</div>
+              <div class="sn-badge" id="snb-client">IDLE</div>
+            </div>
+            <div class="sim-wire" id="sw-1"><div class="sim-pulse" id="sp-1"></div></div>
+            <div class="sim-node" id="sn-kong">
+              <div class="sn-icon">&#128737;</div>
+              <div class="sn-label">KONG GATEWAY</div>
+              <div class="sn-tech">JWT &amp; Rate Limit</div>
+              <div class="sn-badge" id="snb-kong">WAITING</div>
+            </div>
+            <div class="sim-wire" id="sw-2"><div class="sim-pulse" id="sp-2"></div></div>
+            <div class="sim-node" id="sn-grpc">
+              <div class="sn-icon">&#9889;</div>
+              <div class="sn-label">GOLANG CORE</div>
+              <div class="sn-tech">gRPC &amp; Protobuf v3</div>
+              <div class="sn-badge" id="snb-grpc">WAITING</div>
+            </div>
+            <div class="sim-wire" id="sw-3"><div class="sim-pulse" id="sp-3"></div></div>
+            <div class="sim-node" id="sn-bus">
+              <div class="sn-icon">&#128229;</div>
+              <div class="sn-label">EVENT STREAM</div>
+              <div class="sn-tech">Kafka &amp; NATS</div>
+              <div class="sn-badge" id="snb-bus">WAITING</div>
+            </div>
+            <div class="sim-wire" id="sw-4"><div class="sim-pulse" id="sp-4"></div></div>
+            <div class="sim-node" id="sn-data">
+              <div class="sn-icon">&#128024;</div>
+              <div class="sn-label">PERSISTENCE</div>
+              <div class="sn-tech">PostgreSQL &amp; Redis</div>
+              <div class="sn-badge" id="snb-data">WAITING</div>
+            </div>
+          </div>
+
+          <!-- Telemetry Metrics & Live JSON Trace Output -->
+          <div class="sim-metrics">
+            <div class="sm-item">
+              <span class="sm-lbl">Total Latency</span>
+              <span class="sm-val" id="sm-lat">-- ms</span>
+            </div>
+            <div class="sm-item">
+              <span class="sm-lbl">Status Verdict</span>
+              <span class="sm-val" id="sm-status">READY</span>
+            </div>
+            <div class="sm-item">
+              <span class="sm-lbl">Serialization</span>
+              <span class="sm-val" id="sm-ser">Protobuf v3</span>
+            </div>
+            <div class="sm-item">
+              <span class="sm-lbl">Audit Guarantee</span>
+              <span class="sm-val" id="sm-audit">At-Least-Once</span>
+            </div>
+          </div>
+
+          <div class="sim-trace-box">
+            <div class="sim-trace-header">
+              <span>&#128187; DISTRIBUTED TRACE LOG (OpenTelemetry / Jaeger Format)</span>
+              <button class="btn btn-ghost" style="padding:2px 8px;font-size:0.65rem;" onclick="copyTraceLog()">Copy Trace</button>
+            </div>
+            <pre id="simTraceOutput">// Ready. Click [ SEND PACKET TRACE ] to simulate end-to-end request lifecycle across Harshit's production microservices stack.</pre>
+          </div>
         </div>
 
         <!-- ARCH 1 -->
@@ -1307,6 +1518,80 @@ Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view av
 
       <div style="text-align:right;margin-top:22px;">
         <button class="btn btn-ghost" onclick="closeResumeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECRUITER FAST-TRACK & CANDIDATE MATCH MODAL -->
+  <div class="modal-overlay" id="recruiterModal" onclick="closeModalOnBg(event)">
+    <div class="modal-card" style="max-width:850px;">
+      <button class="modal-close" onclick="closeRecruiterModal()">&times;</button>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;border-bottom:1px solid var(--glass-border);padding-bottom:12px;">
+        <span style="font-size:1.4rem;">&#128084;</span>
+        <div>
+          <h2 style="font-family:var(--mono);font-size:1.05rem;color:var(--accent);margin:0;font-weight:900;">EXECUTIVE BRIEFING &amp; RECRUITER HUD</h2>
+          <span style="font-size:0.75rem;color:var(--ink2);">Harshit Nain &middot; Full Stack Developer &middot; Ready for Immediate/Short-Notice Onboarding</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;">
+        <a class="btn btn-primary" href="mailto:hnain932@gmail.com?subject=Interview%20Invitation%20-%20Harshit%20Nain" onclick="playClick()" style="font-size:0.75rem;">&#128231; Schedule Interview</a>
+        <button class="btn btn-ghost" onclick="copyContact();playClick();" style="font-size:0.75rem;">&#128203; Copy All Contact Info</button>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener" onclick="playClick()" style="font-size:0.75rem;">&#128188; LinkedIn Profile</a>
+        <a class="btn btn-ghost" href="https://wa.me/919654994442" target="_blank" rel="noopener" onclick="playClick()" style="font-size:0.75rem;">&#128172; WhatsApp Chat</a>
+      </div>
+
+      <!-- Candidate Vitals Grid -->
+      <div class="recruiter-grid">
+        <div class="rec-box">
+          <div class="rec-box-ttl">&#127919; CANDIDATE PROFILE</div>
+          <div style="font-size:0.8rem;color:var(--ink);line-height:1.7;">
+            <strong>Current:</strong> Full Stack Developer @ RNR Consulting (May 2025 – Present)<br>
+            <strong>Previous:</strong> Full Stack Developer @ AppSquadz (Jan 2024 – Oct 2024)<br>
+            <strong>Total Production Exp:</strong> 1.4+ Years<br>
+            <strong>Education:</strong> B.Tech CSE (CGPA: 7.4) &middot; Anangpuria Institute<br>
+            <strong>Certifications:</strong> AWS Certified Cloud Practitioner
+          </div>
+        </div>
+
+        <div class="rec-box">
+          <div class="rec-box-ttl">&#9889; AVAILABILITY &amp; ROLES</div>
+          <div style="font-size:0.8rem;color:var(--ink);line-height:1.7;">
+            <strong>Target Roles:</strong> Full Stack Developer / Golang Backend SDE / React Frontend Engineer<br>
+            <strong>Notice Period:</strong> Immediate / Short Notice (negotiable)<br>
+            <strong>Location:</strong> India (Open to Remote, Hybrid, or Relocation)<br>
+            <strong>Email:</strong> <span style="color:var(--accent);">hnain932@gmail.com</span><br>
+            <strong>Phone:</strong> <span style="color:var(--accent);">+91-9654994442</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Skill Matcher -->
+      <div class="rec-box" style="margin-top:14px;">
+        <div class="rec-box-ttl" style="justify-content:space-between;">
+          <span>&#128269; INTERACTIVE TECH REQUIREMENTS MATCHER (Click to test fit)</span>
+          <span id="matchScoreBadge" style="font-size:0.75rem;color:var(--green);font-weight:800;">100% MATCH (8/8)</span>
+        </div>
+        <p style="font-size:0.75rem;color:var(--ink2);margin-bottom:10px;">Select the technologies required for your open role to verify Harshit's production experience:</p>
+        <div id="matchTagsContainer">
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Golang')">&#10003; Golang (gRPC/Protobuf)</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'React')">&#10003; React.js &amp; Next.js</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Node')">&#10003; Node.js &amp; Express</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Kafka')">&#10003; Apache Kafka &amp; NATS</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Postgres')">&#10003; PostgreSQL &amp; Redis</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Kong')">&#10003; Kong API Gateway</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'AWS')">&#10003; AWS &amp; Docker</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'DPDP')">&#10003; DPDP Compliance / Security</span>
+        </div>
+        <div class="match-score-bar"><div class="match-score-fill" id="matchFill"></div></div>
+        <div id="matchVerdict" style="font-family:var(--mono);font-size:0.72rem;color:var(--green);margin-top:6px;">
+          &#10004; Strong match: Harshit possesses verified production experience across all selected domains.
+        </div>
+      </div>
+
+      <div style="text-align:right;margin-top:18px;">
+        <button class="btn btn-ghost" onclick="closeRecruiterModal()">Close</button>
       </div>
     </div>
   </div>
@@ -1698,26 +1983,49 @@ Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view av
         resRow.innerHTML = 'Available Commands:\n' +
           '  <span style="color:var(--accent);">pipeline</span>      - Inspect GitHub Actions CI/CD health & telemetry\n' +
           '  <span style="color:var(--accent);">arch</span>          - View distributed systems architecture & dataflow\n' +
+          '  <span style="color:var(--accent);">simulate</span>      - Run live distributed request packet simulator\n' +
           '  <span style="color:var(--accent);">skills</span>        - List core technical proficiencies and competencies\n' +
           '  <span style="color:var(--accent);">projects</span>      - Print flagship production platforms\n' +
           '  <span style="color:var(--accent);">exp</span>           - Display professional work history at RNR & AppSquadz\n' +
           '  <span style="color:var(--accent);">benchmarks</span>    - View verified production latency & load speedups\n' +
           '  <span style="color:var(--accent);">certs</span>         - Display AWS & React credentials\n' +
           '  <span style="color:var(--accent);">stack</span>         - Print full technology stack matrix\n' +
+          '  <span style="color:var(--accent);">trace</span>         - Inspect sample OpenTelemetry gRPC trace\n' +
+          '  <span style="color:var(--accent);">hire</span>          - Launch Executive Recruiter HUD\n' +
           '  <span style="color:var(--accent);">contact</span>       - Print email, phone, GitHub, and LinkedIn\n' +
           '  <span style="color:var(--accent);">cv</span>            - Open CV summary modal\n' +
           '  <span style="color:var(--accent);">theme</span>         - Toggle dark/light theme\n' +
-          '  <span style="color:var(--accent);">clear</span>         - Clear the terminal screen\n' +
-          '  <span style="color:var(--accent);">sudo hire</span>     - Candidate hiring access verification';
+          '  <span style="color:var(--accent);">clear</span>         - Clear the terminal screen';
       } else if (c === 'pipeline' || c === 'ci') {
         resRow.innerHTML = '⚡ GITHUB ACTIONS PIPELINE TELEMETRY:\n' +
-          '  Status:          100% OPERATIONAL (11 historic runs, 0 failures)\n' +
+          '  Status:          100% OPERATIONAL (14 historic runs, 0 failures)\n' +
           '  Cadence:         Daily at 06:17 UTC (profile-assets) & 00:00 UTC (snake animation)\n' +
           '  Avg Execution:   ~15.3s runtime\n' +
-          '  Instruments:     22 self-hosted SVGs with strict XML validation\n' +
+          '  Instruments:     24 self-hosted SVGs with strict XML validation (12 dark, 12 light)\n' +
           '  Runtime Hosts:   Zero third-party image host dependencies\n' +
           '  Integrity:       100% Validated (xml.etree.ElementTree compliant)\n' +
           '  CDN Asset Base:  raw.githubusercontent.com/HarshitNain/HarshitNain/main/assets/';
+      } else if (c === 'simulate' || c === 'sim') {
+        tab('arch', document.querySelectorAll('.tab-btn')[3]);
+        setTimeout(function() {
+          var el = document.getElementById('packetSimSection');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          runPacketSimulator();
+        }, 150);
+        resRow.innerHTML = '⚡ Switched to Architecture panel & launched Live Packet Trace Simulator!';
+      } else if (c === 'trace') {
+        resRow.innerHTML = '📡 OPENTELEMETRY TRACE SAMPLE (trace_id: 4bf92f3577b34da6a3ce929d0e0e4736):\n' +
+          '  [SPAN 1] client.http_request -> POST /api/v1/consent/grant (duration: 10.4ms)\n' +
+          '    ├── [SPAN 2] kong.jwt_verify -> token_valid: true (duration: 1.1ms)\n' +
+          '    ├── [SPAN 3] grpc.consent.Grant -> status: OK, proto: v3 (duration: 3.2ms)\n' +
+          '    ├── [SPAN 4] nats.publish -> topic: consent.granted.v1, ack: true (duration: 2.3ms)\n' +
+          '    └── [SPAN 5] postgres.insert -> isolation: READ_COMMITTED (duration: 3.8ms)';
+      } else if (c === 'hire' || c === 'sudo hire' || c === 'recruiter') {
+        openRecruiterModal();
+        resRow.innerHTML = '<span style="color:#10e986;font-weight:900;">[RECRUITER HUD OPENED]</span>\n' +
+          'Candidate: Harshit Nain (Full Stack Developer & Systems SDE)\n' +
+          'Notice Period: Immediate / Short Notice\n' +
+          'Direct Contact: hnain932@gmail.com | +91-9654994442 🚀';
       } else if (c === 'arch' || c === 'architecture') {
         resRow.innerHTML = '🏗️ DISTRIBUTED SYSTEMS ARCHITECTURE & TOPOLOGY:\n' +
           '  Client Tier:     React.js / Next.js (TanStack Query, -30% page load)\n' +
@@ -1783,10 +2091,6 @@ Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view av
       } else if (c === 'clear') {
         scr.innerHTML = '';
         return;
-      } else if (c === 'sudo hire' || c === 'hire') {
-        resRow.innerHTML = '<span style="color:#10e986;font-weight:900;">[ACCESS GRANTED]</span>\n' +
-          'Candidate Harshit Nain is strongly recommended for high-impact Full Stack and Backend Systems roles!\n' +
-          'Direct contact: hnain932@gmail.com / +91-9654994442 🚀';
       } else if (!c) {
         return;
       } else {
@@ -1798,6 +2102,196 @@ Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view av
 
     function escapeHtml(s) {
       return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    /* INTERACTIVE REQUEST PACKET SIMULATOR */
+    var simRunning = false;
+    var simScenarios = {
+      arc: {
+        method: "POST /api/v1/consent/grant",
+        protocol: "HTTP/1.3 -> gRPC -> Kafka -> Vault -> Postgres",
+        payload: {
+          data_principal_id: "dp_88291048",
+          purposes: ["analytics", "marketing_sms", "telemetry"],
+          timestamp: new Date().toISOString(),
+          signature: "ed25519_a8b9f029e18c..."
+        },
+        steps: [
+          { node: "client", status: "SENT", delay: 200, log: "Client emitted HTTPS POST request via Next.js TanStack hook." },
+          { node: "kong", status: "AUTH OK (+1.1ms)", delay: 350, log: "Kong Gateway: Bearer JWT verified. Token bucket rate limit checked (999/1000 remaining)." },
+          { node: "grpc", status: "PROCESSED (+3.2ms)", delay: 400, log: "Golang Microservice Core: gRPC ConsentService.Grant invoked via Protobuf v3. Model validated." },
+          { node: "bus", status: "EMITTED (+2.3ms)", delay: 350, log: "Kafka & NATS JetStream: Published event 'consent.granted.v1' to topic partition 2. Offset: 49120." },
+          { node: "data", status: "COMMITTED (+3.8ms)", delay: 450, log: "PostgreSQL 16: Append-only audit log persisted with ACID transaction. Redis TTL cache set to 86400s." }
+        ],
+        totalLatency: "10.4ms",
+        verdict: "HTTP 200 OK (P99 < 15ms target met)"
+      },
+      grc: {
+        method: "RPC GrcService.ProcessAuditLog",
+        protocol: "gRPC over HTTP/2 -> NATS JetStream -> PostgreSQL",
+        payload: {
+          audit_session_id: "grc_sess_90214",
+          tenant_id: "enterprise_corp_apac",
+          actor: "system_admin",
+          action: "POLICY_OVERRIDE_APPROVE",
+          severity: "HIGH"
+        },
+        steps: [
+          { node: "client", status: "SENT", delay: 200, log: "React Web Dashboard dispatched RPC action over secure WebSocket / HTTP2 channel." },
+          { node: "kong", status: "ROUTED (+0.9ms)", delay: 300, log: "Kong Gateway: gRPC routing plugin matched service 'grpc-grc-core'. TLS terminated." },
+          { node: "grpc", status: "RPC OK (+2.8ms)", delay: 400, log: "Golang Modular Monolith: GrcService.ProcessAuditLog executed with zero reflection overhead." },
+          { node: "bus", status: "STREAMED (+1.9ms)", delay: 350, log: "NATS JetStream: Stream 'GRC_AUDIT' acknowledged message with at-least-once delivery guarantee." },
+          { node: "data", status: "SAVED (+3.1ms)", delay: 400, log: "PostgreSQL 16: B-tree indexed audit entry written. Real-time stats emitted to 500+ WebSocket listeners." }
+        ],
+        totalLatency: "8.7ms",
+        verdict: "gRPC STATUS_OK (Latency -25% vs legacy REST)"
+      },
+      nhit: {
+        method: "POST /api/v1/nhit/reconcile-utr",
+        protocol: "TLS 1.3 Host-to-Host Banking API -> Golang Core -> PostgreSQL 16",
+        payload: {
+          disbursement_id: "nhit_disb_44901",
+          section: "194C_TDS",
+          bank_utr: "HDFC000192837482",
+          amount_inr: 4500000.00,
+          status: "RECONCILED"
+        },
+        steps: [
+          { node: "client", status: "SENT", delay: 200, log: "NHIT Admin Portal initiated automated banking settlement run." },
+          { node: "kong", status: "VERIFIED (+1.3ms)", delay: 350, log: "Kong Gateway: Mutual TLS handshake validated with banking partner gateway." },
+          { node: "grpc", status: "RECONCILED (+4.1ms)", delay: 450, log: "Golang Engine: Section 194C tax calculations verified against contractor master ledger." },
+          { node: "bus", status: "NOTIFIED (+2.0ms)", delay: 350, log: "Event Bus: Dispatched settlement notification to concessionaire webhook subscribers." },
+          { node: "data", status: "LOCKED (+4.4ms)", delay: 500, log: "PostgreSQL 16: Pessimistic row lock acquired. Balance ledger updated with zero transactional drift." }
+        ],
+        totalLatency: "11.8ms",
+        verdict: "HTTP 200 OK (<45ms NHIT SLA met)"
+      }
+    };
+
+    function resetSim() {
+      if (simRunning) return;
+      ['client', 'kong', 'grpc', 'bus', 'data'].forEach(function(n) {
+        var el = document.getElementById('sn-' + n);
+        var bd = document.getElementById('snb-' + n);
+        if (el) { el.classList.remove('active', 'done'); }
+        if (bd) { bd.textContent = n === 'client' ? 'IDLE' : 'WAITING'; }
+      });
+      for (var i = 1; i <= 4; i++) {
+        var w = document.getElementById('sw-' + i);
+        if (w) w.classList.remove('active');
+      }
+      document.getElementById('sm-lat').textContent = '-- ms';
+      document.getElementById('sm-status').textContent = 'READY';
+      document.getElementById('simTraceOutput').textContent = '// Ready. Click [ SEND PACKET TRACE ] to simulate end-to-end request lifecycle across Harshit\'s production microservices stack.';
+    }
+
+    function runPacketSimulator() {
+      if (simRunning) return;
+      simRunning = true;
+      var btn = document.getElementById('btnSim');
+      btn.disabled = true;
+      btn.textContent = '⏳ SIMULATING...';
+
+      var scKey = document.getElementById('simScenario').value;
+      var sc = simScenarios[scKey];
+      var traceLines = [
+        '==> INITIATING TRACE: ' + sc.method,
+        '==> Protocol: ' + sc.protocol,
+        '==> Request Payload: ' + JSON.stringify(sc.payload, null, 2),
+        '-------------------------------------------------------------'
+      ];
+      document.getElementById('simTraceOutput').textContent = traceLines.join('\n');
+      document.getElementById('sm-status').textContent = 'IN FLIGHT';
+
+      var stepIdx = 0;
+      var nodes = ['client', 'kong', 'grpc', 'bus', 'data'];
+
+      function executeStep() {
+        if (stepIdx >= sc.steps.length) {
+          document.getElementById('sm-lat').textContent = sc.totalLatency;
+          document.getElementById('sm-status').textContent = sc.verdict;
+          traceLines.push('-------------------------------------------------------------');
+          traceLines.push('==> TRACE COMPLETE: ' + sc.verdict + ' in ' + sc.totalLatency);
+          document.getElementById('simTraceOutput').textContent = traceLines.join('\n');
+          btn.disabled = false;
+          btn.innerHTML = '&#128640; SEND PACKET TRACE';
+          simRunning = false;
+          toast('Packet trace completed in ' + sc.totalLatency + '!');
+          if (sfxEnabled) playTone(987, 0.12);
+          return;
+        }
+
+        var st = sc.steps[stepIdx];
+        var nEl = document.getElementById('sn-' + st.node);
+        var nBd = document.getElementById('snb-' + st.node);
+
+        if (nEl) {
+          nEl.classList.add('active');
+        }
+        if (nBd) {
+          nBd.textContent = st.status;
+        }
+        if (stepIdx > 0) {
+          var wire = document.getElementById('sw-' + stepIdx);
+          if (wire) wire.classList.add('active');
+          var prevEl = document.getElementById('sn-' + nodes[stepIdx - 1]);
+          if (prevEl) {
+            prevEl.classList.remove('active');
+            prevEl.classList.add('done');
+          }
+        }
+
+        var freqs = [440, 554, 659, 784, 880];
+        if (sfxEnabled) playTone(freqs[stepIdx], 0.05);
+
+        traceLines.push('[HOP ' + (stepIdx + 1) + '] [' + st.node.toUpperCase() + '] ' + st.log);
+        document.getElementById('simTraceOutput').textContent = traceLines.join('\n');
+        var outBox = document.getElementById('simTraceOutput');
+        outBox.scrollTop = outBox.scrollHeight;
+
+        stepIdx++;
+        setTimeout(executeStep, st.delay);
+      }
+
+      executeStep();
+    }
+
+    function copyTraceLog() {
+      var txt = document.getElementById('simTraceOutput').textContent;
+      navigator.clipboard.writeText(txt).then(function() {
+        toast('Trace log copied to clipboard!');
+      });
+    }
+
+    /* RECRUITER MODAL HANDLERS */
+    function openRecruiterModal() {
+      document.getElementById('recruiterModal').classList.add('open');
+    }
+    function closeRecruiterModal() {
+      document.getElementById('recruiterModal').classList.remove('open');
+      playClick();
+    }
+
+    function toggleMatchTag(el, tag) {
+      el.classList.toggle('checked');
+      var all = document.querySelectorAll('#matchTagsContainer .match-tag');
+      var checked = document.querySelectorAll('#matchTagsContainer .match-tag.checked');
+      var pct = Math.round((checked.length / all.length) * 100);
+      document.getElementById('matchFill').style.width = pct + '%';
+      var badge = document.getElementById('matchScoreBadge');
+      var verd = document.getElementById('matchVerdict');
+      badge.textContent = pct + '% MATCH (' + checked.length + '/' + all.length + ')';
+      if (pct === 100) {
+        badge.style.color = 'var(--green)';
+        verd.innerHTML = '&#10004; Strong match: Harshit possesses verified production experience across all selected domains.';
+      } else if (pct >= 50) {
+        badge.style.color = 'var(--accent)';
+        verd.innerHTML = '&#10004; Excellent match (' + pct + '%): Core capabilities align closely with candidate profile.';
+      } else {
+        badge.style.color = 'var(--amber)';
+        verd.innerHTML = '&#8505; Filtered match (' + pct + '%). Harshit is also proficient in related backend & frontend ecosystems.';
+      }
+      playClick();
     }
 
     /* MODAL HANDLERS */
@@ -1825,13 +2319,13 @@ Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view av
       var c = document.getElementById('logContent');
       if (stage === 'FETCH') {
         t.textContent = 'STAGE 01 // TELEMETRY FETCH LOG';
-        c.textContent = '==> [INFO] Connecting to GitHub REST API...\n==> [INFO] User-Agent: HarshitNain-profile-generator\n==> [SUCCESS] Public Repos: 4, Followers: 1\n==> [SUCCESS] Languages Detected: Go, TypeScript, JavaScript, Python, HTML, CSS\n==> [CACHE] Telemetry cached to assets/.telemetry_cache.json (775 KB)\n==> Status: 200 OK';
+        c.textContent = '==> [INFO] Connecting to GitHub REST API...\n==> [INFO] User-Agent: HarshitNain-profile-generator\n==> [SUCCESS] Public Repos: 5, Followers: 1\n==> [SUCCESS] Languages Detected: Go, TypeScript, JavaScript, Python, HTML, CSS\n==> [CACHE] Telemetry cached to assets/.telemetry_cache.json\n==> Status: 200 OK';
       } else if (stage === 'RENDER') {
         t.textContent = 'STAGE 02 // SVG INSTRUMENT RENDER LOG';
-        c.textContent = '==> [RENDER] boot-dark.svg & boot-light.svg (10,533 B)\n==> [RENDER] hero-dark.svg & hero-light.svg (8,660 B)\n==> [RENDER] status-dark.svg & status-light.svg (23,692 B)\n==> [RENDER] domains-dark.svg & domains-light.svg (14,276 B)\n==> [RENDER] pulse-dark.svg & pulse-light.svg (15,912 B)\n==> [RENDER] timeline-dark.svg & timeline-light.svg (14,377 B)\n==> [RENDER] benchmarks-dark.svg & benchmarks-light.svg (9,715 B)\n==> [RENDER] pqc-clock-dark.svg & pqc-clock-light.svg (11,498 B)\n==> [RENDER] langmix-dark.svg & langmix-light.svg (8,317 B)\n==> [RENDER] research-dark.svg & research-light.svg (11,473 B)\n==> Total 20 custom instruments compiled successfully.';
+        c.textContent = '==> [RENDER] boot-dark.svg & boot-light.svg (11,683 B)\n==> [RENDER] hero-dark.svg & hero-light.svg (8,621 B)\n==> [RENDER] status-dark.svg & status-light.svg (27,625 B)\n==> [RENDER] architecture-dark.svg & architecture-light.svg (14,357 B)\n==> [RENDER] stack-dark.svg & stack-light.svg (14,084 B)\n==> [RENDER] domains-dark.svg & domains-light.svg (14,248 B)\n==> [RENDER] pulse-dark.svg & pulse-light.svg (15,918 B)\n==> [RENDER] timeline-dark.svg & timeline-light.svg (14,349 B)\n==> [RENDER] benchmarks-dark.svg & benchmarks-light.svg (9,631 B)\n==> [RENDER] pqc-clock-dark.svg & pqc-clock-light.svg (11,302 B)\n==> [RENDER] langmix-dark.svg & langmix-light.svg (8,512 B)\n==> [RENDER] research-dark.svg & research-light.svg (11,445 B)\n==> Total 24 custom instruments compiled successfully (12 dark, 12 light).';
       } else if (stage === 'VERIFY') {
         t.textContent = 'STAGE 03 // INSTRUMENT VERIFICATION LOG';
-        c.textContent = '==> Checking XML syntax on all SVGs... PASS\n==> Validating dark/light color tokens... PASS\n==> Checking SMIL animation nodes... PASS\n==> Zero third-party image host dependencies verified.\n==> Generated GITHUB_STEP_SUMMARY table.';
+        c.textContent = '==> Checking XML syntax on all 24 SVGs... PASS (0 XML errors)\n==> Validating dark/light color tokens... PASS\n==> Checking SMIL animation nodes... PASS\n==> Zero third-party image host dependencies verified.\n==> Generated GITHUB_STEP_SUMMARY table.';
       } else if (stage === 'COMMIT') {
         t.textContent = 'STAGE 04 // GIT COMMIT & REBASE LOG';
         c.textContent = '==> git config user.name "github-actions[bot]"\n==> git add assets/*.svg assets/.telemetry_cache.json\n==> git commit -m "chore: refresh profile dashboard assets [skip ci]"\n==> git pull --rebase origin main\n==> git push origin main [COMPLETED]';

@@ -581,6 +581,57 @@ def architecture(p, d):
 
 
 # ---------------------------------------------------------------------------
+# Instrument — Multi-Tier Production Stack Matrix
+# ---------------------------------------------------------------------------
+def stack(p, d):
+    W, H = 850, 360
+    idn = "k"
+    s = [frame(W, H, p, idn)]
+    s.append(corner_marks(W, H, p))
+    s.append(head(p, W, "05", "PRODUCTION STACK & INFRASTRUCTURE MATRIX",
+                  "multi-tier distributed system engineering — edge gateway, microservices core, event streaming & storage",
+                  "purple", live=True))
+
+    layers = [
+        ("EDGE GATEWAY & SECURITY", "Kong API Gateway · JWT Auth · Token Bucket Rate Limiting · TLS 1.3", "cyan",
+         [("Kong 3.6", "cyan"), ("JWT / HMAC", "blue"), ("Rate Limiter", "purple"), ("20+ APIs", "green")]),
+        ("MICROSERVICES ENGINE", "Golang gRPC Core · Protobuf v3 · Modular Monolith · P99 < 15ms Latency", "blue",
+         [("Golang 1.23+", "cyan"), ("gRPC / Proto", "blue"), ("Node / Express", "purple"), ("5+ Services", "green")]),
+        ("EVENT STREAMING BUS", "Apache Kafka & NATS JetStream · Asynchronous Pub/Sub · -25% Latency", "pink",
+         [("Apache Kafka", "pink"), ("NATS JetStream", "yellow"), ("Redis Pub/Sub", "orange"), ("At-Least-Once", "green")]),
+        ("PERSISTENCE & SECURITY", "PostgreSQL 16 ACID · Redis Cache · HashiCorp Vault · DPDP Act Compliance", "green",
+         [("PostgreSQL 16", "green"), ("Redis Cache", "pink"), ("HashiCorp Vault", "yellow"), ("Audit Proof", "cyan")]),
+        ("FRONTEND & TELEMETRY", "React.js · Next.js · TanStack Query · Real-time WebSockets · 500+ Sessions", "yellow",
+         [("React.js", "blue"), ("Next.js", "purple"), ("TanStack Query", "yellow"), ("500+ WS", "green")]),
+    ]
+
+    y0 = 84
+    lh = 50
+    gap = 4
+    for i, (title, sub, acc, pills) in enumerate(layers):
+        y = y0 + i * (lh + gap)
+        # Background card row
+        s.append(card(24, y, W - 48, lh, p, fill="card", accent=acc, dx=4, dy=4, rx=3))
+        # Layer title & subtitle
+        s.append(text(42, y + 21, title, size=11, fill="ink", weight=800, font=MONO, spacing=0.4, p=p))
+        s.append(text(42, y + 37, sub, size=9.2, fill="muted", weight=600, font=MONO, p=p))
+
+        # Right-aligned skill pills
+        px = W - 36
+        for pname, pacc in reversed(pills):
+            pw = len(pname) * 6.2 + 14
+            px -= pw
+            s.append(rect(px, y + 14, pw, 22, fill="page", rx=3, stroke=pacc, sw=1.2, p=p))
+            s.append(text(px + pw / 2, y + 29, pname, size=9, fill=pacc, weight=800, font=MONO, anchor="middle", p=p))
+            px -= 8
+
+    # Small animated telemetry beacon
+    s.append(f'<circle cx="28" cy="109" r="2.5" fill="{p["purple"]}"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>')
+    s.append("</svg>")
+    return "".join(s)
+
+
+# ---------------------------------------------------------------------------
 # Instrument 2 — domain radar + repo index (animated sweep)
 # ---------------------------------------------------------------------------
 def radar(p, d):
@@ -1356,6 +1407,7 @@ INSTRUMENTS = {
     "hero": hero,
     "status": status_board,
     "architecture": architecture,
+    "stack": stack,
     "domains": radar,
     "pulse": pulse,
     "timeline": timeline,
@@ -1399,7 +1451,7 @@ def main():
                 f.write("# ⚡ Harshit Nain — Profile Telemetry CI/CD Dashboard\n\n")
                 f.write("![Status](https://img.shields.io/badge/Pipeline-100%25_Operational-10e986?style=for-the-badge&logo=githubactions&logoColor=black) ")
                 f.write("![XML Verified](https://img.shields.io/badge/XML_Integrity-100%25_Valid-00f0ff?style=for-the-badge) ")
-                f.write("![Self-Hosted](https://img.shields.io/badge/Self--Hosted_SVGs-22_Instruments-ff2e88?style=for-the-badge)\n\n")
+                f.write("![Self-Hosted](https://img.shields.io/badge/Self--Hosted_SVGs-24_Instruments-ff2e88?style=for-the-badge)\n\n")
                 f.write("### 📊 Executive Telemetry Metrics\n\n")
                 f.write(f"- 🕒 **Generated At:** `{NOW.strftime('%Y-%m-%d %H:%M:%S UTC')}`\n")
                 f.write(f"- 👥 **Followers:** `{d['followers']}` | 📦 **Public Repos:** `{d['public_source_repos']}`\n")
