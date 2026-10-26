@@ -14,7 +14,7 @@
 [![Snake CI](https://github.com/HarshitNain/HarshitNain/actions/workflows/main.yml/badge.svg)](https://github.com/HarshitNain/HarshitNain/actions/workflows/main.yml)
 ![Pipeline Cadence](https://img.shields.io/badge/Cadence-Daily_06%3A17_UTC-00f0ff?style=flat-square&logo=githubactions&logoColor=black)
 ![Telemetry](https://img.shields.io/badge/Telemetry-100%25_Operational-10e986?style=flat-square&logo=prometheus&logoColor=black)
-[![Interactive Dashboard](https://img.shields.io/badge/Live_Dashboard-preview.html-ff2e88?style=flat-square&logo=html5&logoColor=white)](./preview.html)
+[![Live Mission Control](https://img.shields.io/badge/Live_Web_App-Launch_HN--OS-ff2e88?style=flat-square&logo=safari&logoColor=white)](https://harshitnain.github.io/HarshitNain/)
 
 <br>
 
@@ -44,7 +44,7 @@
 [![Direct Email](https://img.shields.io/badge/Email-hnain932%40gmail.com-ff2e88?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hnain932@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-harshit--nain-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/harshit-nain-62893177)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-%2B91--9654994442-25d366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/919654994442)
-[![Live Mission Control](https://img.shields.io/badge/Mission_Control-Launch_HN--OS-7928ca?style=for-the-badge&logo=safari&logoColor=white)](./preview.html)
+[![Live Mission Control](https://img.shields.io/badge/Mission_Control-Launch_HN--OS-7928ca?style=for-the-badge&logo=safari&logoColor=white)](https://harshitnain.github.io/HarshitNain/)
 
 </div>
 

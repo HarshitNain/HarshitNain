@@ -77,6 +77,10 @@ jobs:
           if [ -f assets/.telemetry_cache.json ]; then
             git add assets/.telemetry_cache.json || true
           fi
+          if [ -f preview.html ]; then
+            cp preview.html index.html
+            git add index.html || true
+          fi
           if git diff --staged --quiet; then
             echo "No asset changes detected."
           else

@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshit Nain — Full Stack Developer &amp; Distributed Systems Architect</title>
+  <meta name="description" content="Interactive cyber-HUD portfolio and live GitHub telemetry dashboard for Harshit Nain, Full Stack Developer specializing in Golang, Node.js, React.js, Next.js, and Microservices.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --bg2: #080e1e;
+      --surface: rgba(13, 22, 44, 0.78);
+      --surface2: rgba(10, 17, 34, 0.94);
+      --surface-hover: rgba(24, 38, 72, 0.88);
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(255, 255, 255, 0.09);
+      --ink: #f1f5f9;
+      --ink2: #94a3b8;
+      --ink3: #475569;
+      --accent: #00f0ff;
+      --accent2: #ff2e88;
+      --accent3: #a855f7;
+      --green: #10e986;
+      --amber: #f59e0b;
+      --blue: #3b82f6;
+      --red: #f43f5e;
+      --border: rgba(0, 240, 255, 0.15);
+      --glow-c: 0 0 24px rgba(0, 240, 255, 0.22), 0 0 60px rgba(0, 240, 255, 0.06);
+      --glow-p: 0 0 24px rgba(255, 46, 136, 0.22), 0 0 60px rgba(255, 46, 136, 0.06);
+      --glow-v: 0 0 24px rgba(168, 85, 247, 0.28), 0 0 60px rgba(168, 85, 247, 0.08);
+      --glow-g: 0 0 24px rgba(16, 233, 134, 0.28), 0 0 60px rgba(16, 233, 134, 0.08);
+      --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --r: 12px;
+      --rs: 8px;
+    }
+
+    body.light {
+      --bg: #f8fafc;
+      --bg2: #f1f5f9;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface2: rgba(248, 250, 252, 0.98);
+      --surface-hover: rgba(241, 245, 249, 0.98);
+      --glass: rgba(0, 0, 0, 0.03);
+      --glass-border: rgba(0, 0, 0, 0.1);
+      --ink: #0f172a;
+      --ink2: #475569;
+      --ink3: #94a3b8;
+      --accent: #0284c7;
+      --accent2: #e11d48;
+      --accent3: #7c3aed;
+      --green: #059669;
+      --amber: #d97706;
+      --blue: #2563eb;
+      --red: #dc2626;
+      --border: rgba(2, 132, 199, 0.24);
+      --glow-c: 0 0 16px rgba(2, 132, 199, 0.15);
+      --glow-p: 0 0 16px rgba(225, 29, 72, 0.15);
+      --glow-v: 0 0 16px rgba(124, 58, 237, 0.15);
+      --glow-g: 0 0 16px rgba(5, 150, 105, 0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background FX */
+    .bg-grid {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.32;
+    }
+    .bg-radial {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 65% 50% at 8% 12%, rgba(0, 240, 255, 0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse 55% 60% at 92% 88%, rgba(168, 85, 247, 0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse 40% 40% at 50% 50%, rgba(255, 46, 136, 0.04) 0%, transparent 70%);
+    }
+    #bgc { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+    /* Layout */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px 90px;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 13px 28px;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(20px) saturate(1.6);
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+    body.light .topbar { background: rgba(248, 250, 252, 0.94); }
+
+    .tb-brand { display: flex; align-items: center; gap: 13px; text-decoration: none; color: inherit; }
+    .tb-logo {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-weight: 800; font-size: 14px; color: #000;
+      flex-shrink: 0; box-shadow: var(--glow-c);
+    }
+    .tb-meta { display: flex; flex-direction: column; }
+    .tb-title { font-family: var(--mono); font-size: 0.82rem; font-weight: 700; color: var(--ink); letter-spacing: 0.06em; }
+    .tb-title strong { color: var(--accent); }
+    .tb-sub { font-size: 0.65rem; color: var(--ink2); font-weight: 500; }
+
+    .tb-acts { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: var(--rs);
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+      cursor: pointer; border: none; outline: none; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .btn-ghost {
+      background: var(--glass); border: 1px solid var(--glass-border); color: var(--ink2);
+    }
+    .btn-ghost:hover {
+      background: rgba(0, 240, 255, 0.08); border-color: var(--accent); color: var(--accent); box-shadow: var(--glow-c);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
+      border: 1px solid var(--accent); color: var(--accent); box-shadow: var(--glow-c);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.26), rgba(168, 85, 247, 0.26));
+      transform: translateY(-1px); box-shadow: 0 0 32px rgba(0, 240, 255, 0.35);
+    }
+    .btn-cv {
+      background: linear-gradient(135deg, rgba(16, 233, 134, 0.15), rgba(0, 240, 255, 0.15));
+      border: 1px solid var(--green); color: var(--green); box-shadow: var(--glow-g);
+    }
+    .btn-cv:hover {
+      background: linear-gradient(135deg, rgba(16, 233, 134, 0.25), rgba(0, 240, 255, 0.25));
+      transform: translateY(-1px); box-shadow: 0 0 32px rgba(16, 233, 134, 0.35);
+    }
+
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-live { background: var(--green); animation: pdot 2s ease-in-out infinite; box-shadow: 0 0 8px var(--green); }
+    @keyframes pdot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.7); } }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: center;
+      padding: 56px 0 38px;
+    }
+    @media(max-width: 768px) { .hero { grid-template-columns: 1fr; } }
+
+    .hero-kick {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+      color: var(--accent); display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .hero-kick::before {
+      content: ''; display: block; width: 32px; height: 2px;
+      background: var(--accent); box-shadow: var(--glow-c);
+    }
+    .hero-name {
+      font-size: clamp(2.3rem, 5.5vw, 3.8rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.035em;
+      background: linear-gradient(135deg, var(--ink) 10%, var(--accent) 55%, var(--accent3) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 12px;
+    }
+    .hero-role {
+      font-size: 1.08rem; font-weight: 600; color: var(--accent2); margin-bottom: 12px;
+      font-family: var(--mono); letter-spacing: 0.02em;
+    }
+    .hero-sub {
+      font-size: 0.92rem; color: var(--ink2); line-height: 1.74; max-width: 670px;
+    }
+
+    /* CONTACT CHIPS */
+    .contact-bar {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center;
+    }
+    .cchip {
+      display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: var(--rs);
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 600; text-decoration: none;
+      background: var(--surface); border: 1px solid var(--glass-border); color: var(--ink2);
+      transition: all 0.2s;
+    }
+    .cchip:hover {
+      border-color: var(--accent); color: var(--accent); background: rgba(0, 240, 255, 0.06);
+      transform: translateY(-1px);
+    }
+
+    /* TECH CHIPS */
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 100px;
+      font-family: var(--mono); font-size: 0.69rem; font-weight: 600;
+      border: 1px solid var(--border); background: var(--glass); color: var(--ink2);
+      letter-spacing: 0.03em; transition: all 0.2s; cursor: default;
+    }
+    .chip:hover {
+      border-color: var(--accent); color: var(--accent); background: rgba(0, 240, 255, 0.08);
+      box-shadow: var(--glow-c); transform: translateY(-1px);
+    }
+    .chip.lead {
+      border-color: rgba(0, 240, 255, 0.35); background: rgba(0, 240, 255, 0.08); color: var(--accent);
+    }
+
+    /* KPI STATS */
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 28px;
+      background: var(--border); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
+    }
+    @media(max-width: 680px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
+    .hstat {
+      background: var(--surface2); padding: 16px 14px; text-align: center;
+      transition: background 0.2s;
+    }
+    .hstat:hover { background: var(--surface-hover); }
+    .hstat-v {
+      font-family: var(--mono); font-size: 1.45rem; font-weight: 800; color: var(--accent); display: block;
+    }
+    .hstat-l {
+      font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; color: var(--ink3);
+      text-transform: uppercase; margin-top: 4px;
+    }
+    .hstat-d { font-size: 0.68rem; color: var(--ink2); margin-top: 4px; }
+
+    /* AVATAR RING */
+    .hero-av { position: relative; width: 165px; height: 165px; flex-shrink: 0; }
+    @media(max-width: 768px) { .hero-av { display: none; } }
+    .av-ring {
+      position: absolute; inset: -8px; border-radius: 50%;
+      background: conic-gradient(var(--accent), var(--accent3), var(--accent2), var(--green), var(--accent));
+      animation: spin 7s linear infinite;
+    }
+    .av-ring::before { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: var(--bg); }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .av-in {
+      position: absolute; inset: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, #0d1e3d, #1f0b35);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 1; border: 2px solid var(--border); text-align: center;
+    }
+    .av-initials { font-family: var(--mono); font-size: 2.3rem; font-weight: 900; color: var(--accent); line-height: 1; }
+    .av-tag { font-family: var(--mono); font-size: 0.58rem; color: var(--green); font-weight: 700; letter-spacing: 0.1em; margin-top: 4px; }
+
+    /* PIPELINE BAR */
+    .pipe {
+      position: relative; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 16px 22px; display: flex; align-items: center; gap: 16px; overflow: hidden; margin-bottom: 30px;
+    }
+    .pipe::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3), var(--accent2), var(--green));
+      animation: pscan 3s linear infinite;
+    }
+    @keyframes pscan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    .pipe-lbl {
+      font-family: var(--mono); font-size: 0.68rem; color: var(--accent); letter-spacing: 0.12em;
+      flex-shrink: 0; font-weight: 800; display: flex; align-items: center; gap: 5px;
+    }
+    .pipe-stages { display: flex; align-items: center; gap: 5px; flex: 1; min-width: 0; flex-wrap: wrap; }
+    .pstage {
+      display: flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: var(--rs);
+      font-family: var(--mono); font-size: 0.67rem; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .pstage:hover { transform: translateY(-1px); }
+    .pstage.pass { color: var(--green); background: rgba(16, 233, 134, 0.09); border: 1px solid rgba(16, 233, 134, 0.25); }
+    .pstage.run {
+      color: var(--accent); background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.35);
+      animation: srun 2s ease-in-out infinite;
+    }
+    @keyframes srun { 0%, 100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4); } 50% { box-shadow: 0 0 0 5px rgba(0, 240, 255, 0); } }
+    .pstage.que { color: var(--ink3); background: var(--glass); border: 1px solid var(--glass-border); }
+    .parr { color: var(--ink3); font-size: 0.78rem; margin: 0 2px; flex-shrink: 0; }
+    .pipe-time { font-family: var(--mono); font-size: 0.68rem; color: var(--accent2); flex-shrink: 0; margin-left: auto; font-weight: 700; }
+
+    /* TAB NAV */
+    .tab-nav {
+      display: flex; gap: 5px; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 6px; margin-bottom: 24px; overflow-x: auto;
+    }
+    .tab-btn {
+      flex: 1; min-width: fit-content; padding: 9px 15px; border-radius: var(--rs);
+      font-family: var(--mono); font-size: 0.71rem; font-weight: 700; letter-spacing: 0.05em;
+      cursor: pointer; border: none; outline: none; background: transparent; color: var(--ink3);
+      transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 7px; white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
+      color: var(--accent); border: 1px solid rgba(0, 240, 255, 0.3); box-shadow: var(--glow-c);
+    }
+    .tab-btn:hover:not(.active) { background: var(--glass); color: var(--ink); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* SECTION */
+    .sec { margin-bottom: 46px; }
+    .sec-hdr { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
+    .sec-num {
+      font-family: var(--mono); font-size: 0.65rem; font-weight: 800; color: var(--accent);
+      letter-spacing: 0.15em; background: rgba(0, 240, 255, 0.09); border: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 3px 8px; border-radius: 4px;
+    }
+    .sec-ttl {
+      font-family: var(--mono); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.14em;
+      color: var(--ink2); text-transform: uppercase;
+    }
+    .sec-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+    /* SEARCH FILTER BAR */
+    .search-bar {
+      display: flex; gap: 12px; margin-bottom: 18px; align-items: center;
+    }
+    .search-input {
+      flex: 1; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--rs);
+      padding: 8px 14px; font-family: var(--mono); font-size: 0.74rem; color: var(--ink); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input:focus { border-color: var(--accent); box-shadow: var(--glow-c); }
+
+    /* SVG CARDS */
+    .svg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 20px; }
+    @media(max-width: 520px) { .svg-grid { grid-template-columns: 1fr; } }
+    .scard {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--r);
+      overflow: hidden; backdrop-filter: blur(14px); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative;
+    }
+    .scard::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.04) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+    .scard:hover {
+      transform: translateY(-4px); border-color: rgba(0, 240, 255, 0.35);
+      box-shadow: var(--glow-c), 0 20px 40px rgba(0, 0, 0, 0.45);
+    }
+    .scard-hdr {
+      position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px 10px; border-bottom: 1px solid var(--glass-border); background: rgba(0, 0, 0, 0.25);
+    }
+    body.light .scard-hdr { background: rgba(0, 0, 0, 0.04); }
+    .scard-id { font-family: var(--mono); font-size: 0.66rem; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .scard-st { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 0.62rem; font-weight: 700; color: var(--green); }
+    .scard-body { position: relative; z-index: 1; padding: 12px; cursor: zoom-in; }
+    .scard-body img { width: 100%; height: auto; display: block; border-radius: 6px; transition: filter 0.2s; }
+    .scard-body img:hover { filter: brightness(1.06); }
+    .scard-ft {
+      position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 16px; font-family: var(--mono); font-size: 0.62rem; color: var(--ink3);
+      border-top: 1px solid var(--glass-border);
+    }
+    .scard-ft-action { color: var(--accent); font-weight: 700; text-decoration: none; cursor: pointer; }
+    .scard-ft-action:hover { text-decoration: underline; }
+    .fw { grid-column: 1 / -1; }
+
+    /* EXPERIENCE ROLES CARDS */
+    .exp-card {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--r);
+      padding: 24px; margin-bottom: 20px; position: relative; overflow: hidden;
+      backdrop-filter: blur(14px); transition: all 0.25s;
+    }
+    .exp-card::after {
+      content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent3));
+    }
+    .exp-card:hover {
+      border-color: rgba(0, 240, 255, 0.3); transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), var(--glow-c);
+    }
+    .exp-hdr {
+      display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;
+      margin-bottom: 14px;
+    }
+    .exp-role { font-size: 1.15rem; font-weight: 800; color: var(--ink); }
+    .exp-company {
+      font-size: 0.88rem; font-weight: 600; color: var(--accent); margin-top: 3px; font-family: var(--mono);
+    }
+    .exp-period {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--accent2);
+      padding: 4px 10px; border-radius: 4px; background: rgba(255, 46, 136, 0.1); border: 1px solid rgba(255, 46, 136, 0.25);
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .exp-bullet {
+      position: relative; padding-left: 20px; font-size: 0.84rem; color: var(--ink2); line-height: 1.68;
+    }
+    .exp-bullet::before {
+      content: '▹'; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 900;
+    }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+
+    /* PROJECTS CARDS */
+    .proj-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .pfilter-btn {
+      padding: 6px 14px; border-radius: 100px; font-family: var(--mono); font-size: 0.68rem; font-weight: 700;
+      border: 1px solid var(--border); background: var(--glass); color: var(--ink2); cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pfilter-btn.active, .pfilter-btn:hover {
+      background: rgba(0, 240, 255, 0.12); border-color: var(--accent); color: var(--accent);
+    }
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+    .pcard {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--r);
+      padding: 22px; backdrop-filter: blur(14px); transition: all 0.25s; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .pcard::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--c1), var(--c2)); opacity: 0.85;
+    }
+    .pcard:hover {
+      transform: translateY(-4px); border-color: rgba(0, 240, 255, 0.3);
+      box-shadow: 0 20px 42px rgba(0, 0, 0, 0.4), var(--glow-c);
+    }
+    .pdom { font-family: var(--mono); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; margin-bottom: 8px; text-transform: uppercase; }
+    .pname { font-size: 1.02rem; font-weight: 800; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+    .pblurb { font-size: 0.81rem; color: var(--ink2); line-height: 1.68; margin-bottom: 16px; flex: 1; }
+    .pmeta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .lbadge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 0.65rem; font-weight: 600; color: var(--ink2); }
+    .ldot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .tbadge {
+      font-family: var(--mono); font-size: 0.62rem; font-weight: 800; padding: 2px 7px; border-radius: 4px;
+      background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.25); color: var(--accent);
+    }
+    .pvtbadge {
+      font-family: var(--mono); font-size: 0.6rem; font-weight: 700; padding: 2px 6px; border-radius: 3px;
+      background: rgba(168, 85, 247, 0.12); border: 1px solid rgba(168, 85, 247, 0.3); color: var(--accent3);
+    }
+
+    /* ARCHITECTURE DIAGRAMS */
+    .arch-card {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 22px; margin-bottom: 22px; position: relative; overflow: hidden;
+    }
+    .arch-title { font-size: 1.05rem; font-weight: 800; color: var(--accent); margin-bottom: 6px; font-family: var(--mono); }
+    .arch-sub { font-size: 0.78rem; color: var(--ink2); margin-bottom: 14px; }
+    .arch-diagram {
+      background: #02050e; border: 1px solid rgba(0, 240, 255, 0.2); border-radius: var(--rs);
+      padding: 16px; font-family: var(--mono); font-size: 0.72rem; color: #00f0ff; overflow-x: auto;
+      line-height: 1.45; white-space: pre; margin-bottom: 14px;
+    }
+    body.light .arch-diagram { background: #0f172a; color: #38bdf8; }
+
+    /* INTERACTIVE TERMINAL */
+    .term-box {
+      background: #010409; border: 1px solid var(--accent); border-radius: var(--r);
+      overflow: hidden; box-shadow: var(--glow-c); font-family: var(--mono);
+    }
+    .term-header {
+      background: #0d1117; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.72rem; color: var(--ink2);
+    }
+    .term-dots { display: flex; gap: 6px; }
+    .term-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .td-red { background: #ff5f56; } .td-yellow { background: #ffbd2e; } .td-green { background: #27c93f; }
+    .term-screen {
+      padding: 16px; min-height: 280px; max-height: 380px; overflow-y: auto; color: #f1f5f9; font-size: 0.75rem;
+      line-height: 1.6;
+    }
+    .term-out { margin-bottom: 10px; white-space: pre-wrap; }
+    .term-input-row { display: flex; align-items: center; gap: 8px; }
+    .term-prompt { color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .term-cli {
+      flex: 1; background: transparent; border: none; outline: none; color: var(--accent);
+      font-family: var(--mono); font-size: 0.75rem; font-weight: 700;
+    }
+
+    /* SKILLS CATEGORIES */
+    .sk-cat { margin-bottom: 24px; }
+    .sk-cat-ttl {
+      font-family: var(--mono); font-size: 0.76rem; font-weight: 800; color: var(--accent);
+      letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .sk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 11px; }
+    .sk-card {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--rs);
+      padding: 14px 12px; text-align: center; transition: all 0.2s; backdrop-filter: blur(10px); cursor: default;
+    }
+    .sk-card:hover {
+      border-color: var(--accent); background: rgba(0, 240, 255, 0.08);
+      transform: translateY(-2px); box-shadow: var(--glow-c);
+    }
+    .sk-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .sk-name { font-family: var(--mono); font-size: 0.69rem; font-weight: 700; color: var(--ink); letter-spacing: 0.04em; }
+    .sk-bar { margin-top: 8px; height: 3px; background: var(--glass-border); border-radius: 100px; overflow: hidden; }
+    .sk-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--accent), var(--accent3)); box-shadow: 0 0 8px var(--accent); }
+
+    /* CERTIFICATIONS & EDUCATION */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-bottom: 26px; }
+    .ccard {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--r);
+      padding: 18px; backdrop-filter: blur(12px); transition: all 0.2s; position: relative;
+    }
+    .ccard:hover {
+      border-color: var(--green); box-shadow: var(--glow-g); transform: translateY(-2px);
+    }
+    .cbadge { font-family: var(--mono); font-size: 0.6rem; font-weight: 800; color: var(--green); letter-spacing: 0.08em; margin-bottom: 6px; }
+    .ctitle { font-size: 0.92rem; font-weight: 700; color: var(--ink); line-height: 1.35; margin-bottom: 6px; }
+    .corg { font-size: 0.74rem; color: var(--ink2); }
+
+    /* TIMELINE */
+    .tl { position: relative; padding-left: 28px; }
+    .tl::before {
+      content: ''; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent3), var(--accent2), var(--green));
+    }
+    .tl-item { position: relative; margin-bottom: 24px; }
+    .tl-dot {
+      position: absolute; left: -24px; top: 5px; width: 14px; height: 14px; border-radius: 50%;
+      border: 2px solid var(--accent); background: var(--bg); box-shadow: 0 0 10px var(--accent);
+    }
+    .tl-date { font-family: var(--mono); font-size: 0.66rem; font-weight: 800; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 4px; }
+    .tl-lbl { font-size: 0.94rem; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+    .tl-sub { font-size: 0.8rem; color: var(--ink2); line-height: 1.58; }
+
+    /* BENCHMARKS */
+    .bk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 15px; }
+    .bcard {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--r);
+      padding: 20px; backdrop-filter: blur(14px); transition: all 0.25s;
+    }
+    .bcard:hover { border-color: var(--accent); box-shadow: var(--glow-c); transform: translateY(-3px); }
+    .bval { font-family: var(--mono); font-size: 1.85rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .bmet { font-size: 0.8rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .brepo { font-family: var(--mono); font-size: 0.65rem; color: var(--accent2); margin-bottom: 10px; letter-spacing: 0.04em; }
+    .bdet { font-size: 0.75rem; color: var(--ink2); line-height: 1.52; margin-bottom: 12px; }
+    .bbar { height: 4px; border-radius: 100px; background: var(--glass-border); overflow: hidden; }
+    .bfill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--accent), var(--accent3)); box-shadow: 0 0 10px var(--accent); }
+    .benv { font-family: var(--mono); font-size: 0.61rem; color: var(--ink3); margin-top: 8px; }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.84); backdrop-filter: blur(9px);
+      display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-card {
+      background: var(--surface2); border: 1px solid var(--accent); border-radius: var(--r);
+      width: 100%; max-width: 900px; max-height: 90vh; overflow-y: auto; padding: 28px;
+      box-shadow: var(--glow-c); position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 18px; right: 20px; background: transparent; border: none;
+      font-size: 1.5rem; color: var(--ink2); cursor: pointer;
+    }
+    .modal-close:hover { color: var(--accent); }
+
+    /* CONTACT BANNER */
+    .contact {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 26px 30px; backdrop-filter: blur(14px); display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 18px; position: relative; overflow: hidden;
+    }
+    .contact::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(168, 85, 247, 0.05)); pointer-events: none;
+    }
+    .ct-info { display: flex; flex-direction: column; gap: 5px; position: relative; }
+    .ct-name { font-size: 1.15rem; font-weight: 900; color: var(--ink); }
+    .ct-role { font-size: 0.83rem; color: var(--accent2); font-weight: 600; font-family: var(--mono); }
+    .ct-links { display: flex; gap: 10px; flex-wrap: wrap; position: relative; }
+
+    /* FOOTER */
+    .footer { text-align: center; padding: 42px 0 0; border-top: 1px solid var(--border); margin-top: 42px; }
+    .footer-txt { font-family: var(--mono); font-size: 0.7rem; color: var(--ink3); line-height: 1.85; letter-spacing: 0.04em; }
+    .footer-badge {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+      padding: 6px 16px; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border);
+      font-family: var(--mono); font-size: 0.65rem; color: var(--ink3);
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed; bottom: 24px; right: 24px; z-index: 1100;
+      background: var(--surface2); border: 1px solid var(--accent); border-radius: var(--r);
+      padding: 12px 20px; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--accent);
+      box-shadow: var(--glow-c); transform: translateY(80px); opacity: 0; transition: all 0.3s;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 100px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* REQUEST PACKET SIMULATOR */
+    .sim-card {
+      background: var(--surface2); border: 1px solid var(--accent); border-radius: var(--r);
+      padding: 24px; margin-bottom: 24px; box-shadow: var(--glow-c); position: relative; overflow: hidden;
+    }
+    .sim-header {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+      margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 14px;
+    }
+    .sim-title {
+      display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.85rem;
+      font-weight: 800; color: var(--accent); letter-spacing: 0.06em;
+    }
+    .sim-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .sim-select {
+      background: var(--bg); border: 1px solid var(--border); color: var(--ink); border-radius: var(--rs);
+      padding: 8px 14px; font-family: var(--mono); font-size: 0.74rem; outline: none; cursor: pointer;
+    }
+    .sim-select:focus { border-color: var(--accent); }
+    .sim-pipeline {
+      display: flex; align-items: center; justify-content: space-between; position: relative;
+      padding: 16px 0; margin-bottom: 20px; overflow-x: auto; gap: 8px;
+    }
+    .sim-node {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--rs);
+      padding: 14px 12px; min-width: 130px; text-align: center; position: relative; z-index: 2;
+      transition: all 0.3s;
+    }
+    .sim-node.active {
+      border-color: var(--accent); box-shadow: var(--glow-c); transform: translateY(-3px) scale(1.02);
+      background: var(--surface-hover);
+    }
+    .sim-node.done { border-color: var(--green); box-shadow: var(--glow-g); }
+    .sn-icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .sn-label { font-family: var(--mono); font-size: 0.72rem; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .sn-tech { font-size: 0.65rem; color: var(--ink2); margin: 4px 0 8px; }
+    .sn-badge {
+      display: inline-block; font-family: var(--mono); font-size: 0.58rem; font-weight: 800;
+      padding: 2px 6px; border-radius: 4px; background: var(--glass); color: var(--ink3); letter-spacing: 0.06em;
+    }
+    .sim-node.active .sn-badge { background: rgba(0, 240, 255, 0.18); color: var(--accent); }
+    .sim-node.done .sn-badge { background: rgba(16, 233, 134, 0.18); color: var(--green); }
+    .sim-wire {
+      flex: 1; height: 3px; background: var(--glass-border); position: relative; min-width: 24px;
+    }
+    .sim-wire.active { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .sim-pulse {
+      position: absolute; top: -4px; width: 11px; height: 11px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 10px var(--accent); display: none;
+    }
+    .sim-wire.active .sim-pulse { display: block; animation: wireTravel 0.6s linear infinite; }
+    @keyframes wireTravel {
+      0% { left: 0%; opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { left: 100%; opacity: 0; }
+    }
+    .sim-metrics {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 16px;
+    }
+    .sm-item {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--rs);
+      padding: 10px 14px;
+    }
+    .sm-lbl { font-family: var(--mono); font-size: 0.62rem; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+    .sm-val { font-family: var(--mono); font-size: 0.95rem; font-weight: 800; color: var(--accent); }
+    .sim-trace-box {
+      background: #000; border: 1px solid var(--border); border-radius: var(--rs); padding: 14px;
+    }
+    .sim-trace-header {
+      display: flex; align-items: center; justify-content: space-between; font-family: var(--mono);
+      font-size: 0.68rem; color: var(--ink2); margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 6px;
+    }
+    #simTraceOutput {
+      font-family: var(--mono); font-size: 0.72rem; color: #10e986; line-height: 1.6;
+      white-space: pre-wrap; word-break: break-all; max-height: 220px; overflow-y: auto; margin: 0;
+    }
+
+    /* RECRUITER HUD & MATCH CHECKLIST */
+    .recruiter-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;
+    }
+    .rec-box {
+      background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--rs);
+      padding: 16px;
+    }
+    .rec-box-ttl {
+      font-family: var(--mono); font-size: 0.75rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .match-tag {
+      display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; margin: 3px;
+      border-radius: 4px; font-family: var(--mono); font-size: 0.68rem; cursor: pointer;
+      background: var(--glass); border: 1px solid var(--glass-border); color: var(--ink2);
+      transition: all 0.2s; user-select: none;
+    }
+    .match-tag.checked {
+      background: rgba(16, 233, 134, 0.15); border-color: var(--green); color: var(--green); font-weight: 700;
+    }
+    .match-score-bar {
+      height: 6px; background: var(--glass-border); border-radius: 100px; overflow: hidden; margin: 10px 0;
+    }
+    .match-score-fill {
+      height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); border-radius: 100px;
+      width: 100%; transition: width 0.4s;
+    }
+  </style>
+</head>
+<body id="body">
+  <div class="bg-grid"></div>
+  <div class="bg-radial"></div>
+  <canvas id="bgc"></canvas>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <span class="dot dot-live"></span>
+    <span id="toast-msg">Assets Refreshed</span>
+  </div>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a class="tb-brand" href="#hero" onclick="playClick()">
+      <div class="tb-logo">HN</div>
+      <div class="tb-meta">
+        <div class="tb-title"><strong>HARSHIT NAIN</strong> // profile-telemetry</div>
+        <div class="tb-sub">Full Stack Developer &middot; Distributed Systems &middot; Microservices</div>
+      </div>
+    </a>
+    <div class="tb-acts">
+      <div class="dot dot-live"></div>
+      <span style="font-family:var(--mono);font-size:0.65rem;color:var(--green);font-weight:800;letter-spacing:0.08em;margin-right:4px;">OPEN TO ROLES</span>
+      <button class="btn btn-cv" onclick="openRecruiterModal();playClick();" style="border-color:var(--accent);box-shadow:var(--glow-c);">&#128084; RECRUITER HUD</button>
+      <button class="btn btn-ghost" onclick="openResumeModal();playClick();">&#128196; CV</button>
+      <button class="btn btn-ghost" id="sfxBtn" onclick="toggleSfx()">&#128263; SFX OFF</button>
+      <button class="btn btn-ghost" id="themeBtn" onclick="toggleTheme()">&#9728; LIGHT</button>
+      <button class="btn btn-primary" onclick="refreshAssets()">&#8635; REFRESH</button>
+    </div>
+  </header>
+
+  <div class="wrap" id="hero">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-kick">RNR Consulting &middot; Full Stack &amp; Distributed Systems</div>
+        <h1 class="hero-name">Harshit Nain</h1>
+        <div class="hero-role">Golang &middot; Node.js &middot; React.js &middot; Next.js &middot; Microservices</div>
+        <p class="hero-sub">
+          Full Stack Developer with 1.4+ years of production engineering experience architecting scalable backend microservices, event-driven distributed systems, and responsive modern frontend platforms. Proven impact reducing inter-service latency by 25% with Kafka/NATS JetStream and boosting page performance by 30% with TanStack Query.
+        </p>
+
+        <!-- CONTACT BAR -->
+        <div class="contact-bar">
+          <a class="cchip" href="mailto:hnain932@gmail.com" onclick="playClick()">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hnain932@gmail.com
+          </a>
+          <a class="cchip" href="tel:+919654994442" onclick="playClick()">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91-9654994442
+          </a>
+          <a class="cchip" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener" onclick="playClick()">
+            <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+          <a class="cchip" href="https://github.com/HarshitNain" target="_blank" rel="noopener" onclick="playClick()">
+            <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <span class="cchip">&#127470;&#127475; India</span>
+        </div>
+
+        <!-- TECH CHIPS -->
+        <div class="hero-chips">
+          <span class="chip lead">&#128309; Golang (gRPC/Protobuf)</span>
+          <span class="chip lead">&#9883; React.js &amp; Next.js</span>
+          <span class="chip lead">&#129001; Node.js &amp; Express</span>
+          <span class="chip">&#9889; Kafka &amp; NATS JetStream</span>
+          <span class="chip">&#128260; Redux Toolkit &amp; TanStack Query</span>
+          <span class="chip">&#128024; PostgreSQL &amp; Redis</span>
+          <span class="chip">&#128737; Kong API Gateway &amp; JWT</span>
+          <span class="chip">&#9729; AWS Certified</span>
+          <span class="chip">&#128009; Docker &amp; Kubernetes</span>
+        </div>
+
+        <!-- KPI STATS -->
+        <div class="hero-stats">
+          <div class="hstat">
+            <span class="hstat-v" id="kpi-lat">-25%</span>
+            <div class="hstat-l">Latency Cut</div>
+            <div class="hstat-d">Kafka &amp; NATS JetStream</div>
+          </div>
+          <div class="hstat">
+            <span class="hstat-v" id="kpi-load">-30%</span>
+            <div class="hstat-l">Page Load Speedup</div>
+            <div class="hstat-d">TanStack Query Cache</div>
+          </div>
+          <div class="hstat">
+            <span class="hstat-v" id="kpi-ws">500+</span>
+            <div class="hstat-l">Live Sessions</div>
+            <div class="hstat-d">Real-time WebSockets</div>
+          </div>
+          <div class="hstat">
+            <span class="hstat-v" id="kpi-apis">20+</span>
+            <div class="hstat-l">Protected APIs</div>
+            <div class="hstat-d">Kong Gateway &amp; JWT</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVATAR -->
+      <div class="hero-av">
+        <div class="av-ring"></div>
+        <div class="av-in">
+          <div class="av-initials">HN</div>
+          <div class="av-tag">&#9679; ONLINE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIPELINE BAR -->
+    <div class="pipe">
+      <span class="pipe-lbl">&#9658; CI/CD TELEMETRY</span>
+      <div class="pipe-stages">
+        <span class="pstage pass" onclick="showPipelineLog('FETCH');playClick();">&#10003; 01: TELEMETRY FETCH</span>
+        <span class="parr">&rarr;</span>
+        <span class="pstage pass" onclick="showPipelineLog('RENDER');playClick();">&#10003; 02: RENDER 20 SVGs</span>
+        <span class="parr">&rarr;</span>
+        <span class="pstage pass" onclick="showPipelineLog('VERIFY');playClick();">&#10003; 03: VERIFY INSTRUMENTS</span>
+        <span class="parr">&rarr;</span>
+        <span class="pstage run" onclick="showPipelineLog('COMMIT');playClick();">&#8987; 04: GIT REBASE &amp; PUSH</span>
+        <span class="parr">&rarr;</span>
+        <span class="pstage que" onclick="showPipelineLog('SNAKE');playClick();">&#9675; 05: SNAKE ANIMATION</span>
+      </div>
+      <span class="pipe-time" id="clock">--:--:-- IST</span>
+    </div>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" onclick="tab('dash',this)">&#128202; DASHBOARD (SVGs)</button>
+      <button class="tab-btn" onclick="tab('exp',this)">&#128188; EXPERIENCE</button>
+      <button class="tab-btn" onclick="tab('proj',this)">&#128193; KEY PROJECTS</button>
+      <button class="tab-btn" onclick="tab('arch',this)">&#128208; ARCHITECTURE</button>
+      <button class="tab-btn" onclick="tab('term',this)">&#128187; TERMINAL</button>
+      <button class="tab-btn" onclick="tab('sk',this)">&#9889; TECHNICAL SKILLS</button>
+      <button class="tab-btn" onclick="tab('bk',this)">&#128200; BENCHMARKS</button>
+      <button class="tab-btn" onclick="tab('edu',this)">&#127891; CERTIFICATIONS &amp; EDU</button>
+      <button class="tab-btn" onclick="tab('jrn',this)">&#128740; JOURNEY</button>
+    </nav>
+
+    <!-- PANEL 1: DASHBOARD (SVGs) -->
+    <div class="tab-panel active" id="p-dash">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">00&ndash;09</span>
+          <span class="sec-ttl">Live-Generated Profile Instruments (Self-Hosted SVGs)</span>
+          <div class="sec-line"></div>
+        </div>
+        <div class="svg-grid">
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">00 // TERMINAL BOOT TELEMETRY</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="boot" src="./assets/boot-dark.svg" alt="Terminal boot log"></div>
+            <div class="scard-ft"><span>assets/boot-[theme].svg &middot; Kernel ready &middot; Live mount status</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">01 // DEVELOPER HUD</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="hero" src="./assets/hero-dark.svg" alt="Developer HUD"></div>
+            <div class="scard-ft"><span>assets/hero-[theme].svg &middot; Signature cyber neon branding</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">02 // LIVE SYSTEM STATUS</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="status" src="./assets/status-dark.svg" alt="Live system status"></div>
+            <div class="scard-ft"><span>assets/status-[theme].svg &middot; Real-time CI verdict &amp; 12-run commit history</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">03 // SYSTEM ARCHITECTURE &amp; DATAFLOW</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="architecture" src="./assets/architecture-dark.svg" alt="System architecture and dataflow"></div>
+            <div class="scard-ft"><span>assets/architecture-[theme].svg &middot; GRC Distributed Monolith, ARC Consent Engine &amp; Kafka/NATS Event Bus</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">04 // PRODUCTION STACK &amp; INFRASTRUCTURE MATRIX</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="stack" src="./assets/stack-dark.svg" alt="Production Stack Matrix"></div>
+            <div class="scard-ft"><span>assets/stack-[theme].svg &middot; 5-tier production stack: Edge Gateway, Microservices Engine, Event Bus, Persistence &amp; Frontend</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+
+          <div class="scard">
+            <div class="scard-hdr">
+              <span class="scard-id">03 // DOMAIN RADAR</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="domains" src="./assets/domains-dark.svg" alt="Domain radar"></div>
+            <div class="scard-ft"><span>assets/domains-[theme].svg</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect &rarr;</span></div>
+          </div>
+
+          <div class="scard">
+            <div class="scard-hdr">
+              <span class="scard-id">04 // ACTIVITY PULSE</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="pulse" src="./assets/pulse-dark.svg" alt="Activity pulse"></div>
+            <div class="scard-ft"><span>assets/pulse-[theme].svg</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect &rarr;</span></div>
+          </div>
+
+          <div class="scard">
+            <div class="scard-hdr">
+              <span class="scard-id">05 // CAREER TIMELINE</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="timeline" src="./assets/timeline-dark.svg" alt="Career timeline"></div>
+            <div class="scard-ft"><span>assets/timeline-[theme].svg</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect &rarr;</span></div>
+          </div>
+
+          <div class="scard">
+            <div class="scard-hdr">
+              <span class="scard-id">06 // EXPERIENCE &amp; IMPACT</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="research" src="./assets/research-dark.svg" alt="Experience and impact"></div>
+            <div class="scard-ft"><span>assets/research-[theme].svg</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect &rarr;</span></div>
+          </div>
+
+          <div class="scard">
+            <div class="scard-hdr">
+              <span class="scard-id">07 // VERIFIED BENCHMARKS</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="benchmarks" src="./assets/benchmarks-dark.svg" alt="Benchmarks"></div>
+            <div class="scard-ft"><span>assets/benchmarks-[theme].svg</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect &rarr;</span></div>
+          </div>
+
+          <div class="scard">
+            <div class="scard-hdr">
+              <span class="scard-id">08 // ROADMAP CLOCK</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="pqc-clock" src="./assets/pqc-clock-dark.svg" alt="Roadmap clock"></div>
+            <div class="scard-ft"><span>assets/pqc-clock-[theme].svg</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect &rarr;</span></div>
+          </div>
+
+          <div class="scard fw">
+            <div class="scard-hdr">
+              <span class="scard-id">09 // CODEBASE COMPOSITION</span>
+              <span class="scard-st"><span class="dot dot-live"></span>LIVE</span>
+            </div>
+            <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="langmix" src="./assets/langmix-dark.svg" alt="Language mix"></div>
+            <div class="scard-ft"><span>assets/langmix-[theme].svg &middot; Squarified language distribution</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 2: EXPERIENCE -->
+    <div class="tab-panel" id="p-exp">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">01</span>
+          <span class="sec-ttl">Professional Experience</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <!-- ROLE 1 -->
+        <div class="exp-card">
+          <div class="exp-hdr">
+            <div>
+              <div class="exp-role">Full Stack Developer</div>
+              <div class="exp-company">RNR Consulting Pvt. Ltd. &middot; Delhi, India</div>
+            </div>
+            <div class="exp-period">May 2025 – Present</div>
+          </div>
+          <ul class="exp-bullets">
+            <li class="exp-bullet">Architected and maintained <strong>5+ Golang microservices</strong> using <strong>gRPC and Protobuf</strong> for low-latency inter-service communication and strict type safety across production clusters.</li>
+            <li class="exp-bullet">Engineered asynchronous, event-driven backend workflows with <strong>Apache Kafka and NATS JetStream</strong>, achieving robust service decoupling and <strong>cutting inter-service latency by 25%</strong>.</li>
+            <li class="exp-bullet">Configured <strong>Kong API Gateway</strong> with JWT authentication, custom routing rules, and strict rate limiting to protect <strong>20+ public endpoints</strong> from abuse and unauthorized access.</li>
+            <li class="exp-bullet">Built and optimized responsive frontend modules in <strong>React.js and Next.js</strong> using <strong>TanStack Query</strong> for server-state caching, <strong>reducing page load times by 30%</strong>.</li>
+            <li class="exp-bullet">Integrated <strong>WebSockets</strong> for real-time status updates across <strong>500+ active concurrent sessions</strong>; contributed to code reviews, unit testing, and automated CI/CD releases.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="chip lead">Golang</span>
+            <span class="chip lead">gRPC</span>
+            <span class="chip lead">Kafka</span>
+            <span class="chip lead">NATS JetStream</span>
+            <span class="chip">Kong Gateway</span>
+            <span class="chip">React.js</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">TanStack Query</span>
+            <span class="chip">WebSockets</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Docker</span>
+          </div>
+        </div>
+
+        <!-- ROLE 2 -->
+        <div class="exp-card">
+          <div class="exp-hdr">
+            <div>
+              <div class="exp-role">Full Stack Developer</div>
+              <div class="exp-company">AppSquadz Pvt. Ltd. &middot; Noida, India</div>
+            </div>
+            <div class="exp-period">Jan 2024 – Oct 2024</div>
+          </div>
+          <ul class="exp-bullets">
+            <li class="exp-bullet">Developed <strong>15+ scalable RESTful API endpoints</strong> using <strong>Node.js and Express.js</strong> to power core business workflows and critical partner integrations.</li>
+            <li class="exp-bullet">Built modular, reusable UI components across <strong>4+ product modules</strong> using <strong>React.js</strong>, optimizing client-side performance, render efficiency, and user accessibility.</li>
+            <li class="exp-bullet">Standardized global state management with <strong>Redux Toolkit</strong>, eliminating state synchronization bugs and <strong>reducing UI/API integration errors by 20%</strong>.</li>
+            <li class="exp-bullet">Resolved cross-browser compatibility and API edge cases across <strong>30+ responsive screens</strong>; participated in active testing and production releases.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="chip lead">Node.js</span>
+            <span class="chip lead">Express.js</span>
+            <span class="chip lead">React.js</span>
+            <span class="chip lead">Redux Toolkit</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">JavaScript (ES6+)</span>
+            <span class="chip">HTML5 / CSS3</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Git</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 3: PROJECTS -->
+    <div class="tab-panel" id="p-proj">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">02</span>
+          <span class="sec-ttl">Featured Engineering Platforms</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="search-bar">
+          <input type="text" class="search-input" id="projSearch" placeholder="&#128269; Search projects by tech, domain, or keyword (e.g. Go, Kafka, React, Kong)..." oninput="onProjSearch()">
+        </div>
+
+        <div class="proj-filter">
+          <button class="pfilter-btn active" onclick="filterProj('ALL',this)">ALL PROJECTS</button>
+          <button class="pfilter-btn" onclick="filterProj('Backend & APIs',this)">BACKEND &amp; DISTRIBUTED</button>
+          <button class="pfilter-btn" onclick="filterProj('Security & Compliance',this)">SECURITY &amp; COMPLIANCE</button>
+          <button class="pfilter-btn" onclick="filterProj('Full Stack Development',this)">FULL STACK</button>
+          <button class="pfilter-btn" onclick="filterProj('Frontend & UI',this)">FRONTEND &amp; UI</button>
+        </div>
+
+        <div class="proj-grid" id="proj-con"></div>
+      </div>
+    </div>
+
+    <!-- PANEL 4: ARCHITECTURE -->
+    <div class="tab-panel" id="p-arch">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">03</span>
+          <span class="sec-ttl">Distributed System Architectures</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <!-- LIVE SVG ARCHITECTURE INSTRUMENT -->
+        <div class="scard fw" style="margin-bottom:24px;">
+          <div class="scard-hdr">
+            <span class="scard-id">TOPOLOGY // LIVE MICROSERVICES &amp; DATAFLOW</span>
+            <span class="scard-st"><span class="dot dot-live"></span>LIVE SVG</span>
+          </div>
+          <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="architecture" src="./assets/architecture-dark.svg" alt="System architecture and dataflow diagram"></div>
+          <div class="scard-ft"><span>assets/architecture-[theme].svg &middot; Production topology across Kong, Golang gRPC, Kafka/NATS, &amp; PostgreSQL</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+        </div>
+
+        <!-- LIVE SVG STACK INSTRUMENT -->
+        <div class="scard fw" style="margin-bottom:24px;">
+          <div class="scard-hdr">
+            <span class="scard-id">PRODUCTION STACK // MULTI-TIER DISTRIBUTED MATRIX</span>
+            <span class="scard-st"><span class="dot dot-live"></span>LIVE SVG</span>
+          </div>
+          <div class="scard-body" onclick="zoomImg(this)"><img class="pi" data-base="stack" src="./assets/stack-dark.svg" alt="Production Stack Matrix"></div>
+          <div class="scard-ft"><span>assets/stack-[theme].svg &middot; Edge Gateway, Golang gRPC Core, Kafka/NATS Bus, PostgreSQL/Redis, &amp; React UI</span><span class="scard-ft-action" onclick="zoomImg(this.closest('.scard').querySelector('.scard-body'))">Inspect Full Screen &rarr;</span></div>
+        </div>
+
+        <!-- INTERACTIVE REQUEST PACKET SIMULATOR -->
+        <div class="sim-card" id="packetSimSection">
+          <div class="sim-header">
+            <div class="sim-title">
+              <span class="dot dot-live"></span>
+              <span>INTERACTIVE PACKET TRACE &amp; LATENCY SIMULATOR</span>
+            </div>
+            <div class="sim-controls">
+              <select id="simScenario" class="sim-select" onchange="resetSim()">
+                <option value="arc">POST /api/v1/consent/grant (ARC DPDP Engine)</option>
+                <option value="grc">RPC GrcService.ProcessAuditLog (GRC Monolith)</option>
+                <option value="nhit">POST /api/v1/nhit/reconcile-utr (NHIT Banking)</option>
+              </select>
+              <button class="btn btn-primary" id="btnSim" onclick="runPacketSimulator();playClick();">&#128640; SEND PACKET TRACE</button>
+            </div>
+          </div>
+
+          <!-- Simulated Pipeline Diagram Nodes -->
+          <div class="sim-pipeline">
+            <div class="sim-node" id="sn-client">
+              <div class="sn-icon">&#127760;</div>
+              <div class="sn-label">CLIENT APPS</div>
+              <div class="sn-tech">Next.js / React</div>
+              <div class="sn-badge" id="snb-client">IDLE</div>
+            </div>
+            <div class="sim-wire" id="sw-1"><div class="sim-pulse" id="sp-1"></div></div>
+            <div class="sim-node" id="sn-kong">
+              <div class="sn-icon">&#128737;</div>
+              <div class="sn-label">KONG GATEWAY</div>
+              <div class="sn-tech">JWT &amp; Rate Limit</div>
+              <div class="sn-badge" id="snb-kong">WAITING</div>
+            </div>
+            <div class="sim-wire" id="sw-2"><div class="sim-pulse" id="sp-2"></div></div>
+            <div class="sim-node" id="sn-grpc">
+              <div class="sn-icon">&#9889;</div>
+              <div class="sn-label">GOLANG CORE</div>
+              <div class="sn-tech">gRPC &amp; Protobuf v3</div>
+              <div class="sn-badge" id="snb-grpc">WAITING</div>
+            </div>
+            <div class="sim-wire" id="sw-3"><div class="sim-pulse" id="sp-3"></div></div>
+            <div class="sim-node" id="sn-bus">
+              <div class="sn-icon">&#128229;</div>
+              <div class="sn-label">EVENT STREAM</div>
+              <div class="sn-tech">Kafka &amp; NATS</div>
+              <div class="sn-badge" id="snb-bus">WAITING</div>
+            </div>
+            <div class="sim-wire" id="sw-4"><div class="sim-pulse" id="sp-4"></div></div>
+            <div class="sim-node" id="sn-data">
+              <div class="sn-icon">&#128024;</div>
+              <div class="sn-label">PERSISTENCE</div>
+              <div class="sn-tech">PostgreSQL &amp; Redis</div>
+              <div class="sn-badge" id="snb-data">WAITING</div>
+            </div>
+          </div>
+
+          <!-- Telemetry Metrics & Live JSON Trace Output -->
+          <div class="sim-metrics">
+            <div class="sm-item">
+              <span class="sm-lbl">Total Latency</span>
+              <span class="sm-val" id="sm-lat">-- ms</span>
+            </div>
+            <div class="sm-item">
+              <span class="sm-lbl">Status Verdict</span>
+              <span class="sm-val" id="sm-status">READY</span>
+            </div>
+            <div class="sm-item">
+              <span class="sm-lbl">Serialization</span>
+              <span class="sm-val" id="sm-ser">Protobuf v3</span>
+            </div>
+            <div class="sm-item">
+              <span class="sm-lbl">Audit Guarantee</span>
+              <span class="sm-val" id="sm-audit">At-Least-Once</span>
+            </div>
+          </div>
+
+          <div class="sim-trace-box">
+            <div class="sim-trace-header">
+              <span>&#128187; DISTRIBUTED TRACE LOG (OpenTelemetry / Jaeger Format)</span>
+              <button class="btn btn-ghost" style="padding:2px 8px;font-size:0.65rem;" onclick="copyTraceLog()">Copy Trace</button>
+            </div>
+            <pre id="simTraceOutput">// Ready. Click [ SEND PACKET TRACE ] to simulate end-to-end request lifecycle across Harshit's production microservices stack.</pre>
+          </div>
+        </div>
+
+        <!-- ARCH 1 -->
+        <div class="arch-card">
+          <div class="arch-title">01 // GRC – DISTRIBUTED MONOLITH ARCHITECTURE</div>
+          <div class="arch-sub">Production high-concurrency event stream, binary gRPC serialization, and modular microservices</div>
+          <div class="arch-diagram">
++-----------------------------------------------------------------------------------------+
+|                              CLIENT TIER (Next.js &amp; React.js)                           |
+|       - TanStack Query (Server-State Caching, -30% Page Load)  - WebSockets (500+ Live) |
++-----------------------------------------------------------------------------------------+
+                                           |  HTTPS / WSS / REST
+                                           v
++-----------------------------------------------------------------------------------------+
+|                           KONG API GATEWAY &amp; EDGE DEFENSE                               |
+|        - JWT Bearer Validation     - Rate Limiting (Token Bucket)     - Custom Routing  |
++-----------------------------------------------------------------------------------------+
+                                           |
+                    +----------------------+----------------------+
+                    | gRPC / Protobuf                             | gRPC / Protobuf
+                    v                                             v
+     +------------------------------+              +------------------------------+
+     |   Core GRC Golang Service    |              | Analytics &amp; Reporting Service |
+     |  (Modular Domain Boundaries) |              |  (Live Aggregations Engine)  |
+     +------------------------------+              +------------------------------+
+                    |                                             |
+                    +----------------------+----------------------+
+                                           | Event Pub/Sub
+                                           v
++-----------------------------------------------------------------------------------------+
+|                      APACHE KAFKA &amp; NATS JETSTREAM EVENT BUS                            |
+|       - Decoupled Worker Workflows   - Persistent Streams   - 25% Latency Reduction     |
++-----------------------------------------------------------------------------------------+
+                    |                                             |
+                    v                                             v
+     +------------------------------+              +------------------------------+
+     |   PostgreSQL Data Layer      |              |      Redis In-Memory Cache   |
+     | (B-Tree Indexes, Sub-45ms)   |              |  (Session States, Ephemeral) |
+     +------------------------------+              +------------------------------+
+          </div>
+          <p style="font-size:0.82rem;color:var(--ink2);line-height:1.68;">
+            <strong>Architectural Highlights:</strong> By utilizing gRPC for strongly-typed internal communication alongside NATS JetStream for asynchronous job execution, this system reduced latency by 25% while maintaining strict data consistency across 5+ backend services.
+          </p>
+        </div>
+
+        <!-- ARCH 2 -->
+        <div class="arch-card">
+          <div class="arch-title">02 // ARC – AUTOMATED RIGHTS &amp; CONSENTS (DPDP ACT)</div>
+          <div class="arch-sub">End-to-end data privacy compliance microservice with embeddable client widgets and tamper-proof logging</div>
+          <div class="arch-diagram">
++-----------------------------------------------------------------------------------------+
+|                                CLIENT EMBEDDABLE WIDGET                                 |
+|         - Zero-dependency JavaScript SDK embedded via single &lt;script&gt; tag              |
++-----------------------------------------------------------------------------------------+
+                                           |  REST API / TLS 1.3
+                                           v
++-----------------------------------------------------------------------------------------+
+|                            CONSENT WORKFLOW ORCHESTRATOR                                |
+|   [Cookie Consent]   [Grievance Redressal]   [Data Erasure]   [Parental Verification]   |
++-----------------------------------------------------------------------------------------+
+                                           |
+                    +----------------------+----------------------+
+                    |                                             |
+                    v                                             v
+     +------------------------------+              +------------------------------+
+     |   Kafka Data Subject Bus     |              |    HashiCorp Vault Secrets   |
+     |  (Asynchronous Request Queue)|              | (PII Encryption &amp; Rotations) |
+     +------------------------------+              +------------------------------+
+                    |                                             |
+                    +----------------------+----------------------+
+                                           v
++-----------------------------------------------------------------------------------------+
+|                       AUDIT-PROOF TAMPER-EVIDENT PERSISTENCE                            |
+|        - Append-only PostgreSQL audit log    - Redis verification cache                 |
++-----------------------------------------------------------------------------------------+
+          </div>
+          <p style="font-size:0.82rem;color:var(--ink2);line-height:1.68;">
+            <strong>Compliance Highlights:</strong> Built in strict alignment with India's Digital Personal Data Protection Act (DPDP Act), providing audit-proof logs and seamless consent capture across millions of user sessions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 5: TERMINAL -->
+    <div class="tab-panel" id="p-term">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">04</span>
+          <span class="sec-ttl">Interactive Cyber Terminal</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="term-box">
+          <div class="term-header">
+            <div class="term-dots">
+              <span class="term-dot td-red"></span>
+              <span class="term-dot td-yellow"></span>
+              <span class="term-dot td-green"></span>
+            </div>
+            <span>guest@harshit-nain: ~ (bash / zsh)</span>
+            <span style="color:var(--accent);">TYPE 'help'</span>
+          </div>
+          <div class="term-screen" id="termScreen">
+            <div class="term-out">Welcome to Harshit Nain's Interactive Profile Terminal v3.2.0-release.
+Type <span style="color:var(--accent);font-weight:700;">'help'</span> to view available system commands.</div>
+          </div>
+          <div style="padding:10px 16px;background:#0d1117;border-top:1px solid rgba(255,255,255,0.08);">
+            <div class="term-input-row">
+              <span class="term-prompt">guest@harshit-nain:~$</span>
+              <input type="text" class="term-cli" id="termInput" placeholder="type command (e.g. help, skills, exp, projects, contact, sudo hire)..." onkeydown="handleTermKey(event)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 6: TECHNICAL SKILLS -->
+    <div class="tab-panel" id="p-sk">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">05</span>
+          <span class="sec-ttl">Technical Proficiency &amp; Core Competencies</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="sk-cat">
+          <div class="sk-cat-ttl">&#128009; PROGRAMMING LANGUAGES</div>
+          <div class="sk-grid" id="sk-lang"></div>
+        </div>
+
+        <div class="sk-cat">
+          <div class="sk-cat-ttl">&#9889; BACKEND &amp; DISTRIBUTED SYSTEMS</div>
+          <div class="sk-grid" id="sk-back"></div>
+        </div>
+
+        <div class="sk-cat">
+          <div class="sk-cat-ttl">&#9883; FRONTEND &amp; UI ENGINEERING</div>
+          <div class="sk-grid" id="sk-front"></div>
+        </div>
+
+        <div class="sk-cat">
+          <div class="sk-cat-ttl">&#9729; CLOUD, DEVOPS &amp; SECURITY</div>
+          <div class="sk-grid" id="sk-cloud"></div>
+        </div>
+
+        <div class="sk-cat">
+          <div class="sk-cat-ttl">&#128024; DATABASES &amp; CACHING</div>
+          <div class="sk-grid" id="sk-db"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 7: BENCHMARKS -->
+    <div class="tab-panel" id="p-bk">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">06</span>
+          <span class="sec-ttl">Verified Production Benchmarks</span>
+          <div class="sec-line"></div>
+        </div>
+        <div class="bk-grid" id="bk-con"></div>
+      </div>
+    </div>
+
+    <!-- PANEL 8: CERTIFICATIONS & EDUCATION -->
+    <div class="tab-panel" id="p-edu">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">07</span>
+          <span class="sec-ttl">Certifications &amp; Credentials</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="cert-grid">
+          <div class="ccard">
+            <div class="cbadge">&#9679; AWS CERTIFIED</div>
+            <div class="ctitle">AWS Certified Cloud Practitioner</div>
+            <div class="corg">Amazon Web Services (AWS) &middot; Cloud Architecture, Security &amp; Services</div>
+          </div>
+          <div class="ccard">
+            <div class="cbadge">&#9679; AWS BADGE</div>
+            <div class="ctitle">AWS Cloud Quest: Cloud Practitioner</div>
+            <div class="corg">Amazon Web Services (AWS) &middot; Hands-on Cloud Solutions &amp; Compute</div>
+          </div>
+          <div class="ccard">
+            <div class="cbadge">&#9679; DEVOPS</div>
+            <div class="ctitle">DevOps Essentials</div>
+            <div class="corg">CI/CD Pipelines, Containerization &amp; Deployment Automation</div>
+          </div>
+          <div class="ccard">
+            <div class="cbadge">&#9679; FRONTEND</div>
+            <div class="ctitle">Frontend Development with React</div>
+            <div class="corg">Advanced React Patterns, Component Lifecycle &amp; State Management</div>
+          </div>
+        </div>
+
+        <div class="sec-hdr" style="margin-top:28px;">
+          <span class="sec-num">07b</span>
+          <span class="sec-ttl">Formal Education</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-hdr">
+            <div>
+              <div class="exp-role">Bachelor of Technology in Computer Science and Engineering</div>
+              <div class="exp-company">Anangpuria Institute of Technology and Management &middot; Faridabad, Haryana</div>
+            </div>
+            <div class="exp-period">2019 – 2023</div>
+          </div>
+          <p style="font-size:0.86rem;color:var(--ink2);line-height:1.68;">
+            Graduated with <strong>CGPA: 7.4</strong>. Core focus on Data Structures &amp; Algorithms, Operating Systems, Database Management Systems, Distributed Computing, and Object-Oriented Design in C++ and Java.
+          </p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-hdr">
+            <div>
+              <div class="exp-role">Senior Secondary (Class XII) &middot; Non-Medical with Computer Science</div>
+              <div class="exp-company">Vidya Niketan School &middot; CBSE</div>
+            </div>
+            <div class="exp-period">2018 – 2019</div>
+          </div>
+          <p style="font-size:0.86rem;color:var(--ink2);line-height:1.68;">
+            Foundational computer science, programming logic, physics, and advanced mathematics.
+          </p>
+        </div>
+
+        <div class="sec-hdr" style="margin-top:28px;">
+          <span class="sec-num">07c</span>
+          <span class="sec-ttl">Hackathons &amp; Achievements</span>
+          <div class="sec-line"></div>
+        </div>
+        <div class="ccard" style="border-color:rgba(168,85,247,0.35);">
+          <div class="cbadge" style="color:var(--accent3);">&#127942; HACKATHON PARTICIPANT</div>
+          <div class="ctitle">Yukti Sangam Hackathon 2025</div>
+          <div class="corg">RNR Consulting Pvt. Ltd. &middot; Rapid prototyping of distributed microservices &amp; DPDP compliance workflows</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 9: JOURNEY -->
+    <div class="tab-panel" id="p-jrn">
+      <div class="sec">
+        <div class="sec-hdr">
+          <span class="sec-num">08</span>
+          <span class="sec-ttl">Career &amp; Engineering Journey</span>
+          <div class="sec-line"></div>
+        </div>
+        <div class="tl" id="tl-con"></div>
+      </div>
+    </div>
+
+    <!-- CONTACT BANNER -->
+    <section class="contact sec">
+      <div class="ct-info">
+        <div class="ct-name">Harshit Nain</div>
+        <div class="ct-role">Full Stack Developer &middot; Golang, Node.js, React &middot; Available for Opportunities</div>
+      </div>
+      <div class="ct-links">
+        <a class="btn btn-primary" href="mailto:hnain932@gmail.com" onclick="playClick()">&#9993; SEND EMAIL</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener" onclick="playClick()">LINKEDIN &rarr;</a>
+        <a class="btn btn-ghost" href="https://github.com/HarshitNain" target="_blank" rel="noopener" onclick="playClick()">GITHUB &rarr;</a>
+        <button class="btn btn-ghost" onclick="copyContact();playClick();">&#128203; COPY CONTACT</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-txt">
+        Designed &amp; engineered for Harshit Nain.<br>
+        20 self-hosted SVG instruments generated from live GitHub API data by <code>assets/generate.py</code>,<br>
+        committed directly to this repository and refreshed automatically every day via GitHub Actions.<br>
+        Zero external widget dependencies. Every number is verified and reproducible.
+      </p>
+      <div class="footer-badge">
+        <span class="dot dot-live"></span>
+        self-hosted &middot; dark/light aware &middot; real telemetry &middot; zero external hosts &middot; 60fps smil
+      </div>
+    </footer>
+  </div>
+
+  <!-- FULL RESUME MODAL -->
+  <div class="modal-overlay" id="resumeModal" onclick="closeModalOnBg(event)">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeResumeModal()">&times;</button>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;border-bottom:1px solid var(--border);padding-bottom:12px;">
+        <div>
+          <h2 style="font-size:1.4rem;font-weight:900;color:var(--accent);">HARSHIT NAIN</h2>
+          <div style="font-family:var(--mono);font-size:0.75rem;color:var(--ink2);">Full Stack Developer &middot; Golang | Node.js | React.js | Next.js | Microservices</div>
+        </div>
+        <button class="btn btn-primary" onclick="copyResumeText();playClick();">&#128203; COPY RESUME TEXT</button>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-family:var(--mono);font-size:0.72rem;color:var(--ink2);margin-bottom:18px;background:var(--surface);padding:12px;border-radius:var(--rs);border:1px solid var(--glass-border);">
+        <div><strong>Phone:</strong> +91-9654994442</div>
+        <div><strong>Email:</strong> hnain932@gmail.com</div>
+        <div><strong>LinkedIn:</strong> linkedin.com/in/harshit-nain-62893177</div>
+        <div><strong>GitHub:</strong> github.com/HarshitNain</div>
+        <div><strong>Location:</strong> India</div>
+        <div><strong>Experience:</strong> 1.4+ Years in Production</div>
+      </div>
+
+      <h3 style="font-family:var(--mono);font-size:0.82rem;color:var(--accent);margin:18px 0 8px;text-transform:uppercase;">Summary</h3>
+      <p style="font-size:0.84rem;color:var(--ink2);line-height:1.68;margin-bottom:16px;">
+        Full Stack Developer with 1.4+ years of experience engineering scalable backend microservices, distributed systems, and responsive frontend applications for production environments. Proficient in Golang, Node.js, React.js, Next.js, TypeScript, PostgreSQL, Redis, Apache Kafka, Docker, Kubernetes, and AWS. Experienced in building high-throughput REST and gRPC APIs, event-driven pipelines, and compliance-driven platforms with proven skills in debugging, automated testing, CI/CD workflows, and performance optimization.
+      </p>
+
+      <h3 style="font-family:var(--mono);font-size:0.82rem;color:var(--accent);margin:18px 0 8px;text-transform:uppercase;">Professional Experience</h3>
+      <div style="margin-bottom:14px;">
+        <strong style="color:var(--ink);font-size:0.92rem;">Full Stack Developer</strong> &middot; <span style="color:var(--accent);">RNR Consulting Pvt. Ltd.</span> &middot; <span style="font-family:var(--mono);font-size:0.7rem;color:var(--ink3);">May 2025 – Present | Delhi, India</span>
+        <ul style="margin:8px 0 0 18px;font-size:0.82rem;color:var(--ink2);line-height:1.65;">
+          <li>Architected and maintained 5+ Golang microservices using gRPC and Protobuf for low-latency inter-service communication and strict type safety.</li>
+          <li>Engineered asynchronous, event-driven backend workflows with Kafka and NATS JetStream, improving decoupling and cutting latency by 25%.</li>
+          <li>Configured Kong API Gateway with JWT authentication, custom routing, and rate limiting to protect 20+ public endpoints from abuse.</li>
+          <li>Built and optimized responsive frontend modules in React.js and Next.js using TanStack Query for server-state caching, reducing page load times by 30%.</li>
+          <li>Integrated WebSockets for live status updates across 500+ active sessions; contributed to code reviews, unit testing, and CI/CD releases.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <strong style="color:var(--ink);font-size:0.92rem;">Full Stack Developer</strong> &middot; <span style="color:var(--accent);">AppSquadz Pvt. Ltd.</span> &middot; <span style="font-family:var(--mono);font-size:0.7rem;color:var(--ink3);">Jan 2024 – Oct 2024 | Noida, India</span>
+        <ul style="margin:8px 0 0 18px;font-size:0.82rem;color:var(--ink2);line-height:1.65;">
+          <li>Developed 15+ scalable RESTful API endpoints using Node.js and Express.js to power core business workflows and partner integrations.</li>
+          <li>Built modular, reusable UI components across 4+ product modules using React.js, optimizing performance and user accessibility.</li>
+          <li>Standardized state management with Redux Toolkit, eliminating state synchronization bugs and reducing UI/API integration errors by 20%.</li>
+          <li>Resolved cross-browser compatibility and API edge cases across 30+ responsive screens; participated in testing and production releases.</li>
+        </ul>
+      </div>
+
+      <h3 style="font-family:var(--mono);font-size:0.82rem;color:var(--accent);margin:18px 0 8px;text-transform:uppercase;">Key Projects</h3>
+      <div style="font-size:0.82rem;color:var(--ink2);line-height:1.65;">
+        <p style="margin-bottom:8px;"><strong>GRC – Distributed Monolith (Golang, gRPC, NATS JetStream, Kong, PostgreSQL, React):</strong> Distributed production system with gRPC inter-service messaging, NATS pub/sub, Kong JWT rate limiting, and live React analytics.</p>
+        <p style="margin-bottom:8px;"><strong>ARC – Automated Rights and Consents (Golang, React, PostgreSQL, Docker, Kafka, Redis, Vault):</strong> End-to-end DPDP Act compliance microservice with 5+ consent workflows, embeddable JS widgets, and audit-proof logging.</p>
+        <p style="margin-bottom:8px;"><strong>Food Villa (React.js, Redux Toolkit, Swiggy API, Geolocation API):</strong> Interactive food ordering platform with restaurant filtering, geolocation tracking, and persistent Redux cart state.</p>
+      </div>
+
+      <div style="text-align:right;margin-top:22px;">
+        <button class="btn btn-ghost" onclick="closeResumeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECRUITER FAST-TRACK & CANDIDATE MATCH MODAL -->
+  <div class="modal-overlay" id="recruiterModal" onclick="closeModalOnBg(event)">
+    <div class="modal-card" style="max-width:850px;">
+      <button class="modal-close" onclick="closeRecruiterModal()">&times;</button>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;border-bottom:1px solid var(--glass-border);padding-bottom:12px;">
+        <span style="font-size:1.4rem;">&#128084;</span>
+        <div>
+          <h2 style="font-family:var(--mono);font-size:1.05rem;color:var(--accent);margin:0;font-weight:900;">EXECUTIVE BRIEFING &amp; RECRUITER HUD</h2>
+          <span style="font-size:0.75rem;color:var(--ink2);">Harshit Nain &middot; Full Stack Developer &middot; Ready for Immediate/Short-Notice Onboarding</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;">
+        <a class="btn btn-primary" href="mailto:hnain932@gmail.com?subject=Interview%20Invitation%20-%20Harshit%20Nain" onclick="playClick()" style="font-size:0.75rem;">&#128231; Schedule Interview</a>
+        <button class="btn btn-ghost" onclick="copyContact();playClick();" style="font-size:0.75rem;">&#128203; Copy All Contact Info</button>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/harshit-nain-62893177" target="_blank" rel="noopener" onclick="playClick()" style="font-size:0.75rem;">&#128188; LinkedIn Profile</a>
+        <a class="btn btn-ghost" href="https://wa.me/919654994442" target="_blank" rel="noopener" onclick="playClick()" style="font-size:0.75rem;">&#128172; WhatsApp Chat</a>
+      </div>
+
+      <!-- Candidate Vitals Grid -->
+      <div class="recruiter-grid">
+        <div class="rec-box">
+          <div class="rec-box-ttl">&#127919; CANDIDATE PROFILE</div>
+          <div style="font-size:0.8rem;color:var(--ink);line-height:1.7;">
+            <strong>Current:</strong> Full Stack Developer @ RNR Consulting (May 2025 – Present)<br>
+            <strong>Previous:</strong> Full Stack Developer @ AppSquadz (Jan 2024 – Oct 2024)<br>
+            <strong>Total Production Exp:</strong> 1.4+ Years<br>
+            <strong>Education:</strong> B.Tech CSE (CGPA: 7.4) &middot; Anangpuria Institute<br>
+            <strong>Certifications:</strong> AWS Certified Cloud Practitioner
+          </div>
+        </div>
+
+        <div class="rec-box">
+          <div class="rec-box-ttl">&#9889; AVAILABILITY &amp; ROLES</div>
+          <div style="font-size:0.8rem;color:var(--ink);line-height:1.7;">
+            <strong>Target Roles:</strong> Full Stack Developer / Golang Backend SDE / React Frontend Engineer<br>
+            <strong>Notice Period:</strong> Immediate / Short Notice (negotiable)<br>
+            <strong>Location:</strong> India (Open to Remote, Hybrid, or Relocation)<br>
+            <strong>Email:</strong> <span style="color:var(--accent);">hnain932@gmail.com</span><br>
+            <strong>Phone:</strong> <span style="color:var(--accent);">+91-9654994442</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Skill Matcher -->
+      <div class="rec-box" style="margin-top:14px;">
+        <div class="rec-box-ttl" style="justify-content:space-between;">
+          <span>&#128269; INTERACTIVE TECH REQUIREMENTS MATCHER (Click to test fit)</span>
+          <span id="matchScoreBadge" style="font-size:0.75rem;color:var(--green);font-weight:800;">100% MATCH (8/8)</span>
+        </div>
+        <p style="font-size:0.75rem;color:var(--ink2);margin-bottom:10px;">Select the technologies required for your open role to verify Harshit's production experience:</p>
+        <div id="matchTagsContainer">
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Golang')">&#10003; Golang (gRPC/Protobuf)</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'React')">&#10003; React.js &amp; Next.js</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Node')">&#10003; Node.js &amp; Express</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Kafka')">&#10003; Apache Kafka &amp; NATS</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Postgres')">&#10003; PostgreSQL &amp; Redis</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'Kong')">&#10003; Kong API Gateway</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'AWS')">&#10003; AWS &amp; Docker</span>
+          <span class="match-tag checked" onclick="toggleMatchTag(this, 'DPDP')">&#10003; DPDP Compliance / Security</span>
+        </div>
+        <div class="match-score-bar"><div class="match-score-fill" id="matchFill"></div></div>
+        <div id="matchVerdict" style="font-family:var(--mono);font-size:0.72rem;color:var(--green);margin-top:6px;">
+          &#10004; Strong match: Harshit possesses verified production experience across all selected domains.
+        </div>
+      </div>
+
+      <div style="text-align:right;margin-top:18px;">
+        <button class="btn btn-ghost" onclick="closeRecruiterModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE ZOOM MODAL -->
+  <div class="modal-overlay" id="imgModal" onclick="closeModalOnBg(event)">
+    <div class="modal-card" style="max-width:1000px;text-align:center;padding:16px;">
+      <button class="modal-close" onclick="closeImgModal()">&times;</button>
+      <img id="modalImg" src="" style="width:100%;height:auto;border-radius:6px;display:block;" alt="Zoomed SVG">
+    </div>
+  </div>
+
+  <!-- LOG VIEWER MODAL -->
+  <div class="modal-overlay" id="logModal" onclick="closeModalOnBg(event)">
+    <div class="modal-card" style="max-width:700px;">
+      <button class="modal-close" onclick="closeLogModal()">&times;</button>
+      <div style="font-family:var(--mono);font-size:0.82rem;font-weight:800;color:var(--accent);margin-bottom:12px;" id="logTitle">PIPELINE STAGE LOG</div>
+      <pre id="logContent" style="background:#000;color:#10e986;padding:14px;border-radius:6px;font-family:var(--mono);font-size:0.73rem;line-height:1.6;overflow-x:auto;max-height:350px;"></pre>
+    </div>
+  </div>
+
+  <script>
+    var theme = 'dark';
+    var sfxEnabled = false;
+    var audioCtx = null;
+
+    function toggleSfx() {
+      sfxEnabled = !sfxEnabled;
+      if (!audioCtx && sfxEnabled) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      document.getElementById('sfxBtn').innerHTML = sfxEnabled ? '&#128266; SFX ON' : '&#128263; SFX OFF';
+      toast('Cyber SFX ' + (sfxEnabled ? 'Enabled' : 'Disabled'));
+      if (sfxEnabled) playTone(880, 0.05);
+    }
+
+    function playTone(freq, dur) {
+      if (!sfxEnabled || !audioCtx) return;
+      try {
+        var osc = audioCtx.createOscillator();
+        var gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq || 800, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime((freq || 800) * 1.5, audioCtx.currentTime + dur);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + dur);
+      } catch(e) {}
+    }
+
+    function playClick() {
+      playTone(1050, 0.035);
+    }
+
+    function toggleTheme() {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      document.getElementById('body').classList.toggle('light', theme === 'light');
+      document.getElementById('themeBtn').innerHTML = theme === 'dark' ? '&#9728; LIGHT' : '&#9790; DARK';
+      updateImgs();
+      toast('Switched to ' + theme.toUpperCase() + ' theme');
+      playTone(600, 0.06);
+    }
+
+    function updateImgs() {
+      var t = Date.now();
+      document.querySelectorAll('.pi').forEach(function(img) {
+        img.src = './assets/' + img.getAttribute('data-base') + '-' + theme + '.svg?t=' + t;
+      });
+    }
+
+    function refreshAssets() {
+      updateImgs();
+      toast('Assets Refreshed from Telemetry');
+      playTone(1200, 0.05);
+    }
+
+    function toast(msg) {
+      var toastEl = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toastEl.classList.add('show');
+      setTimeout(function() { toastEl.classList.remove('show'); }, 2600);
+    }
+
+    function updateClock() {
+      var now = new Date();
+      document.getElementById('clock').textContent = now.toLocaleTimeString('en-IN', { hour12: false }) + ' IST';
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function tab(id, btn) {
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      var target = document.getElementById('p-' + id);
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+      playClick();
+    }
+
+    /* DATA DEFINITIONS */
+    var LC = {
+      'Go': '#00ADD8', 'JavaScript': '#f1e05a', 'TypeScript': '#3178c6',
+      'Python': '#3572A5', 'HTML': '#e34c26', 'CSS': '#563d7c', 'C++': '#f34b7d'
+    };
+
+    var DC = {
+      'Backend & APIs': { c1: '#10b981', c2: '#00ADD8', t: '#10b981' },
+      'Security & Compliance': { c1: '#f43f5e', c2: '#a855f7', t: '#f43f5e' },
+      'Full Stack Development': { c1: '#3b82f6', c2: '#00ADD8', t: '#3b82f6' },
+      'Frontend & UI': { c1: '#f59e0b', c2: '#f1e05a', t: '#f59e0b' }
+    };
+
+    var PROJ = [
+      {
+        name: 'GRC-Distributed-Monolith',
+        domain: 'Backend & APIs',
+        lang: 'Go',
+        tag: 'v2.1.0',
+        pvt: false,
+        blurb: 'Production distributed system with modular boundaries, gRPC and Protobuf inter-service messaging, NATS JetStream pub/sub, Kong API Gateway, and live React analytics synchronizing operational metrics.'
+      },
+      {
+        name: 'ARC-Automated-Rights-Consents',
+        domain: 'Security & Compliance',
+        lang: 'Go',
+        tag: 'v1.4.0',
+        pvt: false,
+        blurb: 'End-to-end DPDP Act compliance microservice with 5+ consent workflows (cookie consent, grievance redressal, data erasure, parental consent), embeddable JavaScript widgets, Kafka, Redis, and audit-proof logging.'
+      },
+      {
+        name: 'NHIT-Digital-Platform',
+        domain: 'Full Stack Development',
+        lang: 'Go',
+        tag: 'v1.2.0',
+        pvt: false,
+        blurb: 'Next-generation digital operating system for National Highways Infra Trust (NHIT). Automating green notes, Section 194C statutory tax deductions, and direct host-to-host banking UTR reconciliation with sub-45ms latency.'
+      },
+      {
+        name: 'Food-Villa',
+        domain: 'Frontend & UI',
+        lang: 'JavaScript',
+        tag: 'v1.1.0',
+        pvt: false,
+        blurb: 'Interactive restaurant discovery and food ordering web application with dynamic filtering, real-time location tracking via Geolocation API, third-party Swiggy API, and persistent Redux Toolkit cart state.'
+      },
+      {
+        name: 'AppSquadz-Core-APIs',
+        domain: 'Backend & APIs',
+        lang: 'JavaScript',
+        tag: 'v1.0.0',
+        pvt: true,
+        blurb: '15+ scalable RESTful API endpoints powering core workflows and partner integrations using Node.js, Express, and Redux Toolkit across 30+ responsive screens, reducing state errors by 20%.'
+      },
+      {
+        name: 'Enterprise-SyncHub',
+        domain: 'Backend & APIs',
+        lang: 'Go',
+        tag: 'v1.0.0',
+        pvt: true,
+        blurb: 'High-concurrency synchronization gateway, distributed event bus, and persistent agent communication harness supporting real-time WebSockets and workers.'
+      },
+      {
+        name: 'Food-Delivery-Web-App',
+        domain: 'Frontend & UI',
+        lang: 'JavaScript',
+        tag: 'v1.0.0',
+        pvt: false,
+        blurb: 'Full-featured food delivery app built with React.js, Redux Toolkit, Material UI (MUI), and Context API with 98/100 Lighthouse performance.'
+      },
+      {
+        name: 'Secure-Gateway-Shield',
+        domain: 'Security & Compliance',
+        lang: 'Go',
+        tag: 'v1.0.0',
+        pvt: true,
+        blurb: 'Kong API Gateway integration with JWT authentication, custom routing, and strict rate limiting protecting 20+ public endpoints from abuse.'
+      }
+    ];
+
+    var currentFilter = 'ALL';
+
+    function renderProjects(filter, query) {
+      var pc = document.getElementById('proj-con');
+      var list = filter === 'ALL' ? PROJ : PROJ.filter(function(p) { return p.domain === filter; });
+      if (query && query.trim()) {
+        var q = query.trim().toLowerCase();
+        list = list.filter(function(p) {
+          return p.name.toLowerCase().includes(q) ||
+                 p.domain.toLowerCase().includes(q) ||
+                 p.lang.toLowerCase().includes(q) ||
+                 p.blurb.toLowerCase().includes(q);
+        });
+      }
+      if (list.length === 0) {
+        pc.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:32px;font-family:var(--mono);color:var(--ink3);">No projects matched your search query.</div>';
+        return;
+      }
+      pc.innerHTML = list.map(function(p) {
+        var d = DC[p.domain] || { c1: '#00f0ff', c2: '#a855f7', t: '#00f0ff' };
+        var lc = LC[p.lang] || '#ccc';
+        return '<div class="pcard" style="--c1:' + d.c1 + ';--c2:' + d.c2 + '">' +
+          '<div>' +
+            '<div class="pdom" style="color:' + d.t + '">' + p.domain + '</div>' +
+            '<div class="pname">' + p.name + '</div>' +
+            '<div class="pblurb">' + p.blurb + '</div>' +
+          '</div>' +
+          '<div class="pmeta">' +
+            '<span class="lbadge"><span class="ldot" style="background:' + lc + '"></span>' + p.lang + '</span>' +
+            '<span>' + (p.tag ? '<span class="tbadge">' + p.tag + '</span>' : '') +
+            (p.pvt ? ' <span class="pvtbadge">&#128274; private</span>' : '') + '</span>' +
+          '</div></div>';
+      }).join('');
+    }
+    renderProjects('ALL');
+
+    function filterProj(dom, btn) {
+      currentFilter = dom;
+      document.querySelectorAll('.pfilter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var q = document.getElementById('projSearch').value;
+      renderProjects(dom, q);
+      playClick();
+    }
+
+    function onProjSearch() {
+      var q = document.getElementById('projSearch').value;
+      renderProjects(currentFilter, q);
+    }
+
+    /* SKILLS RENDERING */
+    var SK = {
+      lang: [
+        { n: 'Golang', i: '&#128009;', l: 0.94 },
+        { n: 'JavaScript (ES6+)', i: '&#129001;', l: 0.95 },
+        { n: 'TypeScript', i: '&#128311;', l: 0.88 },
+        { n: 'C++', i: '&#9881;', l: 0.82 },
+        { n: 'Python', i: '&#128013;', l: 0.80 },
+        { n: 'SQL / PLpgSQL', i: '&#128024;', l: 0.88 }
+      ],
+      back: [
+        { n: 'gRPC & Protobuf', i: '&#128260;', l: 0.92 },
+        { n: 'Apache Kafka', i: '&#9889;', l: 0.88 },
+        { n: 'NATS JetStream', i: '&#128640;', l: 0.88 },
+        { n: 'Node.js & Express', i: '&#129001;', l: 0.92 },
+        { n: 'Gin & Echo (Go)', i: '&#128009;', l: 0.90 },
+        { n: 'WebSockets (500+)', i: '&#128225;', l: 0.92 },
+        { n: 'RESTful API Design', i: '&#128279;', l: 0.96 },
+        { n: 'Microservices Arch', i: '&#9778;', l: 0.92 }
+      ],
+      front: [
+        { n: 'React.js', i: '&#9883;', l: 0.95 },
+        { n: 'Next.js', i: '&#9650;', l: 0.90 },
+        { n: 'TanStack Query', i: '&#128260;', l: 0.92 },
+        { n: 'Redux Toolkit', i: '&#128230;', l: 0.94 },
+        { n: 'HTML5 & CSS3', i: '&#127912;', l: 0.95 },
+        { n: 'Material UI (MUI)', i: '&#128142;', l: 0.88 },
+        { n: 'D3.js Charts', i: '&#128202;', l: 0.78 }
+      ],
+      cloud: [
+        { n: 'AWS (Cert Cloud)', i: '&#9729;', l: 0.85 },
+        { n: 'Kong API Gateway', i: '&#128737;', l: 0.90 },
+        { n: 'Docker Containers', i: '&#128009;', l: 0.88 },
+        { n: 'Kubernetes', i: '&#9784;', l: 0.78 },
+        { n: 'HashiCorp Vault', i: '&#128274;', l: 0.82 },
+        { n: 'GitHub Actions CI', i: '&#128025;', l: 0.92 },
+        { n: 'JWT & Rate Limits', i: '&#128737;', l: 0.94 }
+      ],
+      db: [
+        { n: 'PostgreSQL', i: '&#128024;', l: 0.90 },
+        { n: 'Redis In-Memory', i: '&#128230;', l: 0.90 },
+        { n: 'MySQL', i: '&#128044;', l: 0.84 },
+        { n: 'MongoDB', i: '&#127811;', l: 0.82 }
+      ]
+    };
+
+    function renderSkillGroup(elId, items) {
+      document.getElementById(elId).innerHTML = items.map(function(s) {
+        return '<div class="sk-card">' +
+          '<div class="sk-icon">' + s.i + '</div>' +
+          '<div class="sk-name">' + s.n + '</div>' +
+          '<div class="sk-bar"><div class="sk-fill" style="width:' + (s.l * 100).toFixed(0) + '%"></div></div>' +
+        '</div>';
+      }).join('');
+    }
+    renderSkillGroup('sk-lang', SK.lang);
+    renderSkillGroup('sk-back', SK.back);
+    renderSkillGroup('sk-front', SK.front);
+    renderSkillGroup('sk-cloud', SK.cloud);
+    renderSkillGroup('sk-db', SK.db);
+
+    /* BENCHMARKS RENDERING */
+    var BK = [
+      {
+        v: '-25%',
+        m: 'Event Latency Reduction',
+        r: 'GRC-Distributed-Monolith',
+        d: 'Kafka & NATS JetStream asynchronous messaging cutting inter-service latency across Go microservices',
+        e: 'Golang gRPC · Kafka · 2026',
+        b: 0.75
+      },
+      {
+        v: '-30%',
+        m: 'Page Load Speedup',
+        r: 'React / Next.js Modules',
+        d: 'TanStack Query server-state caching & responsive module optimization eliminating duplicate network waterfalls',
+        e: 'Next.js · React · Chrome Desktop',
+        b: 0.88
+      },
+      {
+        v: '20+ APIs',
+        m: 'Protected Endpoints',
+        r: 'Kong API Gateway',
+        d: 'Configured JWT authentication, custom routing rules, and strict rate limiting protecting microservices',
+        e: 'Kong API Gateway · Production',
+        b: 0.95
+      },
+      {
+        v: '500+ Live',
+        m: 'Active WebSocket Sessions',
+        r: 'Real-Time Telemetry',
+        d: 'High-concurrency WebSockets synchronizing live operational metrics with zero packet degradation',
+        e: 'Distributed WebSocket Cluster',
+        b: 0.92
+      }
+    ];
+
+    document.getElementById('bk-con').innerHTML = BK.map(function(b) {
+      return '<div class="bcard">' +
+        '<div class="bval">' + b.v + '</div>' +
+        '<div class="bmet">' + b.m + '</div>' +
+        '<div class="brepo">' + b.r + '</div>' +
+        '<div class="bdet">' + b.d + '</div>' +
+        '<div class="bbar"><div class="bfill" style="width:' + (b.b * 100).toFixed(0) + '%"></div></div>' +
+        '<div class="benv">' + b.e + '</div>' +
+      '</div>';
+    }).join('');
+
+    /* JOURNEY TIMELINE */
+    var JRN = [
+      { d: '2019-08', l: 'B.Tech CSE Begins', s: 'Anangpuria Institute of Technology & Management &middot; Core algorithms, data structures & systems programming' },
+      { d: '2021-04', l: 'Frontend Mastery', s: 'React.js, Redux Toolkit & UI Modules &middot; Component architectures and state pipelines' },
+      { d: '2022-03', l: 'Full Stack Capstones', s: 'Node.js, Express & PostgreSQL &middot; Building high-throughput API backends' },
+      { d: '2023-06', l: 'B.Tech CSE Graduate', s: 'Graduated with 7.4 CGPA in Computer Science & Engineering' },
+      { d: '2023-11', l: 'Go Microservices', s: 'High-concurrency Golang, gRPC & Protobuf distributed systems development' },
+      { d: '2024-01', l: 'AppSquadz Pvt. Ltd.', s: 'Full Stack Developer &middot; Built 15+ REST APIs, Redux Toolkit (-20% state errors) & 30+ responsive screens' },
+      { d: '2024-09', l: 'AWS Certified Cloud Practitioner', s: 'Earned AWS Certified Cloud Practitioner & AWS Cloud Quest badges' },
+      { d: '2025-05', l: 'RNR Consulting Pvt. Ltd.', s: 'Full Stack Developer &middot; Architecting 5+ Golang microservices with gRPC and Protobuf' },
+      { d: '2025-08', l: 'Event-Driven Core (-25% Latency)', s: 'Engineered asynchronous workflows with Kafka and NATS JetStream' },
+      { d: '2025-11', l: 'DPDP Act Compliance (ARC)', s: 'Delivered end-to-end Automated Rights & Consents microservice with audit-proof data logging' },
+      { d: '2026-02', l: 'Kong Gateway & JWT', s: 'Configured Kong Gateway with custom rate limiting securing 20+ public endpoints' },
+      { d: '2026-04', l: 'Real-Time Telemetry Harness', s: 'Scaled WebSockets across 500+ active sessions synchronizing operational telemetry' }
+    ];
+
+    document.getElementById('tl-con').innerHTML = JRN.map(function(m) {
+      return '<div class="tl-item">' +
+        '<div class="tl-dot"></div>' +
+        '<div class="tl-date">' + m.d + '</div>' +
+        '<div class="tl-lbl">' + m.l + '</div>' +
+        '<div class="tl-sub">' + m.s + '</div>' +
+      '</div>';
+    }).join('');
+
+    /* INTERACTIVE TERMINAL LOGIC */
+    function handleTermKey(e) {
+      if (e.key === 'Enter') {
+        var input = document.getElementById('termInput');
+        var cmd = input.value.trim();
+        input.value = '';
+        executeTermCmd(cmd);
+        playClick();
+      }
+    }
+
+    function executeTermCmd(cmd) {
+      var scr = document.getElementById('termScreen');
+      var userRow = document.createElement('div');
+      userRow.className = 'term-out';
+      userRow.innerHTML = '<span style="color:var(--green);font-weight:800;">guest@harshit-nain:~$</span> ' + escapeHtml(cmd);
+      scr.appendChild(userRow);
+
+      var resRow = document.createElement('div');
+      resRow.className = 'term-out';
+      var c = cmd.toLowerCase().trim();
+
+      if (c === 'help') {
+        resRow.innerHTML = 'Available Commands:\n' +
+          '  <span style="color:var(--accent);">pipeline</span>      - Inspect GitHub Actions CI/CD health & telemetry\n' +
+          '  <span style="color:var(--accent);">arch</span>          - View distributed systems architecture & dataflow\n' +
+          '  <span style="color:var(--accent);">simulate</span>      - Run live distributed request packet simulator\n' +
+          '  <span style="color:var(--accent);">skills</span>        - List core technical proficiencies and competencies\n' +
+          '  <span style="color:var(--accent);">projects</span>      - Print flagship production platforms\n' +
+          '  <span style="color:var(--accent);">exp</span>           - Display professional work history at RNR & AppSquadz\n' +
+          '  <span style="color:var(--accent);">benchmarks</span>    - View verified production latency & load speedups\n' +
+          '  <span style="color:var(--accent);">certs</span>         - Display AWS & React credentials\n' +
+          '  <span style="color:var(--accent);">stack</span>         - Print full technology stack matrix\n' +
+          '  <span style="color:var(--accent);">trace</span>         - Inspect sample OpenTelemetry gRPC trace\n' +
+          '  <span style="color:var(--accent);">hire</span>          - Launch Executive Recruiter HUD\n' +
+          '  <span style="color:var(--accent);">contact</span>       - Print email, phone, GitHub, and LinkedIn\n' +
+          '  <span style="color:var(--accent);">cv</span>            - Open CV summary modal\n' +
+          '  <span style="color:var(--accent);">theme</span>         - Toggle dark/light theme\n' +
+          '  <span style="color:var(--accent);">clear</span>         - Clear the terminal screen';
+      } else if (c === 'pipeline' || c === 'ci') {
+        resRow.innerHTML = '⚡ GITHUB ACTIONS PIPELINE TELEMETRY:\n' +
+          '  Status:          100% OPERATIONAL (14 historic runs, 0 failures)\n' +
+          '  Cadence:         Daily at 06:17 UTC (profile-assets) & 00:00 UTC (snake animation)\n' +
+          '  Avg Execution:   ~15.3s runtime\n' +
+          '  Instruments:     24 self-hosted SVGs with strict XML validation (12 dark, 12 light)\n' +
+          '  Runtime Hosts:   Zero third-party image host dependencies\n' +
+          '  Integrity:       100% Validated (xml.etree.ElementTree compliant)\n' +
+          '  CDN Asset Base:  raw.githubusercontent.com/HarshitNain/HarshitNain/main/assets/';
+      } else if (c === 'simulate' || c === 'sim') {
+        tab('arch', document.querySelectorAll('.tab-btn')[3]);
+        setTimeout(function() {
+          var el = document.getElementById('packetSimSection');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          runPacketSimulator();
+        }, 150);
+        resRow.innerHTML = '⚡ Switched to Architecture panel & launched Live Packet Trace Simulator!';
+      } else if (c === 'trace') {
+        resRow.innerHTML = '📡 OPENTELEMETRY TRACE SAMPLE (trace_id: 4bf92f3577b34da6a3ce929d0e0e4736):\n' +
+          '  [SPAN 1] client.http_request -> POST /api/v1/consent/grant (duration: 10.4ms)\n' +
+          '    ├── [SPAN 2] kong.jwt_verify -> token_valid: true (duration: 1.1ms)\n' +
+          '    ├── [SPAN 3] grpc.consent.Grant -> status: OK, proto: v3 (duration: 3.2ms)\n' +
+          '    ├── [SPAN 4] nats.publish -> topic: consent.granted.v1, ack: true (duration: 2.3ms)\n' +
+          '    └── [SPAN 5] postgres.insert -> isolation: READ_COMMITTED (duration: 3.8ms)';
+      } else if (c === 'hire' || c === 'sudo hire' || c === 'recruiter') {
+        openRecruiterModal();
+        resRow.innerHTML = '<span style="color:#10e986;font-weight:900;">[RECRUITER HUD OPENED]</span>\n' +
+          'Candidate: Harshit Nain (Full Stack Developer & Systems SDE)\n' +
+          'Notice Period: Immediate / Short Notice\n' +
+          'Direct Contact: hnain932@gmail.com | +91-9654994442 🚀';
+      } else if (c === 'arch' || c === 'architecture') {
+        resRow.innerHTML = '🏗️ DISTRIBUTED SYSTEMS ARCHITECTURE & TOPOLOGY:\n' +
+          '  Client Tier:     React.js / Next.js (TanStack Query, -30% page load)\n' +
+          '  Edge Defense:    Kong API Gateway (JWT Bearer Auth, Rate Limiting, 20+ APIs)\n' +
+          '  Core Services:   Golang Microservices (gRPC / Protobuf, P99 < 15ms)\n' +
+          '  Event Stream:    Apache Kafka & NATS JetStream Pub/Sub (-25% Latency)\n' +
+          '  Compliance:      ARC DPDP Act Engine (Consent State Machine, Tamper-Proof Audit)\n' +
+          '  Data Layer:      PostgreSQL 16 (ACID) & Redis In-Memory Cluster\n' +
+          '  Active Telemetry: 500+ Concurrent Live WebSocket Sessions';
+      } else if (c === 'stack') {
+        resRow.innerHTML = '💻 TECH STACK MATRIX:\n' +
+          '  Languages:       Golang (1.4+ yrs), JavaScript (ES6+), TypeScript, C++, Python, SQL\n' +
+          '  Frameworks:      React.js, Next.js, Node.js, Express.js\n' +
+          '  Distributed:     gRPC, Protobuf, Apache Kafka, NATS JetStream, WebSockets\n' +
+          '  Cloud & Ops:     AWS Certified Cloud Practitioner, Kong Gateway, Docker, CI/CD\n' +
+          '  Databases:       PostgreSQL, Redis, MySQL, MongoDB';
+      } else if (c === 'skills') {
+        resRow.innerHTML = 'LANGUAGES:      Golang, JavaScript (ES6+), TypeScript, C++, Python, SQL\n' +
+          'BACKEND:        gRPC, Protobuf, Kafka, NATS JetStream, Node.js, Express, WebSockets\n' +
+          'FRONTEND:       React.js, Next.js, TanStack Query, Redux Toolkit, Material UI\n' +
+          'CLOUD & DEVOPS: AWS Certified, Kong API Gateway, Docker, Kubernetes, CI/CD\n' +
+          'DATABASES:      PostgreSQL, Redis, MySQL, MongoDB';
+      } else if (c === 'projects') {
+        resRow.innerHTML = '1. GRC – Distributed Monolith (Golang, gRPC, NATS JetStream, Kong, PostgreSQL, React)\n' +
+          '2. ARC – Automated Rights & Consents (Golang, DPDP Act, Kafka, Redis, Vault)\n' +
+          '3. Food Villa (React.js, Redux Toolkit, Swiggy API, Geolocation API)\n' +
+          '4. NHIT Digital Platform (Golang, Banking UTR reconciliation, sub-45ms latency)\n' +
+          '5. Enterprise SyncHub (Golang, WebSocket event harness, persistent workers)';
+      } else if (c === 'exp') {
+        resRow.innerHTML = '• Full Stack Developer | RNR Consulting Pvt. Ltd. (May 2025 – Present)\n' +
+          '  - 5+ Golang microservices via gRPC/Protobuf\n' +
+          '  - Kafka & NATS JetStream event streaming (-25% latency)\n' +
+          '  - Kong Gateway JWT rate limiting for 20+ endpoints\n' +
+          '  - React/Next.js with TanStack Query (-30% load time)\n' +
+          '  - Real-time WebSockets across 500+ sessions\n\n' +
+          '• Full Stack Developer | AppSquadz Pvt. Ltd. (Jan 2024 – Oct 2024)\n' +
+          '  - 15+ scalable RESTful APIs with Node.js & Express\n' +
+          '  - Reusable React components across 4+ product modules\n' +
+          '  - Redux Toolkit state standardization (-20% state bugs)';
+      } else if (c === 'benchmarks') {
+        resRow.innerHTML = '⚡ GRC Monolith Event Latency:  -25% (Kafka & NATS JetStream)\n' +
+          '⚡ Frontend Page Load Speedup:   -30% (TanStack Query Cache)\n' +
+          '⚡ Kong Gateway Protected APIs:  20+ Public Endpoints (JWT + Rate Limits)\n' +
+          '⚡ Active WebSocket Sessions:    500+ Concurrent Live Connections';
+      } else if (c === 'certs') {
+        resRow.innerHTML = '📜 AWS Certified Cloud Practitioner (Amazon Web Services)\n' +
+          '📜 AWS Cloud Quest: Cloud Practitioner (Amazon Web Services)\n' +
+          '📜 DevOps Essentials (CI/CD, Containerization, Docker)\n' +
+          '📜 Frontend Development with React (Component Patterns, Redux Toolkit)\n' +
+          '🎓 B.Tech Computer Science & Engineering (CGPA: 7.4) - AITM (2019-2023)';
+      } else if (c === 'contact') {
+        resRow.innerHTML = 'Email:    hnain932@gmail.com\n' +
+          'Phone:    +91-9654994442\n' +
+          'LinkedIn: https://linkedin.com/in/harshit-nain-62893177\n' +
+          'GitHub:   https://github.com/HarshitNain\n' +
+          'Location: India';
+      } else if (c === 'cv') {
+        openResumeModal();
+        resRow.innerHTML = 'Opened CV Summary modal window.';
+      } else if (c === 'theme') {
+        toggleTheme();
+        resRow.innerHTML = 'Toggled theme to: ' + theme.toUpperCase();
+      } else if (c === 'clear') {
+        scr.innerHTML = '';
+        return;
+      } else if (!c) {
+        return;
+      } else {
+        resRow.innerHTML = '<span style="color:#ef4444;">command not found: ' + escapeHtml(cmd) + '</span>. Type <span style="color:var(--accent);">help</span> for available commands.';
+      }
+      scr.appendChild(resRow);
+      scr.scrollTop = scr.scrollHeight;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    /* INTERACTIVE REQUEST PACKET SIMULATOR */
+    var simRunning = false;
+    var simScenarios = {
+      arc: {
+        method: "POST /api/v1/consent/grant",
+        protocol: "HTTP/1.3 -> gRPC -> Kafka -> Vault -> Postgres",
+        payload: {
+          data_principal_id: "dp_88291048",
+          purposes: ["analytics", "marketing_sms", "telemetry"],
+          timestamp: new Date().toISOString(),
+          signature: "ed25519_a8b9f029e18c..."
+        },
+        steps: [
+          { node: "client", status: "SENT", delay: 200, log: "Client emitted HTTPS POST request via Next.js TanStack hook." },
+          { node: "kong", status: "AUTH OK (+1.1ms)", delay: 350, log: "Kong Gateway: Bearer JWT verified. Token bucket rate limit checked (999/1000 remaining)." },
+          { node: "grpc", status: "PROCESSED (+3.2ms)", delay: 400, log: "Golang Microservice Core: gRPC ConsentService.Grant invoked via Protobuf v3. Model validated." },
+          { node: "bus", status: "EMITTED (+2.3ms)", delay: 350, log: "Kafka & NATS JetStream: Published event 'consent.granted.v1' to topic partition 2. Offset: 49120." },
+          { node: "data", status: "COMMITTED (+3.8ms)", delay: 450, log: "PostgreSQL 16: Append-only audit log persisted with ACID transaction. Redis TTL cache set to 86400s." }
+        ],
+        totalLatency: "10.4ms",
+        verdict: "HTTP 200 OK (P99 < 15ms target met)"
+      },
+      grc: {
+        method: "RPC GrcService.ProcessAuditLog",
+        protocol: "gRPC over HTTP/2 -> NATS JetStream -> PostgreSQL",
+        payload: {
+          audit_session_id: "grc_sess_90214",
+          tenant_id: "enterprise_corp_apac",
+          actor: "system_admin",
+          action: "POLICY_OVERRIDE_APPROVE",
+          severity: "HIGH"
+        },
+        steps: [
+          { node: "client", status: "SENT", delay: 200, log: "React Web Dashboard dispatched RPC action over secure WebSocket / HTTP2 channel." },
+          { node: "kong", status: "ROUTED (+0.9ms)", delay: 300, log: "Kong Gateway: gRPC routing plugin matched service 'grpc-grc-core'. TLS terminated." },
+          { node: "grpc", status: "RPC OK (+2.8ms)", delay: 400, log: "Golang Modular Monolith: GrcService.ProcessAuditLog executed with zero reflection overhead." },
+          { node: "bus", status: "STREAMED (+1.9ms)", delay: 350, log: "NATS JetStream: Stream 'GRC_AUDIT' acknowledged message with at-least-once delivery guarantee." },
+          { node: "data", status: "SAVED (+3.1ms)", delay: 400, log: "PostgreSQL 16: B-tree indexed audit entry written. Real-time stats emitted to 500+ WebSocket listeners." }
+        ],
+        totalLatency: "8.7ms",
+        verdict: "gRPC STATUS_OK (Latency -25% vs legacy REST)"
+      },
+      nhit: {
+        method: "POST /api/v1/nhit/reconcile-utr",
+        protocol: "TLS 1.3 Host-to-Host Banking API -> Golang Core -> PostgreSQL 16",
+        payload: {
+          disbursement_id: "nhit_disb_44901",
+          section: "194C_TDS",
+          bank_utr: "HDFC000192837482",
+          amount_inr: 4500000.00,
+          status: "RECONCILED"
+        },
+        steps: [
+          { node: "client", status: "SENT", delay: 200, log: "NHIT Admin Portal initiated automated banking settlement run." },
+          { node: "kong", status: "VERIFIED (+1.3ms)", delay: 350, log: "Kong Gateway: Mutual TLS handshake validated with banking partner gateway." },
+          { node: "grpc", status: "RECONCILED (+4.1ms)", delay: 450, log: "Golang Engine: Section 194C tax calculations verified against contractor master ledger." },
+          { node: "bus", status: "NOTIFIED (+2.0ms)", delay: 350, log: "Event Bus: Dispatched settlement notification to concessionaire webhook subscribers." },
+          { node: "data", status: "LOCKED (+4.4ms)", delay: 500, log: "PostgreSQL 16: Pessimistic row lock acquired. Balance ledger updated with zero transactional drift." }
+        ],
+        totalLatency: "11.8ms",
+        verdict: "HTTP 200 OK (<45ms NHIT SLA met)"
+      }
+    };
+
+    function resetSim() {
+      if (simRunning) return;
+      ['client', 'kong', 'grpc', 'bus', 'data'].forEach(function(n) {
+        var el = document.getElementById('sn-' + n);
+        var bd = document.getElementById('snb-' + n);
+        if (el) { el.classList.remove('active', 'done'); }
+        if (bd) { bd.textContent = n === 'client' ? 'IDLE' : 'WAITING'; }
+      });
+      for (var i = 1; i <= 4; i++) {
+        var w = document.getElementById('sw-' + i);
+        if (w) w.classList.remove('active');
+      }
+      document.getElementById('sm-lat').textContent = '-- ms';
+      document.getElementById('sm-status').textContent = 'READY';
+      document.getElementById('simTraceOutput').textContent = '// Ready. Click [ SEND PACKET TRACE ] to simulate end-to-end request lifecycle across Harshit\'s production microservices stack.';
+    }
+
+    function runPacketSimulator() {
+      if (simRunning) return;
+      simRunning = true;
+      var btn = document.getElementById('btnSim');
+      btn.disabled = true;
+      btn.textContent = '⏳ SIMULATING...';
+
+      var scKey = document.getElementById('simScenario').value;
+      var sc = simScenarios[scKey];
+      var traceLines = [
+        '==> INITIATING TRACE: ' + sc.method,
+        '==> Protocol: ' + sc.protocol,
+        '==> Request Payload: ' + JSON.stringify(sc.payload, null, 2),
+        '-------------------------------------------------------------'
+      ];
+      document.getElementById('simTraceOutput').textContent = traceLines.join('\n');
+      document.getElementById('sm-status').textContent = 'IN FLIGHT';
+
+      var stepIdx = 0;
+      var nodes = ['client', 'kong', 'grpc', 'bus', 'data'];
+
+      function executeStep() {
+        if (stepIdx >= sc.steps.length) {
+          document.getElementById('sm-lat').textContent = sc.totalLatency;
+          document.getElementById('sm-status').textContent = sc.verdict;
+          traceLines.push('-------------------------------------------------------------');
+          traceLines.push('==> TRACE COMPLETE: ' + sc.verdict + ' in ' + sc.totalLatency);
+          document.getElementById('simTraceOutput').textContent = traceLines.join('\n');
+          btn.disabled = false;
+          btn.innerHTML = '&#128640; SEND PACKET TRACE';
+          simRunning = false;
+          toast('Packet trace completed in ' + sc.totalLatency + '!');
+          if (sfxEnabled) playTone(987, 0.12);
+          return;
+        }
+
+        var st = sc.steps[stepIdx];
+        var nEl = document.getElementById('sn-' + st.node);
+        var nBd = document.getElementById('snb-' + st.node);
+
+        if (nEl) {
+          nEl.classList.add('active');
+        }
+        if (nBd) {
+          nBd.textContent = st.status;
+        }
+        if (stepIdx > 0) {
+          var wire = document.getElementById('sw-' + stepIdx);
+          if (wire) wire.classList.add('active');
+          var prevEl = document.getElementById('sn-' + nodes[stepIdx - 1]);
+          if (prevEl) {
+            prevEl.classList.remove('active');
+            prevEl.classList.add('done');
+          }
+        }
+
+        var freqs = [440, 554, 659, 784, 880];
+        if (sfxEnabled) playTone(freqs[stepIdx], 0.05);
+
+        traceLines.push('[HOP ' + (stepIdx + 1) + '] [' + st.node.toUpperCase() + '] ' + st.log);
+        document.getElementById('simTraceOutput').textContent = traceLines.join('\n');
+        var outBox = document.getElementById('simTraceOutput');
+        outBox.scrollTop = outBox.scrollHeight;
+
+        stepIdx++;
+        setTimeout(executeStep, st.delay);
+      }
+
+      executeStep();
+    }
+
+    function copyTraceLog() {
+      var txt = document.getElementById('simTraceOutput').textContent;
+      navigator.clipboard.writeText(txt).then(function() {
+        toast('Trace log copied to clipboard!');
+      });
+    }
+
+    /* RECRUITER MODAL HANDLERS */
+    function openRecruiterModal() {
+      document.getElementById('recruiterModal').classList.add('open');
+    }
+    function closeRecruiterModal() {
+      document.getElementById('recruiterModal').classList.remove('open');
+      playClick();
+    }
+
+    function toggleMatchTag(el, tag) {
+      el.classList.toggle('checked');
+      var all = document.querySelectorAll('#matchTagsContainer .match-tag');
+      var checked = document.querySelectorAll('#matchTagsContainer .match-tag.checked');
+      var pct = Math.round((checked.length / all.length) * 100);
+      document.getElementById('matchFill').style.width = pct + '%';
+      var badge = document.getElementById('matchScoreBadge');
+      var verd = document.getElementById('matchVerdict');
+      badge.textContent = pct + '% MATCH (' + checked.length + '/' + all.length + ')';
+      if (pct === 100) {
+        badge.style.color = 'var(--green)';
+        verd.innerHTML = '&#10004; Strong match: Harshit possesses verified production experience across all selected domains.';
+      } else if (pct >= 50) {
+        badge.style.color = 'var(--accent)';
+        verd.innerHTML = '&#10004; Excellent match (' + pct + '%): Core capabilities align closely with candidate profile.';
+      } else {
+        badge.style.color = 'var(--amber)';
+        verd.innerHTML = '&#8505; Filtered match (' + pct + '%). Harshit is also proficient in related backend & frontend ecosystems.';
+      }
+      playClick();
+    }
+
+    /* MODAL HANDLERS */
+    function openResumeModal() {
+      document.getElementById('resumeModal').classList.add('open');
+    }
+    function closeResumeModal() {
+      document.getElementById('resumeModal').classList.remove('open');
+      playClick();
+    }
+
+    function zoomImg(el) {
+      var img = el.querySelector('img') || el;
+      document.getElementById('modalImg').src = img.src;
+      document.getElementById('imgModal').classList.add('open');
+      playClick();
+    }
+    function closeImgModal() {
+      document.getElementById('imgModal').classList.remove('open');
+      playClick();
+    }
+
+    function showPipelineLog(stage) {
+      var t = document.getElementById('logTitle');
+      var c = document.getElementById('logContent');
+      if (stage === 'FETCH') {
+        t.textContent = 'STAGE 01 // TELEMETRY FETCH LOG';
+        c.textContent = '==> [INFO] Connecting to GitHub REST API...\n==> [INFO] User-Agent: HarshitNain-profile-generator\n==> [SUCCESS] Public Repos: 5, Followers: 1\n==> [SUCCESS] Languages Detected: Go, TypeScript, JavaScript, Python, HTML, CSS\n==> [CACHE] Telemetry cached to assets/.telemetry_cache.json\n==> Status: 200 OK';
+      } else if (stage === 'RENDER') {
+        t.textContent = 'STAGE 02 // SVG INSTRUMENT RENDER LOG';
+        c.textContent = '==> [RENDER] boot-dark.svg & boot-light.svg (11,683 B)\n==> [RENDER] hero-dark.svg & hero-light.svg (8,621 B)\n==> [RENDER] status-dark.svg & status-light.svg (27,625 B)\n==> [RENDER] architecture-dark.svg & architecture-light.svg (14,357 B)\n==> [RENDER] stack-dark.svg & stack-light.svg (14,084 B)\n==> [RENDER] domains-dark.svg & domains-light.svg (14,248 B)\n==> [RENDER] pulse-dark.svg & pulse-light.svg (15,918 B)\n==> [RENDER] timeline-dark.svg & timeline-light.svg (14,349 B)\n==> [RENDER] benchmarks-dark.svg & benchmarks-light.svg (9,631 B)\n==> [RENDER] pqc-clock-dark.svg & pqc-clock-light.svg (11,302 B)\n==> [RENDER] langmix-dark.svg & langmix-light.svg (8,512 B)\n==> [RENDER] research-dark.svg & research-light.svg (11,445 B)\n==> Total 24 custom instruments compiled successfully (12 dark, 12 light).';
+      } else if (stage === 'VERIFY') {
+        t.textContent = 'STAGE 03 // INSTRUMENT VERIFICATION LOG';
+        c.textContent = '==> Checking XML syntax on all 24 SVGs... PASS (0 XML errors)\n==> Validating dark/light color tokens... PASS\n==> Checking SMIL animation nodes... PASS\n==> Zero third-party image host dependencies verified.\n==> Generated GITHUB_STEP_SUMMARY table.';
+      } else if (stage === 'COMMIT') {
+        t.textContent = 'STAGE 04 // GIT COMMIT & REBASE LOG';
+        c.textContent = '==> git config user.name "github-actions[bot]"\n==> git add assets/*.svg assets/.telemetry_cache.json\n==> git commit -m "chore: refresh profile dashboard assets [skip ci]"\n==> git pull --rebase origin main\n==> git push origin main [COMPLETED]';
+      } else if (stage === 'SNAKE') {
+        t.textContent = 'STAGE 05 // CONTRIBUTION SNAKE ANIMATION LOG';
+        c.textContent = '==> Platane/snk/svg-only@v3 running...\n==> Fetching GitHub contributions for HarshitNain\n==> Output: dist/github-contribution-grid-snake.svg\n==> Output: dist/github-contribution-grid-snake-dark.svg\n==> Pushing to branch: output [COMPLETED]';
+      }
+      document.getElementById('logModal').classList.add('open');
+    }
+    function closeLogModal() {
+      document.getElementById('logModal').classList.remove('open');
+      playClick();
+    }
+
+    function closeModalOnBg(e) {
+      if (e.target.classList.contains('modal-overlay')) {
+        e.target.classList.remove('open');
+        playClick();
+      }
+    }
+
+    function copyContact() {
+      var txt = 'Harshit Nain\nFull Stack Developer | Golang | Node.js | React.js | Next.js | Microservices\nPhone: +91-9654994442\nEmail: hnain932@gmail.com\nLinkedIn: https://linkedin.com/in/harshit-nain-62893177\nGitHub: https://github.com/HarshitNain';
+      navigator.clipboard.writeText(txt).then(function() {
+        toast('Contact copied to clipboard!');
+      });
+    }
+
+    function copyResumeText() {
+      var txt = 'HARSHIT NAIN\nFull Stack Developer | Golang | Node.js | React.js | Next.js | Microservices\nPhone: +91-9654994442 | Email: hnain932@gmail.com\nLinkedIn: linkedin.com/in/harshit-nain-62893177 | GitHub: github.com/HarshitNain\nLocation: India\n\nPROFESSIONAL SUMMARY:\nFull Stack Developer with 1.4+ years of experience engineering scalable backend microservices, distributed systems, and responsive frontend applications for production environments. Proficient in Golang, Node.js, React.js, Next.js, TypeScript, PostgreSQL, Redis, Apache Kafka, Docker, Kubernetes, and AWS.\n\nPROFESSIONAL EXPERIENCE:\n1. Full Stack Developer | RNR Consulting Pvt. Ltd. | May 2025 – Present\n- Architected and maintained 5+ Golang microservices using gRPC and Protobuf for low-latency inter-service communication.\n- Engineered asynchronous workflows with Kafka and NATS JetStream, cutting latency by 25%.\n- Configured Kong API Gateway with JWT auth and rate limiting for 20+ public endpoints.\n- Optimized React.js/Next.js frontend with TanStack Query, cutting page load time by 30%.\n- Integrated WebSockets for live status updates across 500+ active sessions.\n\n2. Full Stack Developer | AppSquadz Pvt. Ltd. | Jan 2024 – Oct 2024\n- Developed 15+ scalable RESTful API endpoints using Node.js and Express.js.\n- Standardized state management with Redux Toolkit, reducing errors by 20%.\n- Built modular UI components across 4+ product modules and 30+ responsive screens.\n\nEDUCATION:\nB.Tech Computer Science & Engineering | CGPA: 7.4 (2019-2023)\nAnangpuria Institute of Technology and Management, Faridabad\n\nCERTIFICATIONS:\nAWS Certified Cloud Practitioner · DevOps Essentials · Frontend Development with React';
+      navigator.clipboard.writeText(txt).then(function() {
+        toast('Complete Resume copied to clipboard!');
+      });
+    }
+
+    /* BACKGROUND PARTICLES */
+    (function() {
+      var c = document.getElementById('bgc'), ctx = c.getContext('2d'), P = [];
+      function resize() { c.width = window.innerWidth; c.height = window.innerHeight; }
+      function mkp() {
+        return {
+          x: Math.random() * c.width, y: Math.random() * c.height,
+          vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28,
+          r: Math.random() * 1.5 + 0.4, a: Math.random() * 0.35 + 0.08,
+          col: Math.random() > 0.5 ? '#00f0ff' : '#a855f7'
+        };
+      }
+      resize();
+      P = Array.from({ length: 50 }, mkp);
+      window.addEventListener('resize', resize);
+      (function loop() {
+        ctx.clearRect(0, 0, c.width, c.height);
+        if (!document.getElementById('body').classList.contains('light')) {
+          P.forEach(function(p) {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0) p.x = c.width; if (p.x > c.width) p.x = 0;
+            if (p.y < 0) p.y = c.height; if (p.y > c.height) p.y = 0;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.col; ctx.globalAlpha = p.a; ctx.fill(); ctx.globalAlpha = 1;
+          });
+        }
+        requestAnimationFrame(loop);
+      })();
+    })();
+  </script>
+</body>
+</html>
