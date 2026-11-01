@@ -192,9 +192,13 @@ def gather():
         data["followers"] = user.get("followers", data["followers"])
 
     repos, page = [], 1
+    # Use /user/repos when authenticated so both public and private repositories are discovered,
+    # falling back to /users/{OWNER}/repos for unauthenticated public discovery.
+    endpoint = "/user/repos" if TOKEN else f"/users/{OWNER}/repos"
+    req_params = {"per_page": 100, "affiliation": "owner"} if TOKEN else {"per_page": 100, "type": "owner"}
     while True:
-        chunk = api(f"/users/{OWNER}/repos", {"per_page": 100, "page": page, "type": "owner"})
-        if not chunk:
+        chunk = api(endpoint, dict(req_params, page=page))
+        if not chunk or not isinstance(chunk, list):
             break
         repos.extend(chunk)
         if len(chunk) < 100:
@@ -203,6 +207,9 @@ def gather():
     if repos:
         data["public_source_repos"] = sum(
             1 for r in repos if not r.get("fork") and not r.get("private"))
+        data["total_repos"] = len(repos)
+        data["private_source_repos"] = sum(
+            1 for r in repos if not r.get("fork") and r.get("private"))
 
     since = (NOW - timedelta(days=WINDOW)).strftime("%Y-%m-%dT%H:%M:%SZ")
     lang_bytes, all_commits = {}, []
