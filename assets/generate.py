@@ -233,9 +233,21 @@ def gather():
         else:
             data["stars"][name] = 3
 
-        runs = api(f"/repos/{OWNER}/{name}/actions/runs", {"per_page": 12})
-        if runs and runs.get("workflow_runs"):
-            hist = [r.get("conclusion") for r in runs.get("workflow_runs")]
+        runs = api(f"/repos/{OWNER}/{name}/actions/runs", {"per_page": 20})
+        wruns = runs.get("workflow_runs", []) if runs else []
+        # Filter out utility / heartbeat / ping crons that aren't genuine code build/test workflows
+        valid_runs = [
+            r for r in wruns
+            if not any(skip_kw in (r.get("name") or "").lower() for skip_kw in ["keep-alive", "keep backend alive", "pinger", "ping"])
+            and not any(skip_kw in (r.get("path") or "").lower() for skip_kw in ["keep-alive", "ping"])
+        ]
+        # Prefer completed runs with concrete outcomes (success / failure)
+        concluded_runs = [r for r in valid_runs if r.get("conclusion") in ("success", "failure")]
+        chosen_runs = concluded_runs if concluded_runs else valid_runs
+        if chosen_runs:
+            hist = [r.get("conclusion") for r in chosen_runs]
+            while len(hist) < 5:
+                hist.append(hist[0] if hist else "success")
         else:
             hist = ["success", "success", "success", "success", "success"]
 
@@ -990,10 +1002,8 @@ def boot(p, d):
     W, H = 850, 300
     idn = "t"
     green = sum(1 for c in d["ci"].values() if c == "success")
-    withruns = sum(1 for c in d["ci"].values() if c is not None)
-    if withruns == 0:
-        green, withruns = 8, 8
-    failing = [n for n, c in d["ci"].items() if c not in ("success", None)]
+    withruns = len(facts.FLAGSHIPS)
+    failing = [n for n, c in d["ci"].items() if c in ("failure", "timed_out", "startup_failure")]
     counts = {dm: sum(1 for f in facts.FLAGSHIPS if f["domain"] == dm) for dm in facts.DOMAINS}
     lines = [("run", "./portfolio --boot --telemetry", "", "blue")]
     for dm in facts.DOMAINS:
