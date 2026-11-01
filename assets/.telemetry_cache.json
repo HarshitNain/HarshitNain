@@ -1266,7 +1266,7 @@
         "cancel_url": "https://api.github.com/repos/HarshitNain/NHIT-Digital-Platform/actions/runs/41336493411/cancel",
         "rerun_url": "https://api.github.com/repos/HarshitNain/NHIT-Digital-Platform/actions/runs/41336493411/rerun",
         "previous_attempt_url": null,
-        "workflow_url": "https://api.github.com/repos/HarshitNain/NHIT-Digital-Platform/actions/workflows/388319962",
+        "workflow_url": "https://api.github.com/repos/HarshitNain/NHIT-Digital-Platform/actions/workflows/395715941",
         "head_commit": {
           "id": "edb2e99e2f6c1fee771bcb486d6ce390607ed7c2",
           "tree_id": "ddb9ec2d216aaec773d066616055466e8a4a799b",
